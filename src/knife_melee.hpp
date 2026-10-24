@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "beam_math.hpp"
 namespace copvr {
 inline float knifeDamageScale(float speed) {

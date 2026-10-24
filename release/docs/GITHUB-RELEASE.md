@@ -1,6 +1,6 @@
 # Call of Pripyat VR — Alpha 0.1.0
 
-**Pre-release. Unofficial free PC VR mod. Original Steam Call of Pripyat 1.6.02 required.** Not Enhanced Edition; not a standalone Quest app. Tested during development on Quest 2 / Touch / USB Quest Link. Full campaign and other hardware are unverified.
+**Pre-release. Unofficial free PC VR mod. Original Steam Call of Pripyat 1.6.02 required.** Not Enhanced Edition; not a standalone Quest app. Tested during development on Quest 2 / Touch / USB Quest Link. The campaign has NOT been played through from start to finish in VR. Cutscenes, scripted scenes and quests may fail or block progress. Keep backup saves. Other hardware is unverified.
 
 Tracked headset/hands, hand-aimed weapons, support grips, physical magazine and single-round reloads, stereo binoculars/scopes, body-based equipment/quick slots, physical item handling, VR menu rays, wrist HUD and physical crouching are implemented. Historical headset confirmations and pending checks are distinguished in the included English/Ukrainian feature-status guides.
 

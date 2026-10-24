@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "game_vr_binocular.hpp"
 #include "game_vr_scope_accuracy.hpp"
 #include "Include/xrRender/UIRender.h"

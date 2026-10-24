@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "beam_math.hpp"
 #include "vr_optics_limits.hpp"
 #include <cmath>

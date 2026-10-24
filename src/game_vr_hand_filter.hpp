@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "adaptive_pose_filter.hpp"
 namespace copvr_game {
 struct HandFilterState { copvr::AdaptivePoseFilter filter; Fmatrix rawGrip,filteredGrip; bool ready=false; };
