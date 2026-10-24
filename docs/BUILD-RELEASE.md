@@ -38,6 +38,6 @@ The included unsigned EXEs have no Authenticode certificate; SHA256SUMS detects 
 
 ## GitHub publication preparation
 
-No repository has been created or pushed by this task. Choose the repository owner/name, add the remote, commit reviewed source, then tag `v0.1.0-alpha.1` only after acceptance. Do not add `engine/`, `game-vr/`, `reports/`, `build/`, private saves or game archives. They are ignored. Source distribution consists of this repo, a pinned engine-bootstrap script/patch, frozen overlay, attribution and build instructions.
+Repository: https://github.com/Kerpi4i/call-of-pripyat-vr. Pre-release `v0.1.0-alpha.1` was published on 2026-10-25 after the owner confirmed installation/startup and authorized publication. For later versions, commit reviewed source and tag only after acceptance. Do not add `engine/`, `game-vr/`, `reports/`, `build/`, private saves or game archives. They are ignored. Source distribution consists of this repo, a pinned engine-bootstrap script/patch, frozen overlay, attribution and build instructions.
 
 Use `release/docs/GITHUB-RELEASE.md` as the **pre-release** body; attach the setup EXE, its `.config`, portable ZIP and SHA256SUMS. Mark the release as a prerelease, not a stable release. Run `.github/workflows/source-checks.yml` for portable checks; this workflow does not claim to build/test the native VR package. No automatic publication workflow is configured. Put the actual GitHub release URL into the Steam post drafts immediately before posting. Do not post a placeholder URL.

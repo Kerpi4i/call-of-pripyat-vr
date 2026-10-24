@@ -28,4 +28,6 @@ The clean-install checklist is intentionally left for explicit tester acceptance
 
 ## Owner acceptance — 2026-10-25
 
-The owner reported installation and launch working and explicitly authorized publication. This is a user-reported acceptance; it does not silently mark every per-feature/headset regression item above as passed. Publication URL/status will be recorded after remote verification.
+The owner reported installation and launch working and explicitly authorized publication. This is a user-reported acceptance; it does not silently mark every per-feature/headset regression item above as passed.
+
+Published on 2026-10-25 (Europe/Kiev): https://github.com/Kerpi4i/call-of-pripyat-vr/releases/tag/v0.1.0-alpha.1. The GitHub source-check workflow passed at release commit `059ec62453bdb14f0949e6091a756834be8f0ef1`. All six uploaded assets were verified against their local size and GitHub SHA-256 digest. This publication record is a later documentation-only update; the release tag and attached source ZIP remain frozen at that release commit. Steam was not published, as requested by the owner.
