@@ -1,0 +1,6 @@
+Texture2D s_base; SamplerState smp_rtlinear;
+float4 main(float4 P:SV_Position,float4 C:COLOR0,float2 uv:TEXCOORD0):SV_Target {
+    float4 pixel=s_base.Sample(smp_rtlinear,uv);
+    // Opaque screen interior; preserve the removed frame's transparency.
+    return float4(pixel.rgb*C.rgb,smoothstep(.02,.20,pixel.a)*C.a);
+}

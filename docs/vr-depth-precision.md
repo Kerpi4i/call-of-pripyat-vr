@@ -1,0 +1,3 @@
+VR depth precision correction
+
+The main stereo projection used a 0.005 m near plane with D24 depth. Changed to 0.05 m, improving conventional depth precision by about 10x at ordinary world distances for the same far plane. This targets flicker at wall intersections and terrain/object contacts; coplanar geometry and foliage aliasing may still need separate fixes. Near-eye optical aperture protection now keeps rendered lenses at least 0.055 m along the optic axis; both binocular and scope rendering share this helper. Geometry closer than 5 cm can clip. No AA, resolution, quality or driver settings changed. Binocular optics unit tests pass. Headset verification pending; game not launched.

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\tools\engine-build\Microsoft.Windows.SDK.CPP.10.0.19041.5\build\native\Microsoft.Windows.SDK.cpp.props" />
+  <PropertyGroup>
+    <ForceImportAfterCppProps>$(MSBuildThisFileDirectory)..\..\tools\engine-config\sdk-late.props</ForceImportAfterCppProps>
+  </PropertyGroup>
+</Project>

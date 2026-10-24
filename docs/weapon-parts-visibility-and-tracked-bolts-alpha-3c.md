@@ -1,0 +1,17 @@
+# Magazine visibility, tracked charging parts and jam recovery, alpha 3c
+
+## Changes
+Magazine visual instances are now keyed by profile AND instance: fresh left/right proxies, detached left/right magazines and 24 discarded magazine slots each have a separate renderer visual. The engine's insert_dynamic skips a visual whose marker already matches the pass; the old profile-only cache caused discarded magazines (submitted first) to suppress freshly held magazines of the same weapon. Original mesh triangles/UVs are retained, but exported magazines now have one isolated identity bone instead of the entire native weapon skeleton. Two-weight UV layout is corrected (weight at byte 52, UV at 56); a native SIG550 vertex with NaN binormal is repaired from normal x tangent. Standalone meshes have finite vertex data and correct local bounds.
+
+Native magazines, including cartridge/joint4 pistol magazines, have visibility and skinning palettes enforced AFTER animation evaluation and before submission. Parent/bind relative transforms move the socket with the actual weapon pose while keeping the insertion point valid when its magazine bone is hidden. Detachment carries this pose into the held magazine.
+
+33 charging part profiles are measured from native mesh geometry: pistol rear/top slide surfaces, exposed side handle geometry on long guns, and native lock bones for weapons using them. Detection uses the tracked palm, not wrist or generic bone origin; contact points are transformed through current bone versus bind pose. During grip, hand displacement projects onto a bounded part axis, drives the actual bone callback, and anchors the virtual palm at the moving contact point. Release resets to native rest pose and performs chambering after sufficient travel. This is a linear manual movement prototype, not reconstruction of every weapon's articulated native reload sequence. Non-detachable break-action/rocket/launcher locks still use their previous native ammo accounting after the gesture.
+
+A jam cannot be cleared by racking alone: a detachable magazine reload must be performed first. Insertion preserves the jam until the final rack. Native dedicated anm_misfire/anm_jammed and anm_reload_misfire[_w_gl] clips are retained where supplied; ordinary reload clips are not substituted when a dedicated clip is absent. Full canned reload audio is removed from detachable magazine insertion, replaced by short mechanical clicks and pistol sndClose for slide closure. Legacy non-detachable reload audio remains.
+
+Tracked hand/finger palettes are rebuilt from the native pose and reapplied immediately before every HUD/lighting/shadow submission. This protects against a shot invalidating the skeleton after player_hud::update, which could expose the original sleeve/arm pose before the next update. Existing renderer rejection of the local actor body visual remains.
+
+## Validation
+Release x64 xrGame build succeeded. Updated magazine_reload_tests passes, including jam requiring a reload. tools/validate-vr-weapon-parts.py checks all 26 one-bone magazine assets, vertex layout/finite data/indices/centres, and all 33 native charging contact points inside their source mesh bounds. Engine whitespace and reverse patch checks pass. No game launch; visibility, grip reachability, slide/handle movement, audio and flash suppression require headset confirmation.
+
+The all-weapons test copy remains copvr_all_weapons_test. Existing alpha-3b temporary discarded-magazine and shared-ammo-pool limitations remain.

@@ -1,0 +1,7 @@
+Texture2D s_base; SamplerState smp_rtlinear;
+float4 main(float4 P:SV_Position,float4 C:COLOR0,float2 uv:TEXCOORD0):SV_Target {
+    float4 sample=s_base.Sample(smp_rtlinear,uv);
+    // Keep the native contour; opaque radar, transparent unused canvas.
+    float coverage=saturate(sample.a*20.0);
+    return float4(sample.rgb*C.rgb,coverage*C.a);
+}

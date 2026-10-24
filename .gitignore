@@ -1,0 +1,13 @@
+/engine/
+/build/
+/reports/
+/tools/toolchain/
+/tools/openxr-loader/
+/tools/engine-build/
+/game-test/
+/game-vr/
+*.obj
+*.pdb
+/dist/
+__pycache__/
+*.pyc

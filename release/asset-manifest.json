@@ -1,0 +1,4301 @@
+{
+  "version": "0.1.0-alpha.1",
+  "overlay": [
+    {
+      "path": "configs/copvr_equipment.ltx",
+      "sha256": "5dc876bb9b523a4d316d51582a854ee97cd8966d8f703e9a885da3ebe5912315",
+      "bytes": 31701
+    },
+    {
+      "path": "configs/openxray.ltx",
+      "sha256": "cbacbbefaf7bbaaa255f31a1a70a5e7dc1741dae100b47c87e1f08f401652b9f",
+      "bytes": 1255
+    },
+    {
+      "path": "configs/scripts/jupiter/jup_a12_bandit_cashier.ltx",
+      "sha256": "5900b0c1fcc1dca3bbdaaca13d879f334d9bf8ad409a3ce9b1801dbe963cec95",
+      "bytes": 2334
+    },
+    {
+      "path": "configs/scripts/zaton/zat_b14_stalker_1.ltx",
+      "sha256": "9288ec987da8e8ae646d8f1a8438882c267b9cdc83911b2e312f3ad390749183",
+      "bytes": 7727
+    },
+    {
+      "path": "configs/text/cze/openxray.xml",
+      "sha256": "b999dd82b5e6873f59d46cfbfb710105b48b54485871b568b43b58ae7417fc44",
+      "bytes": 4647
+    },
+    {
+      "path": "configs/text/cze/st_copvr_options.xml",
+      "sha256": "71467e58ab789a44cf9bc689c161ec163fa0d5d864db67491574574dc0277538",
+      "bytes": 147
+    },
+    {
+      "path": "configs/text/eng/openxray.xml",
+      "sha256": "8ad88769bb5810954d629534527e776802eab27226d1ffb9047b21e4c04cbf88",
+      "bytes": 3316
+    },
+    {
+      "path": "configs/text/eng/st_copvr_options.xml",
+      "sha256": "71467e58ab789a44cf9bc689c161ec163fa0d5d864db67491574574dc0277538",
+      "bytes": 147
+    },
+    {
+      "path": "configs/text/ger/openxray.xml",
+      "sha256": "e644b43c5d74293141676ba19a278f3873b7aec496fdfd78c805012c801ef0c9",
+      "bytes": 3320
+    },
+    {
+      "path": "configs/text/ger/st_copvr_options.xml",
+      "sha256": "71467e58ab789a44cf9bc689c161ec163fa0d5d864db67491574574dc0277538",
+      "bytes": 147
+    },
+    {
+      "path": "configs/text/pol/openxray.xml",
+      "sha256": "705507ca14f6709874812b197c1500f79c33cdad57a73ddec3f1a56b38af395f",
+      "bytes": 3396
+    },
+    {
+      "path": "configs/text/pol/st_copvr_options.xml",
+      "sha256": "71467e58ab789a44cf9bc689c161ec163fa0d5d864db67491574574dc0277538",
+      "bytes": 147
+    },
+    {
+      "path": "configs/text/rus/openxray.xml",
+      "sha256": "65679398f0ec090101ab23329b7bd7a5292e8eb92cc485b19e64d067acf82aa2",
+      "bytes": 3614
+    },
+    {
+      "path": "configs/text/rus/st_copvr_options.xml",
+      "sha256": "71467e58ab789a44cf9bc689c161ec163fa0d5d864db67491574574dc0277538",
+      "bytes": 147
+    },
+    {
+      "path": "configs/text/ukr/openxray.xml",
+      "sha256": "17057363befaa840fad665783d37f34c88ae6b467fc8601855999e1250d6c1b4",
+      "bytes": 4817
+    },
+    {
+      "path": "configs/text/ukr/st_copvr_options.xml",
+      "sha256": "2e97de857b57337e0854b5a7aa2e2814943040eb6d072987bf1841d87350404e",
+      "bytes": 144
+    },
+    {
+      "path": "configs/ui/actor_menu_16.xml",
+      "sha256": "2399d0beb8efa73ca0fb6c639d302f9548d80f31cdd66c223dc6676407aa32cb",
+      "bytes": 20576
+    },
+    {
+      "path": "configs/ui/pda_16.xml",
+      "sha256": "71ccb8b58e7a77165919f573b5cbb8a4b64883d19200de2181b0683ab30f19fc",
+      "bytes": 2957
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/actor_menu.xml",
+      "sha256": "4f1b67fa508ae6be2064cc25acc6caf08e7bf7a7f227549560b0adbb4dcf7a1d",
+      "bytes": 15622
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/actor_menu_16.xml",
+      "sha256": "a4adb69860d876c2ebf0633bdc506607613f58ddab4869c3d2cfb07479797612",
+      "bytes": 16239
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/actor_menu_item.xml",
+      "sha256": "305ff36d4af2cc32817893ede4a4b5b023e728ca7ee0eadd2b6603cc43c638d4",
+      "bytes": 12310
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/actor_menu_item_16.xml",
+      "sha256": "84d0a7b3dd4ae272c93db0ad2ec7841f90d3878a4d8a2464fcbf5fb23dd8976a",
+      "bytes": 12927
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/actor_statistic.xml",
+      "sha256": "6e118cf2bed5f405abbafc2b5f62de20f7d68ea5b2f46f8c3c196dd310c0004f",
+      "bytes": 6101
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/af_params.xml",
+      "sha256": "aff3adb570d74787d371c7e0023c7629ac2d3a201f9bb95750c4ca7dd4951154",
+      "bytes": 4752
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/af_params_16.xml",
+      "sha256": "1feeff42e5314143957c656525533e371e0ef216bc2aedfd62565128283419bc",
+      "bytes": 4687
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/buy_menu_item.xml",
+      "sha256": "7cec68a4320aeec179152c4d703262f561c0ae796201d89d6a4bc274e51e1cc1",
+      "bytes": 3618
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/buy_menu_item_16.xml",
+      "sha256": "ad6cb31cfbcc86afdca52f2911cf7126263eae2d6aaa5a3105f776839700808f",
+      "bytes": 3623
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/chat_mp.xml",
+      "sha256": "225cb126f1a09d0ded4e867cca1fe56ec9d616f7aa62f793771260bd8e3564f9",
+      "bytes": 729
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/color_defs.xml",
+      "sha256": "454d3cb6779cef27fad09372f39abd1df8fe6b2accc4ee542eee2627d2a3e349",
+      "bytes": 1817
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/game_tutorial_pda.xml",
+      "sha256": "b943c53ec58f386292156cb3878036728f080a56a1562ec5b590c7315f83a8f1",
+      "bytes": 20020
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/game_tutorial_pda_16.xml",
+      "sha256": "943e5adc81e0492d05010956d4c0f422beb71b507609e8f85eb8a3e8c39dd096",
+      "bytes": 19827
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/game_tutorials.xml",
+      "sha256": "50bcb26a2e6bc07469454a6fa4e66437242f0cbb76113298d1a759d08d7ce236",
+      "bytes": 31124
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/grenade.xml",
+      "sha256": "1bf8be26df8413ea2bfb8c0d211a192393090c09a0c1dc030e891161a3256429",
+      "bytes": 366
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/heli_progress.xml",
+      "sha256": "c8f4032a15dd5be1fbb4833b187e0e0c2d79544def60947a01b1841919b4002f",
+      "bytes": 238
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/hint_item.xml",
+      "sha256": "dcb1ee31c3801a8480a93b3f9d4e88dff902226d813165843559d921dd9e5f32",
+      "bytes": 438
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ingame_msglog_mp.xml",
+      "sha256": "86f79f92b8421898ec807e4657dc5179c5edb81e2b0287c302467ec0ab26de8a",
+      "bytes": 239
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ingame_msglog_sp.xml",
+      "sha256": "2d5911106a109bb747ce37b478f68ab279412f6b9653c2a58092e4ddf319ca52",
+      "bytes": 229
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_new.xml",
+      "sha256": "e5f4b667b72fdef880e46a19b20273d4128df5f2e818c2fbb67da2643d817683",
+      "bytes": 7457
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_new_16.xml",
+      "sha256": "2227f54c8d4eeb6ef6e8e70f388c0b811a0b804a1426001a3f83a43c6ba6f738",
+      "bytes": 7601
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_upgrade.xml",
+      "sha256": "bfb1b45b4ad578e822ec39288a882b8385f4d18f11ea3af51393c888c287be00",
+      "bytes": 21896
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_upgrade_16.xml",
+      "sha256": "b7edf12d974789d98200647a9e3dd5a2e553da6ffae9c7e30309997d35d30abe",
+      "bytes": 22003
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_upgrade_info.xml",
+      "sha256": "9c4d9ec75a2d08e78c01d8d6878acb19ee3fbd5ae380e521cbbd863f2ddb91f0",
+      "bytes": 517
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/inventory_upgrade_info_16.xml",
+      "sha256": "3274cea81f9bcba7537dc9d43f52c40501958f358e8a3a0925a4b271a9c50ca2",
+      "bytes": 516
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/maingame.xml",
+      "sha256": "e9cf04b3f506f3d64274178b45c5dc4abe94ba692231f88a0cd3729675725015",
+      "bytes": 6838
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/maingame_16.xml",
+      "sha256": "3c2a7cfd70ff7f314a6663fb7b67ad9670071c4a23fb5c0ed60299d1b389780b",
+      "bytes": 7157
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/maingame_pda_msg.xml",
+      "sha256": "517e78d07562555855c7ddba7e6965b275da41032cd93e0025a0384d94698404",
+      "bytes": 446
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/maingame_pda_msg_16.xml",
+      "sha256": "fc2b5215187ba91c05ce9b13dea644235768c62b8fd06f84928374c9d4eeb179",
+      "bytes": 446
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_desc.xml",
+      "sha256": "d4a8d9d03571569df10e9ca4387eea9d1e281d951c4d4a657cff2089f45387f1",
+      "bytes": 1715
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_desc_16.xml",
+      "sha256": "47587f825bef35dc80a9d27d7ba15493254ec1b010630a64cad0d092a596aeab",
+      "bytes": 1797
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_spots.xml",
+      "sha256": "139e7d9368d6a98b6607a4776e5fbd157078467e742504c1952ce488fee07d7e",
+      "bytes": 48953
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_spots_complex.xml",
+      "sha256": "835b83976fc23176391fd9c839c89ad6648bf0a34f9d9d564575f3f33200d08a",
+      "bytes": 15383
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_spots_find_upgrade.xml",
+      "sha256": "9ab945a42e3340fc0f0958f07a802dbd9704a05df212e36542d48b1eda20ca4f",
+      "bytes": 6217
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_spots_mp.xml",
+      "sha256": "5b829c883669dd61b8d15540cccb146bf663f10841ad8ea331be72cf1afdacc8",
+      "bytes": 7501
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/map_spots_relations.xml",
+      "sha256": "8f5fb8e4a8235e53dd8cf8ef0037a70b42afa8976f4bcb28f1346172fccbe19a",
+      "bytes": 1486
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/message_box.xml",
+      "sha256": "262871177392c59f1443f35e7410b329f049499d5dc33499a3769b3630d2331a",
+      "bytes": 31914
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/message_box_16.xml",
+      "sha256": "411f54ba70d3a95f0835df3e75b3a448738bfbbaeb120466021e130dcee66adb",
+      "bytes": 32731
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/messages_window.xml",
+      "sha256": "903490134ee393ee2217a406ce575fe75f5904f2c7c7e28e43fdc08b06f08dcc",
+      "bytes": 1634
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/motion_icon.xml",
+      "sha256": "0cbe5ca9f499c25073c6570bb353bfc1954b0e31f957b761f746beb8b26f5c67",
+      "bytes": 1502
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/motion_icon_16.xml",
+      "sha256": "6b3b38b862584e3898024def8cf1e4b8d121e8df714014357b831a1b6cfe04d2",
+      "bytes": 1579
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/mp_buy_menu.xml",
+      "sha256": "29c740e7e65e2db2f4fc383b94b8f313464cf1caa97daf5f7f894dde87a3bdd4",
+      "bytes": 5367
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/mp_buy_menu_16.xml",
+      "sha256": "c6e7c80504b3092e6894a2650f9b5265bbe0a80985953eb8d3a388f64205ccf5",
+      "bytes": 5421
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/mp_buy_menu_buttons.xml",
+      "sha256": "89ef26aab64b96642e0c928109d2685b202579814e36cac6a7d93a10860da2ef",
+      "bytes": 9284
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/mp_buy_menu_buttons_16.xml",
+      "sha256": "3706173cb016d39722c09b9e2f93bc2724675b2b232d8199ec5f4d5df2681b04",
+      "bytes": 9633
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda.xml",
+      "sha256": "8f45c366c31438a44eb3fe3ba97f562c20db4386d422d3e369bd4f92e688c752",
+      "bytes": 3353
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_16.xml",
+      "sha256": "d6e249639c1e603976b730c25fdcf14a8df4cab68bd134fbeb0ef336b2ca9bb8",
+      "bytes": 3790
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_character.xml",
+      "sha256": "3a4df9dd02eccbe8f53861d0c32f6853bd542498db272cf954cf1c15f0d64f59",
+      "bytes": 2012
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_dialog_character.xml",
+      "sha256": "212ff54ac0f3f4b36edb41508593ded0f6572a8f47cbe6ca1b7986958b811167",
+      "bytes": 1188
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_dialog_character_16.xml",
+      "sha256": "5750c93adb6446af6d4a73f0ee7fc8aaff6fa7d472572ac605ccba06961b78e9",
+      "bytes": 1188
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_fraction_war.xml",
+      "sha256": "eea2f3d43aebda8788d593ff7c304ab05ad58d40afd3162f49dede9daa54443e",
+      "bytes": 6489
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_fraction_war_16.xml",
+      "sha256": "a798f56aa4ad18e450d8391a8188714eded85ae00bdde8be1cb053c032f7a356",
+      "bytes": 6786
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_logs.xml",
+      "sha256": "0517251d01104e0c6cf8a27e29d20758cd693d7439e18d33802b64e7bb8736ab",
+      "bytes": 4546
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_logs_16.xml",
+      "sha256": "0083d97493e03e8f260b475823cf789de6f5a8ce74c4b5676b180230b9928038",
+      "bytes": 4713
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_ranking.xml",
+      "sha256": "7c4e311e021937ed97b382c62b675d48af8c4f0352316d2adb84fb2afa1f2f9a",
+      "bytes": 8272
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_ranking_16.xml",
+      "sha256": "2c2258f95b179708c40fe22a81a1725cceb6a435729cd7ef20a5bdcb68e11f25",
+      "bytes": 8667
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_tasks.xml",
+      "sha256": "00cb1d2946686e45346d4df9fe868251cc0e53e369ad36441d9595d74c6069be",
+      "bytes": 14363
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/pda_tasks_16.xml",
+      "sha256": "c83f5777ad13aed145354dfa20fd3df5fe238c83695166bf00f376420da77136",
+      "bytes": 14974
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/scopes.xml",
+      "sha256": "7e98ecefa81586c203ca1b071401fc92eb3cd2358ec2c03b7aa68e2b1d62f607",
+      "bytes": 1102
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/scopes_16.xml",
+      "sha256": "698eaee2f21cf309aadea13ddcf61a078ad04002651fc7a6eed0ada65ed1fb16",
+      "bytes": 2442
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/scroll_bar.xml",
+      "sha256": "2464d5bfe0a8ef4c59e7af78b8a80a93f145c5c812584931f0ea232a1c5d05b2",
+      "bytes": 1657
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/scroll_bar_16.xml",
+      "sha256": "8a5118b76ed65b17eef99bfc36d3dcb338d2f9ff5d2b9d9bcddd09fd72ad9b9b",
+      "bytes": 1682
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/skin_selector.xml",
+      "sha256": "7c42bfa777f53cf19e632ec031a9dd17450d661fb267e73a4fef33fb33b51d3d",
+      "bytes": 2931
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/skin_selector_16.xml",
+      "sha256": "596902901260e249bd94f1f3d3f98d0953c0feef1fd7735c82341b1b03ae71d6",
+      "bytes": 3063
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/spawn.xml",
+      "sha256": "4d060d4cf38490adfdb53a095aa96fefee0912cf30753c0bf844615b11b450be",
+      "bytes": 2569
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/spawn_16.xml",
+      "sha256": "aff4226bbcb078a42e5a3fe59457fccaa6ba32417d95a4c5fd8c5afd2b6113cf",
+      "bytes": 2582
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/stalkers_ranking.xml",
+      "sha256": "dd5a68dcb95ba32696eed05cd3ac5d1310bf265163e36316fc144f724c69d57e",
+      "bytes": 4621
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/stalkers_ranking_character.xml",
+      "sha256": "2c1e2931542c239ac2d2316462954d56b8be7b2495c102417780dbcd220c564b",
+      "bytes": 1450
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/stalkers_ranking_character_16.xml",
+      "sha256": "793c4315fafa495538049d428c578aa4340a9d449824ff452570355a2df07593",
+      "bytes": 1450
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/statisticwnd.xml",
+      "sha256": "c3abc5b6b09a36a5ca674de34ffdb08c8b0f5432b0154ce93535ee045300cf9f",
+      "bytes": 1808
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/stats.xml",
+      "sha256": "504530cc98640fd584f9a0495f5d5d9486c4f72b5b8e460297567f5fc13a03bc",
+      "bytes": 5263
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/stats_16.xml",
+      "sha256": "8c0c75016eac71515a7497c5d2e1a104b402aea48a218f0c373dd25f9014af57",
+      "bytes": 5287
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/strelok_progress.xml",
+      "sha256": "b7f02fcb504d6989d37c20a51df8ee16bd8192b0427a5c5809beab5a20ed13ed",
+      "bytes": 202
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/talk.xml",
+      "sha256": "92453f8536b7cbdd8343d9604df2e5ef2a1f09bcf8afe4ad950417219ac6bf64",
+      "bytes": 4267
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/talk_16.xml",
+      "sha256": "7f3f323b70d6fe764acb93f06b81e0aed622d262a008cd8b6f11f8a2759d4eef",
+      "bytes": 4464
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/talk_character.xml",
+      "sha256": "b9f7e33b79b89e36fed23681da99953d0d069e66929ca413ccd09dfe48fe7e38",
+      "bytes": 874
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/talk_character_16.xml",
+      "sha256": "783e4e15314dfb0e38a56a91076cbb6cba952599c161af7a637c13148cb6d936",
+      "bytes": 916
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_alife.xml",
+      "sha256": "af88045f104f6486d6296319d8292d1c2a5819af6820660f5bd4bf88dbcd14d4",
+      "bytes": 267
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_asus_intro.xml",
+      "sha256": "921f0af6e0436b43d4ac41a958adf589e827b55ed86a755eb97bcd5be622a062",
+      "bytes": 201
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_buy_menu.xml",
+      "sha256": "b51ccdc62760fe1777a2cb63e6487ffe46869935d7f52251798f36f390040e6a",
+      "bytes": 3303
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_common.xml",
+      "sha256": "990662f0a1ae1209f407b00f330341b6a3dc3cbc6aa3298d73d833f4003833d5",
+      "bytes": 46606
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_hud.xml",
+      "sha256": "953d056b765089b0bb254bcb203f9d075ee3214844df5389d56ca26810c9334b",
+      "bytes": 11439
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_icon_equipment.xml",
+      "sha256": "acc0f195359ae191eced2a72fff5a9037f539e67e76526c1f1e0a03e77764ff8",
+      "bytes": 214
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_icons_map.xml",
+      "sha256": "fb94e9076e1dfacf658543ac5610b0d3f0192887e53b257896dc6291c5901349",
+      "bytes": 194
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_icons_npc.xml",
+      "sha256": "0d8b7e490cfea3e7f0759c2c20de1b443d044483dbe4f293da1d771aa9facb20",
+      "bytes": 1507
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_iconstotal.xml",
+      "sha256": "07de6f3541e34cf87dfcda5455b9fff2996eb2d023e85f2f1891ed8f4b5e0cda",
+      "bytes": 13610
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame.xml",
+      "sha256": "cb64ce283dc0a99ae0388dc3641867fc0e3e23c16ff74353a02c7a4be8895b36",
+      "bytes": 820
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_01.xml",
+      "sha256": "b6384f6c19c615ff4bceef642e01059bf38d51441f9d15116a9ba125ecccfc54",
+      "bytes": 143
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_02.xml",
+      "sha256": "35017f5ec74588cb4e8dfbb2efaa1390bea40e607b87d98afc8c13d1b10c2165",
+      "bytes": 225
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_03.xml",
+      "sha256": "abac44a9c95360b9a8a7e3990d8a60ce11860bf52d1da3552bb0bcd2ba95a018",
+      "bytes": 143
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_add2_w.xml",
+      "sha256": "62784f49336b5b534fd59e45ef8db4d9a61f9cf6d3e31a2dafcd5e6d8dd0c281",
+      "bytes": 417
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_add3_w.xml",
+      "sha256": "19e5ec69059b2d009f3aaf62777d346470ec7382d82188f584a2633c24b05b1b",
+      "bytes": 421
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_back_add_w.xml",
+      "sha256": "055615e5d940e253ad204f68b9b0981e92e87f194fae32f409bc0ab24ad36210",
+      "bytes": 593
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_ingame2_common.xml",
+      "sha256": "991fecb7e55ae99ea16274518c0e4a4f6a5e7fcc48be78ac1e00f8f9d9e304af",
+      "bytes": 15444
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_inventory.xml",
+      "sha256": "9de0a92846cf225af8ee4cacd959152d67ac88189329dbaf18fee783993a78d4",
+      "bytes": 1313
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_inventory2.xml",
+      "sha256": "13cf166856f20da1fb732df9bba97a3d8c2337a5d32382551095723f23a5a093",
+      "bytes": 6789
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_logos.xml",
+      "sha256": "0c5e0e00c2bed4cb6c0db9bf5e6ac18c2e73d7b544bb8b20a588d28aa53b6718",
+      "bytes": 1315
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_magnifier2.xml",
+      "sha256": "487ae030ec02d539556b1cf5531270e2d09619bed0865fb615d927b10de64b3d",
+      "bytes": 131
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_mainmenu.xml",
+      "sha256": "02d58d0ab816e70c6142a32ab3ce10f64a9e6db2f204d47e271dbad3ccbd4bdc",
+      "bytes": 3838
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_mainmenu2.xml",
+      "sha256": "1ed425aaa5cb3cfe444de860130952b47184857f0fb1f60f603786db707215df",
+      "bytes": 930
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_map_description.xml",
+      "sha256": "5eb53ad5eeca890353e9fb6dc662238447fe8246ba684f38ea45c02315800b45",
+      "bytes": 1343
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_mm_loading_screen.xml",
+      "sha256": "5baa1baabde8ca9300778249a50ff52d84b849f5981f74ee676f17cc580073da",
+      "bytes": 474
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_models_multiplayer.xml",
+      "sha256": "93d57ff0d7b54754ea6cfa1689c77e4e8adc6057d2bb962dd463e3113198c519",
+      "bytes": 1548
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_mp_icon_rank.xml",
+      "sha256": "4cf5508d744a38b2a7a75de2191734c9344eafd4c49038237c27b11be899ca38",
+      "bytes": 386
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_mp_main.xml",
+      "sha256": "6ea8e5dec677ba1629717536d6052a4669e2304f224cf88f58829173dd77be81",
+      "bytes": 519
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_npc_monster.xml",
+      "sha256": "dea0d4ee8110f2a7dac0ab0b3929f9badbd50fa09ac1fd009fa36bce762636a8",
+      "bytes": 1731
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_npc_unique.xml",
+      "sha256": "2f3e5d7d541c09b21cd10e6dd1ea871bb3478df4f635d8ff49c82fdd60ea6d49",
+      "bytes": 9015
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_numpad.xml",
+      "sha256": "1912d6f316a59264e87c8d7a6103ba7196700fa2b6810862407430f5cfb79ba4",
+      "bytes": 1783
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_old_textures.xml",
+      "sha256": "ac90394b2cf17d3034f6de9457d861433359551e2e6a8227b37748ce7190609b",
+      "bytes": 7246
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_pda.xml",
+      "sha256": "c073d66a4006d40383288a579f41eabdace310de11128b9e0ce69aa2174d51d7",
+      "bytes": 120
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_pda2.xml",
+      "sha256": "34bd5533d505e189cc05f67bcf00257863768e9a0a016f693bb33ed394cdfbeb",
+      "bytes": 4006
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_pda2_noice.xml",
+      "sha256": "725b6c9a370d97551efdeb26ed392deb0ada77e73d707292355e4002a76eba50",
+      "bytes": 10556
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_statistics.xml",
+      "sha256": "8d8976036f3924f803f03fb7d0d61612c9bb3a6a90bafe35e96f1125a9aea75a",
+      "bytes": 2603
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_team_logo.xml",
+      "sha256": "7ebaeeef7dbf3eaaf2f7467b49aa4e95caac833ed75e7e29980fb866fc4bdbc3",
+      "bytes": 209
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/textures_descr/ui_team_logo_small.xml",
+      "sha256": "0d07d39c61f749c2620e7d776aaba2f48f106b3eadbda64a51f54f77b088a78f",
+      "bytes": 222
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/trade.xml",
+      "sha256": "952d53c895ba39af86038b92b7e9fe6ccc4f66dbad28c9591ddae400ac108c7b",
+      "bytes": 3444
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/trade_16.xml",
+      "sha256": "a92aebc59fe4760b55b46da8657a1c1ce3a121dda2ab3d5cd1f30913ca1e4429",
+      "bytes": 3525
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/trade_character.xml",
+      "sha256": "06201c24256303031c619b1c4e781e01a0608f0e9c4751508612de8796985c1c",
+      "bytes": 1150
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_credits.xml",
+      "sha256": "1bac4b40622989140fbe87c5e3a048fe699e444a498e7bdc7dc87a6cfd02de14",
+      "bytes": 599
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_credits_16.xml",
+      "sha256": "456704332eab357e08358b71cb03576da8368476871695408c3f5096629cb59d",
+      "bytes": 959
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_credits_base.xml",
+      "sha256": "9295a3f29890405e7d0e342d74453b5ef56d7448326a43596bea138cbd5058db",
+      "bytes": 61672
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_custom_msgs.xml",
+      "sha256": "c5a883112fdad60d5003a315199eaec25b39d51f821eaa5cf800a48c5be56882",
+      "bytes": 9539
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_detector_artefact.xml",
+      "sha256": "f563a0a17bcdb8f76eb43f42ebe02f5daed7900a221bd397844e8a247651d33a",
+      "bytes": 506
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_ahunt.xml",
+      "sha256": "8791633c0ab46becd10c4658160676798d8f230f2aac9d196b57c711e1a41a59",
+      "bytes": 1752
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_ahunt_16.xml",
+      "sha256": "352fd1517e351788698d93a41d33889e0557a5b4d3137bc137e1757da8b5377b",
+      "bytes": 1846
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_cta.xml",
+      "sha256": "630b332b43031a62f8ed246b5d646bea268a165205e3f10eeb6a170829fbe569",
+      "bytes": 4399
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_cta_16.xml",
+      "sha256": "7f0999d0e5d96ba1264a6aa6ffe7b2e6e237e57e89c0cf20a51dc6a4c0e5032a",
+      "bytes": 4634
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_dm.xml",
+      "sha256": "9d550ece1580c2b0cfc5c7b64a069333298d6654ae6b8fc0a541ff7e36094aa2",
+      "bytes": 2839
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_dm_16.xml",
+      "sha256": "253b89634c8294177153a60ddc1535a96f85f1d77afeaf0b0f982d8fce559a4a",
+      "bytes": 2992
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_over.xml",
+      "sha256": "1bb5430a1df36acf4542d3eb8e66d510eeb002147fd1920d7483d4fcd90ada6c",
+      "bytes": 952
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_tdm.xml",
+      "sha256": "255a79db920223f04ba3b08fc6b5b93526ffee8b607f17041e3c688f327bd6bd",
+      "bytes": 1261
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_game_tdm_16.xml",
+      "sha256": "bacd664670ad1d4a6d17ba30bf57bad5b1c0dcc1764d646f04684a557dd7cadd",
+      "bytes": 1333
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_keybinding.xml",
+      "sha256": "1a74b863e6ebe50dd8757d70d858db28fe1f5f59254b0fd6cda56e09c49ead16",
+      "bytes": 3259
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mapinfo.xml",
+      "sha256": "879fedde005a598326b518059595746f6b449ac7187275a98b0bc99c2e86d2e8",
+      "bytes": 353
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_load_dlg.xml",
+      "sha256": "41cc6abd7a6352d86d4b464365639a7b4181c5ca2c13380461024bfef9a6b34a",
+      "bytes": 2833
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_load_dlg_16.xml",
+      "sha256": "491905dc5f95f400ecff8101d3c2b03ce755ba4116bfa9afaf7ca94b06a433b8",
+      "bytes": 3380
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_loading_screen.xml",
+      "sha256": "d2a605a171bce9ed108556c623dd471cdca0bc14b628a86357ba0b14a2e3d2d9",
+      "bytes": 716
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_loading_screen_16.xml",
+      "sha256": "8ed7c3468aa0ed9270d784e79ca2088a495781692d181bc0732f0c1806491e1c",
+      "bytes": 1068
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_main.xml",
+      "sha256": "3f174244721b0bf29373fd0fd94d505db1733edf557500f182f8392d9cb442b6",
+      "bytes": 5781
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_main_16.xml",
+      "sha256": "5a450ad85f949f1df4d93d7c2af7de3043faeb1c3e0261367b4e7f331c18730c",
+      "bytes": 6334
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp.xml",
+      "sha256": "0fdc7059971711a36da4e705f8e68ee11f5ec05267887d557f2d81383082440f",
+      "bytes": 5486
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_16.xml",
+      "sha256": "e5ca8b535eb506db5b135195af1ddf664b58f66888b980b8349208191e602792",
+      "bytes": 6225
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_tabclient.xml",
+      "sha256": "0ca3c624e0e80a5b90084145f6445929dfb6aef18736bfb605934e436e63fbc0",
+      "bytes": 7679
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_tabclient_16.xml",
+      "sha256": "ba0b346f0d1e45a2cfeb8f6581acc0fb64375692acaa5ab8166b954ec21d44ee",
+      "bytes": 8007
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_taboptions.xml",
+      "sha256": "50e98f0e87adf970ba00de3f7a55fc8d3b625db0a711d0d98726dfd8fb0e86cd",
+      "bytes": 11614
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_taboptions_16.xml",
+      "sha256": "88405b6d59384362de077ceb5bcf9c9b486ef15cb44e9f8e4dd83951a61d5aec",
+      "bytes": 11871
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_tabserver.xml",
+      "sha256": "41e0a5edbf26810a95367cde25dd73521479051db4e997f57b3efddf2ee564ef",
+      "bytes": 4572
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_mp_tabserver_16.xml",
+      "sha256": "14b6bf35a642764a56c017ea1a02014a84b71ad3e4b3ae4396897f12bac8a42e",
+      "bytes": 4741
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_opt.xml",
+      "sha256": "bf7a56c7aee4678b0e24ef9e36b3f70ef6a93def904b38f0fd43b5b0e61c0365",
+      "bytes": 32738
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_opt_16.xml",
+      "sha256": "691843a8a71c246004b6db565469b2398feb1d11ba1842bce6e29784c650e100",
+      "bytes": 33635
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_save_dlg.xml",
+      "sha256": "3cfd48ff693f4084415660c0c2068fb27eb92806d9cf8eb1eb6fc70417daf924",
+      "bytes": 2352
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_mm_save_dlg_16.xml",
+      "sha256": "2344209ff7615ee24438c84e2613a06c5c329736ae8a6c2825ffff6b7877262d",
+      "bytes": 2874
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_movies.xml",
+      "sha256": "e476562e1c21a40efe6273953a7d7e3830a241f12d3e7c788298130116b61c00",
+      "bytes": 13550
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_numpad_wnd.xml",
+      "sha256": "bac364cc55144ad0915995d3ef4ae3d6d12b214d06810217345434d313c896d4",
+      "bytes": 2369
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_spawn_dlg.xml",
+      "sha256": "b85f1f2398f09aae233f3b127dca649a40d29183fb59186f74485eee9e74cdb6",
+      "bytes": 3257
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_team_panels_ahunt.xml",
+      "sha256": "9834416ca26f7287ba529858952b22eb71d8c8b1b7a9cebae1479f5fdf51bb40",
+      "bytes": 19701
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_team_panels_cta.xml",
+      "sha256": "db648e69d6f2c46c93b756f5348ad0fdbf7387b8eb2b9c9c7031ea78d0672be8",
+      "bytes": 19682
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_team_panels_dm.xml",
+      "sha256": "ececc1cb29a7a5b2bbc89bad30c9dddf3579010c7ab4d41cb253c0d14ee1930e",
+      "bytes": 8821
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/ui_team_panels_tdm.xml",
+      "sha256": "1627be50ee3863ab3af0d202a55575539955bda901da7ff4c31bc61cbdee50a4",
+      "bytes": 18119
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/video_templ.xml",
+      "sha256": "e616e120221922e298b5423f17092e5ec514a8c9604622e96daa23cdf67b244a",
+      "bytes": 219
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/voting_category.xml",
+      "sha256": "f7786ccfa4ef7586756d5f23de2722e59e89c7be8c5c629c6a8f1379c6f320eb",
+      "bytes": 13710
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/voting_category_16.xml",
+      "sha256": "a4d0ab0e3167a7d50623b873ad002252bee87f12eedaa0d815b1393302c642de",
+      "bytes": 13810
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/zone_map.xml",
+      "sha256": "4130462f10310db33bb55549892bd0e2e273d9fc664a7850cd9e158999c914bc",
+      "bytes": 944
+    },
+    {
+      "path": "configs/ui/styles_/ui_style_cs/zone_map_16.xml",
+      "sha256": "df0434526cf40e6e7254792f51021c7b8aa3888b2fcf766412f7f868357e548b",
+      "bytes": 974
+    },
+    {
+      "path": "configs/ui/ui_keybinding.xml",
+      "sha256": "872f33440214eeaee4ea10117a8f309e38eca9b145f933225b97d3933d84e8d9",
+      "bytes": 3258
+    },
+    {
+      "path": "configs/ui/ui_keybinding_gamepad.xml",
+      "sha256": "fba954a7b6eb9c0948e48721e968984d3ba420a3dc9e02c7c7f35dc8edcfd4d5",
+      "bytes": 2876
+    },
+    {
+      "path": "configs/ui/ui_mm_load_dlg.xml",
+      "sha256": "54965ef908d5afd890d747f58a0904f91876ccd2df8b651351ff94b44f63e19b",
+      "bytes": 2403
+    },
+    {
+      "path": "configs/ui/ui_mm_load_dlg_16.xml",
+      "sha256": "69e52835882fbfb0dfd1029de110513e59d54d1f3465bcf2f3e19e52700e547e",
+      "bytes": 2814
+    },
+    {
+      "path": "configs/ui/ui_mm_opt.xml",
+      "sha256": "583a313c8cb95b671843f7249b504d5684a395ce7f9295acb61766aa92f03439",
+      "bytes": 44420
+    },
+    {
+      "path": "configs/ui/ui_mm_opt_16.xml",
+      "sha256": "661e47f383c68f523af7c9b39b6a80a80d4059d21a871304fe9a97ca2599efe0",
+      "bytes": 45175
+    },
+    {
+      "path": "configs/ui/ui_mm_save_dlg.xml",
+      "sha256": "38265d03adad0c0096e2b6834f820ff682f32c8990b39be1a3b067c47321418f",
+      "bytes": 2171
+    },
+    {
+      "path": "configs/ui/ui_mm_save_dlg_16.xml",
+      "sha256": "01aacb5c4ad70c45a9804c9dccb69c8824837180c9663b1f35f6cd46c8d9ff03",
+      "bytes": 2471
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_abakan_hud.ogf",
+      "sha256": "4e70be2a58d1304458c64330eca878ab42823c36ad0febe2ab63bfe8be2a171f",
+      "bytes": 26365
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_ak74_hud.ogf",
+      "sha256": "9c62b350e8944f0e7312711c8d4b7e2d12ea41dbfae33b3247deec14afd29a41",
+      "bytes": 16703
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_ak74u_hud.ogf",
+      "sha256": "701d3e4fc091aaec34ab258497a03dc39995942823ceb0e5b651dc415052e525",
+      "bytes": 26441
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_beretta92fs_hud.ogf",
+      "sha256": "8bc6cb6f49aa13b701793b39418b89f4eeb47658c1b0d46a0ae72b93974bffac",
+      "bytes": 9278
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_colt1911_hud.ogf",
+      "sha256": "2d81982caf1bd7ecdba866f8380b7e3c292181e25aab3c143a1afe897bf66746",
+      "bytes": 14111
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_desert_eagle_hud.ogf",
+      "sha256": "508fb065b80c63ceeff315286dcc7713ac11fc6075205bb366a56b0b6fd67245",
+      "bytes": 2551
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_fn2000_hud.ogf",
+      "sha256": "6539d87406096e3390e9f1da30da15d422c5d7e69053500b9a02adf748040995",
+      "bytes": 35465
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_fort_hud.ogf",
+      "sha256": "6fa0ce3724e2413bb572c4152448c6276b5cf059f0f17ff96c119633a294189f",
+      "bytes": 2543
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_g36_hud.ogf",
+      "sha256": "b3997e8beed42964419e03ab1ec456f7458d969d4abaf0ccfe8f0778cb14dbc0",
+      "bytes": 24802
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_gauss_hud.ogf",
+      "sha256": "d639b90afc317f768f39ed75e2b226a5328d3ee8e855dbb5df4f0d964b30fec6",
+      "bytes": 5040
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_groza_hud.ogf",
+      "sha256": "8011254be6b38dd63f964a6b1dd78cc5e81e3a0d01c794cff1f6fad79a8b1f56",
+      "bytes": 10770
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_hpsa_hud.ogf",
+      "sha256": "81f5b6c380e76a33c3a9e33a408bea8825eece983e072fcc1e641d378be10903",
+      "bytes": 2303
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_l85_hud.ogf",
+      "sha256": "e185f414d876c7484ec1481a1a4381077bbce1bd2333086311556c8b2c06a5d7",
+      "bytes": 31894
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_lr300_hud.ogf",
+      "sha256": "876af5d36afa3b05f9c62b24345a71f35851daec95e73a10dceebe31e7fcaf8e",
+      "bytes": 13974
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_mp5_hud.ogf",
+      "sha256": "67657a03830cc785f4fa7158c8fd8bea8345e60dea5ece039ca347156ad4f83f",
+      "bytes": 24262
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_pb_hud.ogf",
+      "sha256": "2d4002082caaa9fa6f395aa7c0a2028e0634c6b76eaedc3e9ba8695d98b397dc",
+      "bytes": 2541
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_pkm_hud.ogf",
+      "sha256": "93cdbb000b15d118aae0b942a71432379c9f35fdc5f9c65385ed904debb67ea0",
+      "bytes": 78454
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_pm_hud.ogf",
+      "sha256": "9611d3fbe4725ee60cc2bbbfa1ac7e412b5668e5ae2445b8910e5af3de92e721",
+      "bytes": 2541
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_sig220_hud.ogf",
+      "sha256": "331e11f7cdf47a96a74d2b558577f9825cf2f1019584c7e3e136bf3df77cea9c",
+      "bytes": 3219
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_sig550_hud.ogf",
+      "sha256": "d28028c337ba918b5309ce8d7365e646817559272e593b6f14dc4e2d2eced3e1",
+      "bytes": 36337
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_svd_hud.ogf",
+      "sha256": "5035e1fc9c97b82cc5ac1c728b960af852075d16a5d0a9c63e5b7bceecd85d0e",
+      "bytes": 8494
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_svu_hud.ogf",
+      "sha256": "e07f768216f0e03f9c6f323b81f0b876160872940b35b730a0d74473034cc37a",
+      "bytes": 8256
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_usp45_hud.ogf",
+      "sha256": "fd3fcb112301ab306fe0410f8b3d661db01e4f16b647aa8c584de4c3fc611c6c",
+      "bytes": 9262
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_val_hud.ogf",
+      "sha256": "68c95c027e43e8a10c6a906437f7b98f2d5b72b4598ee195d847a6ff24a22416",
+      "bytes": 19978
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_vintorez_hud.ogf",
+      "sha256": "6a1485517c8c0b69d17949b2d1784dfa86e28c023fbae440f1f00f839e3cf344",
+      "bytes": 11830
+    },
+    {
+      "path": "meshes/copvr/magazines/wpn_walter99_hud.ogf",
+      "sha256": "2b29d03b0a2aaa6386c1d50bf2443dd21f1f287f54e2e04d90dc76d7b59a0b6d",
+      "bytes": 8523
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_abakan_hud.ogf",
+      "sha256": "b7bdc1564e639348fc626275fa3b1babdd8b571714bca46c5530c2efc76251a1",
+      "bytes": 17458
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_ak74_hud.ogf",
+      "sha256": "97228c8adb3c83f1550619f52b453479ff1f8d9bd0338f6198f27a66bbc08165",
+      "bytes": 14902
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_fn2000_hud.ogf",
+      "sha256": "e85dee0d840eed0697a8d8ea840784ab32edd40d33c8143c7a1c29f3e6a6e3fb",
+      "bytes": 18314
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_groza_hud.ogf",
+      "sha256": "9a272920d920c1a82d8d402db613e55fdae29bf759bb73b993d08d0a596920dd",
+      "bytes": 16102
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_lr300_hud.ogf",
+      "sha256": "200828e570f7eabf21198ddfbb39eb0bb9fdbb63e0e3ddac16dac15b507b9a3e",
+      "bytes": 27008
+    },
+    {
+      "path": "meshes/copvr/rounds/launcher_wpn_sig550_hud.ogf",
+      "sha256": "e5521e874f259a3508c715e77eeed60708d593572405710201faf8076a3ac181",
+      "bytes": 13874
+    },
+    {
+      "path": "meshes/copvr/rounds/shell12g.ogf",
+      "sha256": "43f08af291fe6a1e62b99c07d2864a4a4ff5d0607c9cc5631f1a693f694b1de7",
+      "bytes": 4705
+    },
+    {
+      "path": "meshes/copvr/rounds/vog25.ogf",
+      "sha256": "8edf403044a09ee6352a644bd899a38e12f873174cae5086c0bb79ddd08fb324",
+      "bytes": 13582
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_beretta92fs/wpn_beretta92fs_hud.ogf",
+      "sha256": "f38ae02848e98c2f25845ef2840f1362b3ccae10d0448ec221dfc315a2809b5e",
+      "bytes": 167523
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_colt1911/wpn_colt1911_hud.ogf",
+      "sha256": "d78e77d09bfa568ed4e86b0d78de31956e9c58d2089ed96f805427f1f19a5107",
+      "bytes": 145011
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_desert_eagle/wpn_desert_eagle_hud.ogf",
+      "sha256": "f932aa7b16d994564df18e4e72ba868e94a606d69b210c2eb062e24295fc077e",
+      "bytes": 127928
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_fort/wpn_fort_hud.ogf",
+      "sha256": "0a4f7b69421bab2301d16174b167834681461339db65c112252fd5d0ca7271b9",
+      "bytes": 91566
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_hpsa/wpn_hpsa_hud.ogf",
+      "sha256": "e59dcbc4bf9ea7050c4d5c19c34aa5286804705bd203b5f6900836abf9db93b9",
+      "bytes": 88414
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_pb/wpn_pb_hud.ogf",
+      "sha256": "a51b4e781929fc8519467e2df81586ed05b735f392a5c1cf0339f2bc6f6b8bd0",
+      "bytes": 118613
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_pm/wpn_pm_hud.ogf",
+      "sha256": "5790e639428b9168a58b0a094a392d17fb4fc7289f44a027b6211409fb30c448",
+      "bytes": 98327
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_sig220/wpn_sig220_hud.ogf",
+      "sha256": "672feda7e3af99024d8d6ec7536d8d8a3c371f37f1ec7f8f4d2d873b484c67cf",
+      "bytes": 118469
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_usp45/wpn_usp45_hud.ogf",
+      "sha256": "9ee7c25007b717f88d60f0cc77e397861033ab0ae161125e4ed4a8203c9d9fd3",
+      "bytes": 106710
+    },
+    {
+      "path": "meshes/dynamics/weapons/wpn_walter99/wpn_walter99_hud.ogf",
+      "sha256": "98e14d435f546184487d2f0b3ab102f3ed55e19ec69f1458bf87c9ece2541f42",
+      "bytes": 101484
+    },
+    {
+      "path": "scripts/bind_anomaly_field.script",
+      "sha256": "829ec0c3fdd1bb23d2db528da2e6b15ec7a0ac6a0a3db3333311e5f9f4c42b4c",
+      "bytes": 1569
+    },
+    {
+      "path": "scripts/bind_smart_cover.script",
+      "sha256": "5504652c775cfb5c235d1192a778e988ab68bb5bb104c7c2095ee1fde93c7174",
+      "bytes": 1032
+    },
+    {
+      "path": "scripts/profiler.script",
+      "sha256": "29f96ba890c9cf496691bd0983cc25259827ce43a547fca466918fef920b998d",
+      "bytes": 610
+    },
+    {
+      "path": "scripts/ui_load_dialog.script",
+      "sha256": "61d5229d05689315de75bf586f6609fc60c0eb0f16942e589440b0f667d75604",
+      "bytes": 9571
+    },
+    {
+      "path": "scripts/ui_main_menu.script",
+      "sha256": "309fad6a2196284891aeb5d42f6675bd16793c2e72a53bac2d9bd9fbd4c8ab56",
+      "bytes": 11058
+    },
+    {
+      "path": "scripts/ui_mm_mp_gamespy.script",
+      "sha256": "b604a399a6e7c09a336b813f4899bc404ef2c4239e2e4eb26842f02649167a36",
+      "bytes": 25547
+    },
+    {
+      "path": "scripts/ui_mm_mp_localnet.script",
+      "sha256": "34b9610c0bdc91e04206e02463ba5bb8059278e00f0279fd74faace0396ae362",
+      "bytes": 4210
+    },
+    {
+      "path": "scripts/ui_mm_opt_controls.script",
+      "sha256": "3bc2f1381ae64d91f92d69ffa0c0f6f8b4b932df68ae2b7db6f6979164b5ad79",
+      "bytes": 1005
+    },
+    {
+      "path": "scripts/ui_mm_opt_controls_gpad.script",
+      "sha256": "f8c09f1a92cd863f39b2c0031e598927fa33b82e6b33505eea1ebf5de7f44cf0",
+      "bytes": 765
+    },
+    {
+      "path": "scripts/ui_mm_opt_gameplay.script",
+      "sha256": "1365b2789c62ed167aa24d1d292696b0d7ea01b1af209a3b5b906e942d4cad99",
+      "bytes": 4520
+    },
+    {
+      "path": "scripts/ui_mm_opt_main.script",
+      "sha256": "dd3d52dfb04e369910ef3034b8368ff2217c91ab143741c369ba34eb836f4303",
+      "bytes": 14369
+    },
+    {
+      "path": "scripts/ui_mm_opt_video.script",
+      "sha256": "c3dc8ec5ee7847fa99645eefc7df4492aee4804f7ed38fce01c0fe1ea7a0d1fd",
+      "bytes": 1671
+    },
+    {
+      "path": "scripts/ui_mm_opt_video_adv.script",
+      "sha256": "19918b42f27164177c55674177f838bdc19fce195ba86fa7b0f6b6cc41e871a9",
+      "bytes": 10552
+    },
+    {
+      "path": "scripts/ui_mp_main.script",
+      "sha256": "36e733342d03a4966a0dbb4c94b3360808f25e9234aa683f01ea103ee5c86f54",
+      "bytes": 21787
+    },
+    {
+      "path": "scripts/ui_numpad.script",
+      "sha256": "d9ca578bb7f692fc733223824a3fafa3df3cd4c94c607f1efe77a327f1889008",
+      "bytes": 6219
+    },
+    {
+      "path": "scripts/ui_save_dialog.script",
+      "sha256": "df8630fd2dc1a7b2579558b2faad42da4c682f133cfb5f68aaaa5e95eaccd664",
+      "bytes": 6792
+    },
+    {
+      "path": "scripts/ui_sleep_dialog.script",
+      "sha256": "c934df31e9acf54b40b53c34d4f277088ed7b28d787912deed01503b2c3fbada",
+      "bytes": 6026
+    },
+    {
+      "path": "scripts/xr_logic.script",
+      "sha256": "506ccf420c0db55a9d44e4e1337a45d95d4c48a0888d91283c19d2d39addbb6d",
+      "bytes": 53242
+    },
+    {
+      "path": "shaders/gl/accum_base.ps",
+      "sha256": "2ed2dc0f7f9ddf180394a9b8184be88c9d7eab45dd154c23df0d4ab7b20f1cfc",
+      "bytes": 2528
+    },
+    {
+      "path": "shaders/gl/accum_emissive.ps",
+      "sha256": "9babebd7529ec0e12a7ebf3896715ba9d3acfaf2ccaecb28e51063d582c64cb8",
+      "bytes": 155
+    },
+    {
+      "path": "shaders/gl/accum_emissivel.ps",
+      "sha256": "69efdbb8715846d7a81e81890dfad324d5ceb8bdf49a96c9691701e5471065e1",
+      "bytes": 154
+    },
+    {
+      "path": "shaders/gl/accum_indirect.ps",
+      "sha256": "045ac51a89380b7e34c53ba7b5a1bb93f81f1141acecb5c0a3649126a8bcb159",
+      "bytes": 1432
+    },
+    {
+      "path": "shaders/gl/accum_indirect_msaa.ps",
+      "sha256": "eac05a6506316f16b886b91c748d82895dfeb815cd17a63ac0656d9bbd0df2d0",
+      "bytes": 28
+    },
+    {
+      "path": "shaders/gl/accum_indirect_nomsaa.ps",
+      "sha256": "065e1efcc27f6a8bdab7706e70998c76e1cb3533ab3e6c662e24db967be96b76",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/accum_mask.vs",
+      "sha256": "167297f6b5b201c8b2807852421aa1340844b78375406263d55f12a2f7f9b9c8",
+      "bytes": 164
+    },
+    {
+      "path": "shaders/gl/accum_omni_normal.ps",
+      "sha256": "f068b8291d4e11b1d55d85049085ea5b1a5bd5176b8606dd43d950d1f9d365a0",
+      "bytes": 46
+    },
+    {
+      "path": "shaders/gl/accum_omni_normal_msaa.ps",
+      "sha256": "854fa5484677c9da0fb735465fadf1ec1ff3b0aa0e26a6b9eacd03d9459d411c",
+      "bytes": 35
+    },
+    {
+      "path": "shaders/gl/accum_omni_normal_nomsaa.ps",
+      "sha256": "3412652b2f20bfb9678c54974db18ae591c50e78421ef5a6c47d71d93779ff1a",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_omni_transluent.ps",
+      "sha256": "1596c6195f4f1c777436fbf16a2a8388d60f363399de39520492957a432ecb71",
+      "bytes": 66
+    },
+    {
+      "path": "shaders/gl/accum_omni_transluent_msaa.ps",
+      "sha256": "12044dcbbcb09eb8502fc547caa76b3aca2001c9b687740a8c2971c8c8b0cc85",
+      "bytes": 39
+    },
+    {
+      "path": "shaders/gl/accum_omni_transluent_nomsaa.ps",
+      "sha256": "c7fa62ecb279ffebf6b19e8b30c09a52ea73af3595b43f8e187695b68d4c6359",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/gl/accum_omni_unshadowed.ps",
+      "sha256": "fe64ba79fbe6385e3e08dad6ede164f5e34a72fe23fa3a0cf1fc549576a33bef",
+      "bytes": 999
+    },
+    {
+      "path": "shaders/gl/accum_omni_unshadowed_msaa.ps",
+      "sha256": "cff463524863742002dace838a3fa5bbfe2e3e202c4a85558a2e8888a1252fb9",
+      "bytes": 37
+    },
+    {
+      "path": "shaders/gl/accum_omni_unshadowed_nomsaa.ps",
+      "sha256": "c60c1ebb38a88386b2eb616072c49d51cd6900ad9f64ef1ba15809a3e578f0a2",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/gl/accum_spot_fullsize.ps",
+      "sha256": "1596c6195f4f1c777436fbf16a2a8388d60f363399de39520492957a432ecb71",
+      "bytes": 66
+    },
+    {
+      "path": "shaders/gl/accum_spot_fullsize_msaa.ps",
+      "sha256": "cfff35a84236709df527078e342b0fd54905de07e78fc8d4e5ca1383003b1c3e",
+      "bytes": 35
+    },
+    {
+      "path": "shaders/gl/accum_spot_fullsize_nomsaa.ps",
+      "sha256": "994ce3a50d9f41f47de25b53ef16fa93285cc7b9a85a95f116c625102ae61712",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/gl/accum_spot_normal.ps",
+      "sha256": "8328e0b4e8f605d179034b11138cd79532052c0062ee73471c3836918025b44e",
+      "bytes": 89
+    },
+    {
+      "path": "shaders/gl/accum_spot_normal_msaa.ps",
+      "sha256": "c4de240c5170eabe15a892eae565121b7c96453b82d3063dd80a4cb4fe1abbc3",
+      "bytes": 33
+    },
+    {
+      "path": "shaders/gl/accum_spot_normal_nomsaa.ps",
+      "sha256": "cc53d5bf5a900789966bd5dc69c9809003c6a2cbbdb8d2a0564520f7cfedfcf2",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_spot_unshadowed.ps",
+      "sha256": "80fc1e43be40635001c7ff80878e5b00f289b9cb17d224f0a19d64ca6b6a1d46",
+      "bytes": 46
+    },
+    {
+      "path": "shaders/gl/accum_spot_unshadowed_msaa.ps",
+      "sha256": "051e70286e0c73f62b40b5677d55b5e9ca4421b51b37b3cba107de65f125f7ce",
+      "bytes": 39
+    },
+    {
+      "path": "shaders/gl/accum_spot_unshadowed_nomsaa.ps",
+      "sha256": "a69f78021a62ef6cc6a60384d3785d767b3cc2bd458fed13f21c70ee68013a7a",
+      "bytes": 65
+    },
+    {
+      "path": "shaders/gl/accum_sun.ps",
+      "sha256": "2ee0ec27e6d7f9a7e102322f0f35ebd1e2cbcf9d7d475366d36af51a8315ffb1",
+      "bytes": 1183
+    },
+    {
+      "path": "shaders/gl/accum_sun.vs",
+      "sha256": "59faf532e0bbaf61ececdfdda58262feea08909b280dfed30e34b4a2d8bb7ede",
+      "bytes": 528
+    },
+    {
+      "path": "shaders/gl/accum_sun_far.ps",
+      "sha256": "4c424f32a6adea2f930e4a3b0f5ccc309aef038d761a597652073b4838db428e",
+      "bytes": 2483
+    },
+    {
+      "path": "shaders/gl/accum_sun_far_msaa.ps",
+      "sha256": "baf9122d8fd2a8d8db404590c8682be89f71801e8079a01824c5a37490051970",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/accum_sun_far_nomsaa.ps",
+      "sha256": "baf9122d8fd2a8d8db404590c8682be89f71801e8079a01824c5a37490051970",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/accum_sun_mask.ps",
+      "sha256": "959e3aba358ef82c2a21f04db1c0af6cd7d7ea3749f74f26a9d828a2b67015e8",
+      "bytes": 1077
+    },
+    {
+      "path": "shaders/gl/accum_sun_mask_msaa.ps",
+      "sha256": "52a5708d1b1952fa9cfafcebe32f9363dbb62802ca3df5201a2967ae56bcb0df",
+      "bytes": 28
+    },
+    {
+      "path": "shaders/gl/accum_sun_mask_nomsaa.ps",
+      "sha256": "5852a01611c492c68133e76614478ab9718bedd68906e0a9b969fa327c82537a",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/accum_sun_msaa.ps",
+      "sha256": "79488fe0a54e109d9c283b83e84f1af3c386d99f807c2a28382beb21bdc07746",
+      "bytes": 25
+    },
+    {
+      "path": "shaders/gl/accum_sun_near.ps",
+      "sha256": "ffaef49cc27e816a7c7d3e6370280f4359f7502bc322af9b89fec96d8b662c50",
+      "bytes": 2043
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_msaa.ps",
+      "sha256": "bc8150335100684fa0001e9a5e44a7f1476ad3555e00e9e268315dfddfe05e8f",
+      "bytes": 30
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_msaa_minmax.ps",
+      "sha256": "fdee4064e182257b6822468dc9444710fe8ad2a4860c579a70419e6f8d14cc03",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_msaa_nominmax.ps",
+      "sha256": "e8ed1e1df9a449342231f6c21a28caca056094bda90bd6f4ea857af4fd2f9b70",
+      "bytes": 52
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_nomsaa.ps",
+      "sha256": "fd36e1a62b8f0ab26423817982857507f4ebadfb55a1aae931589a9f9899e524",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_nomsaa_minmax.ps",
+      "sha256": "3ae67c9d42987932b2bfa25c70ff58f7f653797ed13572946da8cfd8adb47885",
+      "bytes": 81
+    },
+    {
+      "path": "shaders/gl/accum_sun_near_nomsaa_nominmax.ps",
+      "sha256": "2e73321b87022dbd144cfad668dd3fc03b4791cd2984c1cf4b175865fcb0242c",
+      "bytes": 80
+    },
+    {
+      "path": "shaders/gl/accum_sun_nomsaa.ps",
+      "sha256": "2bb30a451032d218f0d0f0e20b7896fcc0b9b1273f416a28de61a3d43a3ab1c7",
+      "bytes": 51
+    },
+    {
+      "path": "shaders/gl/accum_volume.vs",
+      "sha256": "59faf532e0bbaf61ececdfdda58262feea08909b280dfed30e34b4a2d8bb7ede",
+      "bytes": 528
+    },
+    {
+      "path": "shaders/gl/accum_volumetric.ps",
+      "sha256": "cac35fd1b88324d79aff0cd2af641035aac66dec0e9806325acd576755052005",
+      "bytes": 2292
+    },
+    {
+      "path": "shaders/gl/accum_volumetric.s",
+      "sha256": "fa4eb8192cf875d485f904fe89778c055935316bdcc6c9fcf9a43f61d92f37a0",
+      "bytes": 520
+    },
+    {
+      "path": "shaders/gl/accum_volumetric.vs",
+      "sha256": "ceb309fdf211d6cda436547657a55f798771fd7201eb66f29aefe3d2a6c82951",
+      "bytes": 799
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_msaa.ps",
+      "sha256": "1afcb4a23aa139b6b3ced88e5cadd1c6c1567bcb1ec623f636094755e52703d6",
+      "bytes": 32
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_nomsaa.ps",
+      "sha256": "508b97adeefebd58174f16df281253b695abeb66998e47490ccdb9e5af9fe393",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_nomsaa.s",
+      "sha256": "fa4eb8192cf875d485f904fe89778c055935316bdcc6c9fcf9a43f61d92f37a0",
+      "bytes": 520
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_nomsaa.vs",
+      "sha256": "0e2b4fa03c8c22b4fb1bcedf307c99bb3a21a18586546db27a971c30ecc2d239",
+      "bytes": 32
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun.ps",
+      "sha256": "c1b6e270cda22d40ea1cc6fefd7a40ab3a523c23c044498d0ee7aa2a6cbbc6a8",
+      "bytes": 2975
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun.s",
+      "sha256": "cf3a97983f9700730c6672b7bc98341b9dc93dba0d3156fc01b09dfe88fdfca5",
+      "bytes": 558
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_minmax.ps",
+      "sha256": "ed515396258ab82792ef432d5c2f03ed8ed595b55c7f75d9215d6ea4d949e02e",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_minmax.s",
+      "sha256": "5d9281504aa854e862f90f40ada09d9e1d6df93f8e6ddeba51ce5a68dd772f12",
+      "bytes": 547
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa.ps",
+      "sha256": "2d49e866fa05af40c274d1469c413adc2366eb8b506c09b6fce019f7326291cf",
+      "bytes": 34
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa0.ps",
+      "sha256": "923308163098503b1512406901ea71a75606f31f5de5b5b949aafb14fb4c05b5",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa0.s",
+      "sha256": "6f7640be3d5fb517d314acaf63999d263099c4b5755532dcb8a1c6092efa7556",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa1.ps",
+      "sha256": "91556edd033cee1cb24bc263cda21d673efa75894a2077d4239a523a2bf1fd70",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa1.s",
+      "sha256": "6bc801fe97ee245c95ebe04a3a3b0f7c50914158da083864b984546a2c5911d8",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa2.ps",
+      "sha256": "0718fd249057915ebb6cc257e822c5cf6367d917eae2b80dbf28235f851589f0",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa2.s",
+      "sha256": "a91a92d4fc6c8e21e26e6aec30a6debce9f49d7c3101195e154b97f1554da5bd",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa3.ps",
+      "sha256": "2d1c8a005a327ff3ce54d5ec17eecdca76c23787b3c8c207f4599ee467e6bd58",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa3.s",
+      "sha256": "f5a3f43fbd777328f489b02cf48ee1a62cbfd8552af7a4878eefba4d569bbe65",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa4.ps",
+      "sha256": "c0c3054a8f41d9f9e82828e502f1c2842924ede7336eee641eb8537743ed5e36",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa4.s",
+      "sha256": "b62c65b9cee7c4cdf5ea0676d4b7ab720c2bc7b528b631e8114c63b6b72f3bae",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa5.ps",
+      "sha256": "48d3b93b588e8c2e2407309bcb6138967849f15d89da927076a416b82d09d3ec",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa5.s",
+      "sha256": "e417bf946b04827b5ef02dbecc4ff19eaca4645bdf0562f5531be2b57e454360",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa6.ps",
+      "sha256": "b42cfa36536876c66d4caf001e9992df9926ac4b679c809d2c104f4e60f6dc80",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa6.s",
+      "sha256": "fadc6faae0b98d965411f48399f2967195d981a596f7d53f04087cc71df54f19",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa7.ps",
+      "sha256": "113070ede7cd0d596661fb4467b5618224d3f41c0c413780076f1c73eef710ed",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_msaa7.s",
+      "sha256": "0f373af975e7c0000b299e442b687ad2816248142197227fc10b4a1456e50c26",
+      "bytes": 546
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_nomsaa.ps",
+      "sha256": "94a2b41e54a3c708a20ed00c1261f38e45ed7e07fbf791e71ac8d8a83a1f7eb7",
+      "bytes": 62
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_nomsaa.s",
+      "sha256": "070d47a6a4841e104a8e955322e869c1cf36a798ff52eeceb5f8e76d9899c35a",
+      "bytes": 619
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_nomsaa_minmax.s",
+      "sha256": "ac4afda8a8ff17058bb3213ea009227128e94199bee76b50cebb0fcd7a632021",
+      "bytes": 619
+    },
+    {
+      "path": "shaders/gl/accum_volumetric_sun_normal .ps",
+      "sha256": "a63562239dbfb62988e28201c3c22c3cce5359b8b11fcc441220e6754a7e23f1",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/base_lplanes.ps",
+      "sha256": "98dcbda7be6ed2424be24d07eba1e7394057539e81c6ac94bce707db810d0e7a",
+      "bytes": 290
+    },
+    {
+      "path": "shaders/gl/base_lplanes.vs",
+      "sha256": "4193cdf0d7950b1e1a546ac40ced189365832393814193fda81844c0d42d7c7e",
+      "bytes": 438
+    },
+    {
+      "path": "shaders/gl/bloom_build.ps",
+      "sha256": "bfe3f18f0980d1270144d9e2126cb0226056a4d269a164e6f4bb821fced56de8",
+      "bytes": 758
+    },
+    {
+      "path": "shaders/gl/bloom_filter.ps",
+      "sha256": "e14bb66d07dc7fce42c10f500cd47540be34bebf893b11298bd7b693d6b33adb",
+      "bytes": 1473
+    },
+    {
+      "path": "shaders/gl/bloom_filter_f.ps",
+      "sha256": "cd58133b7d571513d343c012f786f5d00ca424e04308f251b6bfdfcb33ce6858",
+      "bytes": 523
+    },
+    {
+      "path": "shaders/gl/bloom_luminance_1.ps",
+      "sha256": "2cceb12235b1fa996b9985971a4a169b9bbbd3cbbb13264e0414f4d695deb608",
+      "bytes": 879
+    },
+    {
+      "path": "shaders/gl/bloom_luminance_2.ps",
+      "sha256": "7cc200d05d0b6066b444981520f746ca95510c639470bdc0141489bf892ea18c",
+      "bytes": 1288
+    },
+    {
+      "path": "shaders/gl/bloom_luminance_3.ps",
+      "sha256": "3c33e0999b392ef59e9430a009813835c1d0ea69b968e90b90490334f8a11445",
+      "bytes": 1772
+    },
+    {
+      "path": "shaders/gl/clouds.ps",
+      "sha256": "40b46faae9e1ea9032943299033f2135ef8a552f624a72dcbc4a10904a9abc89",
+      "bytes": 753
+    },
+    {
+      "path": "shaders/gl/clouds.s",
+      "sha256": "43df768f1276c52a02c645fc35c7a869b96820b63646aa6b06aa9b2e0cf679e8",
+      "bytes": 716
+    },
+    {
+      "path": "shaders/gl/clouds.vs",
+      "sha256": "26d6d5c4d4112339b1d6785a3674d8ec6aeb6698c3a0db8988beeadfeaeaab01",
+      "bytes": 798
+    },
+    {
+      "path": "shaders/gl/combine_1.ps",
+      "sha256": "766a7f42d74a55b8787b9cfd61428d249b9211529b78ab2bd0ba39f8ee275028",
+      "bytes": 7279
+    },
+    {
+      "path": "shaders/gl/combine_1.vs",
+      "sha256": "f671843f4db28733499942e251c92043264ce32d9f737364da01db6496f08908",
+      "bytes": 482
+    },
+    {
+      "path": "shaders/gl/combine_1_msaa.ps",
+      "sha256": "1107129c74b5c703ed792799b36c9a6de0b39fce090dc28689caea913a7844fd",
+      "bytes": 25
+    },
+    {
+      "path": "shaders/gl/combine_1_nomsaa.ps",
+      "sha256": "93e56e823ad9a9f77d961b9028d69be45f571cdfb4ab555cb11d998297cf39b1",
+      "bytes": 49
+    },
+    {
+      "path": "shaders/gl/combine_2_aa.ps",
+      "sha256": "986449bddcaa546bf641b0bb24b25a34adad4c9e6f53689e054fb7f4f1e39c1a",
+      "bytes": 4047
+    },
+    {
+      "path": "shaders/gl/combine_2_aa_d.ps",
+      "sha256": "a530c1dc281980989a87850195872c7868910e334cb61c6da8fe12ee7571a55c",
+      "bytes": 70
+    },
+    {
+      "path": "shaders/gl/combine_2_naa.ps",
+      "sha256": "a46698afec40e13319b9b8fb33c3eb78202f9e7137f7238ce69ba4ef44440758",
+      "bytes": 4066
+    },
+    {
+      "path": "shaders/gl/combine_2_naa_d.ps",
+      "sha256": "02bce42dd69e2446cbc26825a4e0e67b3e48359525150e89aa76db76802e46ab",
+      "bytes": 71
+    },
+    {
+      "path": "shaders/gl/combine_volumetric.ps",
+      "sha256": "39c7dc1f30b8e0146af90ff69e23bc8b979038da665749787426d2d454d72b03",
+      "bytes": 937
+    },
+    {
+      "path": "shaders/gl/combine_volumetric.s",
+      "sha256": "6328c12e60023db0070547c5a41c74107725016252397531cbac0f5139fe6f44",
+      "bytes": 392
+    },
+    {
+      "path": "shaders/gl/common.h",
+      "sha256": "0fcaf5f10b3f4894a19ea0bc3c81d58525d95a57049fef801a1900a5eb04ea90",
+      "bytes": 433
+    },
+    {
+      "path": "shaders/gl/common_cbuffers.h",
+      "sha256": "3d8a4e04377b8bff5c31f95bc80eddfc5552afb276433d8d1d78761f4bea0829",
+      "bytes": 753
+    },
+    {
+      "path": "shaders/gl/common_defines.h",
+      "sha256": "fee4b01b890a73e0a1b95fdb18c63651f28db3ddee43c2823502c0ccb6004b70",
+      "bytes": 969
+    },
+    {
+      "path": "shaders/gl/common_functions.h",
+      "sha256": "b7e892f76f9bc60245ba1a6e4ffc3b26b627f1006028186e021b35a4162b9c7c",
+      "bytes": 14495
+    },
+    {
+      "path": "shaders/gl/common_iostructs.h",
+      "sha256": "1e4afb77db277d59c4fe3c233d6fff240e3c57904fe13068c74baecaaaf68495",
+      "bytes": 12787
+    },
+    {
+      "path": "shaders/gl/common_policies.h",
+      "sha256": "6403f9304963796439fdd7e8489ca8e8beae789871d187ce1d061991253eec1e",
+      "bytes": 1286
+    },
+    {
+      "path": "shaders/gl/common_samplers.h",
+      "sha256": "32cb58de8666a8be9f13c255b6aef08a718a2b308f1606112dcd49dc70aea3a6",
+      "bytes": 2836
+    },
+    {
+      "path": "shaders/gl/copy.ps",
+      "sha256": "eec79bf7981ba647586e693105f65ab06640a84a5923f8f0b1999888e95bee7a",
+      "bytes": 653
+    },
+    {
+      "path": "shaders/gl/copy_msaa.ps",
+      "sha256": "9cb452d9982b4ecd1d8dc1fd27ff0d31f3af6a4c7fa77a190485c57d1e9910af",
+      "bytes": 20
+    },
+    {
+      "path": "shaders/gl/copy_nomsaa.ps",
+      "sha256": "6ee4fd04a7a7e3675de8f97f277f6055cd143d12e1a69bc577b7a05152fde0f5",
+      "bytes": 46
+    },
+    {
+      "path": "shaders/gl/copy_p.ps",
+      "sha256": "d4147370e67d94f2e600fb010113c2d86464b0535652170b347efc722eeb4c08",
+      "bytes": 761
+    },
+    {
+      "path": "shaders/gl/copy_p_msaa.ps",
+      "sha256": "2d78db811bb9966b6f709c4c94093b97c602c38ba57c0addfde96ef3fccb9b26",
+      "bytes": 22
+    },
+    {
+      "path": "shaders/gl/copy_p_nomsaa.ps",
+      "sha256": "088be109912330a32bee822747294151ee97fd1d26f8bc910b59b36bd8768478",
+      "bytes": 48
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_bump-hq.ps",
+      "sha256": "7a85d78889292ce6a81f284d3a2f6f816cc6d1a0819fea2c8101e4994cb2721c",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_bump.ps",
+      "sha256": "8dc0056e342665499d94bbde64b0e106682b32123570fddc2150af506add56fa",
+      "bytes": 2491
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_bump_d-hq.ps",
+      "sha256": "f565a78d5ee6ed6c183a1a4b3cf0de0f9fabed8f7158de546113b0dfc7676ff8",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_bump_d.ps",
+      "sha256": "592067cb047ef09e9b23cc63f81055e386a217017dfaa28b321d94484b746dfe",
+      "bytes": 77
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_bump_db-hq.ps",
+      "sha256": "ab7c7fababaaeb8c12d803bb5e68620fe817b1b2be0b4d4385b4fe01b799fa46",
+      "bytes": 68
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_flat.ps",
+      "sha256": "2249308a6dbc2873e63bbcfc45e0108a87a180279ed9fdbc91fdb3813735be3e",
+      "bytes": 2743
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_flat_d.ps",
+      "sha256": "98d8fa1d19f6f8bf005b9b4103e3e65278a7739b17d1bdd4597f0f5f73a22006",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_steep-hq.ps",
+      "sha256": "3fe12391dcbcac4d14c05b3ba7f49def102e22f80705710ad4566c11375be7ab",
+      "bytes": 64
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_steep_d-hq.ps",
+      "sha256": "5bb049b261b643324153ffbef77b45a60de6d5c5cf75455b6a599209902203ac",
+      "bytes": 66
+    },
+    {
+      "path": "shaders/gl/deffer_base_aref_steep_db-hq.ps",
+      "sha256": "34c0cb01ed0e01f2ff1056473b7f3a32bdab6ebdcff331152847713435cc38b9",
+      "bytes": 69
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_bump-hq.ps",
+      "sha256": "4f6a577bc021db4c27586750f070d28a4b77868ed3f2c7eaa3988ef9cbcbccba",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_bump.ps",
+      "sha256": "8bd56d49f806f5573cd8060430fefd812c8490e29c73e29695c9c118790b65f8",
+      "bytes": 51
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_bump_d-hq.ps",
+      "sha256": "5874c165e8200758e75c94ba19621a0141318632188dde62bce55c92034b6102",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_bump_d.ps",
+      "sha256": "ef1169999a9a28283eb0856b6e389390e44bd5c8048e9b1768b7026e16cfb7b7",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_bump_db-hq.ps",
+      "sha256": "dcf302029e4b9140903fd7fda94106bb6f0a2f9297cb0aae10a948bbaec7249d",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_flat.ps",
+      "sha256": "59f147c9e3f24cbe0cc04626a5efeb10c9c5ce8fe454681a55d4606e8862745a",
+      "bytes": 51
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_flat_d.ps",
+      "sha256": "55961ac9a00d58c127b82d2c83b165f7c7a354a71d74f72f847c527000991520",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_steep-hq.ps",
+      "sha256": "b071ff1e703a741730819a1732cde4804d47ef01356a108239a5da911c6926ec",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_steep_d-hq.ps",
+      "sha256": "efb95f7b137ec55d52234cc579d55621ce5c83ce2624d35501859050a2522cbe",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_aref_steep_db-hq.ps",
+      "sha256": "1bf3629e184025501af38acf9adffe23787d83e73f5c8efa8d70e9cecfc38cd2",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_bump-hq.ps",
+      "sha256": "bda338481498fc9452b88b55ed48f4469540ff4a7e8779205f6b733f8e3c64d3",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_bump.ps",
+      "sha256": "6c9f578f32a3effaeeb3eb26746926a97eaf04db4df352f72152a7f6e4443ca4",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_bump_d-hq.ps",
+      "sha256": "a800e034a40c1a763e59e5d40bba16cf45dcc1250332b158674711113d62ec0c",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_bump_d.ps",
+      "sha256": "a4fdde32e20976c9b34f9f306db7054c482ede4e3bde343a64afcb99bea35d36",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_bump_db-hq.ps",
+      "sha256": "6091c15a43fb3064d8364f9c1a67e0838f4f66c8c97ec2c62b8224da23bfecd5",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_flat.ps",
+      "sha256": "8ff3421334702266813919a077e6b5d1bc08dce9781b345696ed37dff474580d",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_flat_d.ps",
+      "sha256": "25bc863aff4af85c7a0e6c4ff2c9130860f4a8b31a4c98732e6663209bc9b366",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_steep-hq.ps",
+      "sha256": "f38c83270a7d56fdf4103073712f59561816e7db89b7ade0eba20d6dd475a815",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_steep_d-hq.ps",
+      "sha256": "0d2856043d6a8df1778e73be56bebf33a2b52cb33fb81f117cc055f6a5059d1d",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/deffer_base_atoc_lmh_aref_steep_db-hq.ps",
+      "sha256": "e3fd973e7eeacc4a5429a70aacd2df20b3503a72745f5784fb159e15e257fa68",
+      "bytes": 62
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump-hq.ps",
+      "sha256": "365b97b001ca3afd364803b15d5415b14f305fe8ab428aedcb65a13b34654426",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump-hq.vs",
+      "sha256": "4e194507da68374ff3abfcda2a3ed3e8d2c6289b3587646a945803362bf5e01e",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump.ps",
+      "sha256": "6128fc7162e7fd154738a5ce4db80abd788428e6a2c7a13624b12759887e4aed",
+      "bytes": 918
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump.vs",
+      "sha256": "c1cdd20fca6c0a59c62b537a5b0204e393ccd2454f2708accb3aeb13597627a8",
+      "bytes": 1899
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump_d-hq.ps",
+      "sha256": "15c145a6fd8e707102685d330a5c810dd9a0bdd6e28e7adb518a11c451731e90",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump_d-hq.vs",
+      "sha256": "cb90809f09234e2587797e0e5bb9e25dd0d2a1a1775696c0f10a525b5e227164",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump_d.ps",
+      "sha256": "4345410a46abf16b3fb97ce6b7b47fa4ae11b178e91bfd839c5868925141d3cc",
+      "bytes": 76
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump_d.vs",
+      "sha256": "6eae8549cc66b91ebce8cf047f893550ce0e9125a0cb069e9eb9944e37aebca3",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_bump_db-hq.ps",
+      "sha256": "6afffa0ba5e88a3b79f929dd11949f63a4d3675f8e47757f621090cdc25966df",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/gl/deffer_base_flat.ps",
+      "sha256": "9bdfba202fb6fa4e4dc005ab86718f94ad2a9dc1c5fef942ac488c886710406b",
+      "bytes": 892
+    },
+    {
+      "path": "shaders/gl/deffer_base_flat.vs",
+      "sha256": "e3cf18b250e5be13dd8484c9a4b5db4334de2767b1ab0d1de10b97e0b8d4e89d",
+      "bytes": 913
+    },
+    {
+      "path": "shaders/gl/deffer_base_flat_d.ps",
+      "sha256": "e0655424fc58a2ba54809b9110da7f31797271d5b21e31c7ba482596a7934f45",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_base_flat_d.vs",
+      "sha256": "1136c96372927a751aec6f411cfe60862859992c7842fd054f65af850a4b00a6",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_bump-hq.ps",
+      "sha256": "db3c9a8e5348e84eb5a2c142efee8f8d6d6b1a351ac3e449db6416a0147b1d84",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_bump.ps",
+      "sha256": "de10f7d81489a79ae28e249d9a07c6b222a82fc6deba3ca74ecd6b7e0039fdb2",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_bump_d-hq.ps",
+      "sha256": "21d77d0f6c8754d0e6aaa0212545ed5892e522e53e2f481c42f1e7d716b5cc92",
+      "bytes": 65
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_bump_d.ps",
+      "sha256": "2f644cf285daee9db7898bdeb5eb4256a102cb08762f4471ac6b59e5297fc674",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_bump_db-hq.ps",
+      "sha256": "8de14f030f04c13935097c767c696f14fe7ce7df7c3a650c91e04e5b7c97dc41",
+      "bytes": 72
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_flat.ps",
+      "sha256": "f74b47b34abe1eacd9885685ed21bb7878f242fbab0bccf2b64edc6ec0c4ab14",
+      "bytes": 58
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_flat_d.ps",
+      "sha256": "958a10a0bb2d73f43f06677a20061df9d0acf25c3f2a626aea5e81d9c099ed4c",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_steep-hq.ps",
+      "sha256": "82733ec87bbf4cea004772b92832a61d772f6d740adcdab0cbdd7e9383194e45",
+      "bytes": 68
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_steep_d-hq.ps",
+      "sha256": "e427bc1aa4e84c9d771d936d7302f24f7e0ad3bffaa70ac54226a5bbf360fb31",
+      "bytes": 70
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_aref_steep_db-hq.ps",
+      "sha256": "8bfe8586126e8a05f3423b571aba08410ad21523f562dc237ab033275dc33b03",
+      "bytes": 73
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump-hq.ps",
+      "sha256": "b5822aa68f71172f14601c3da686ed7be0b28c808b8966e5134d7ecb0b627b55",
+      "bytes": 87
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump-hq.vs",
+      "sha256": "b5c45822fd1e039f1b744c945f9ddb245f3fdfab633c621d3bff6696353eee58",
+      "bytes": 87
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump.ps",
+      "sha256": "73ac784ed2d664679ad0643c860cb42b74e2729caf0c2a7f82b0cf3126d5ffa8",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump.vs",
+      "sha256": "9a3219887b61eb1a42265b8737ef0cf701307c9bf8d1ecf57cf7d5ec738c0154",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump_d-hq.ps",
+      "sha256": "091fa2f220db51e0b20238264d7e5ed0d65ee1cea2a381e1a74e9d565651396e",
+      "bytes": 89
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump_d-hq.vs",
+      "sha256": "40506bc84c4a3ec85d97538a9e4eb33e79db896a3b1687f87e5854db4eb680d0",
+      "bytes": 89
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump_d.ps",
+      "sha256": "7686818a97e31520a254d7d53b491c9c6b0679f0d40af92ad1874b4f86f6ddec",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump_d.vs",
+      "sha256": "dac3e5fef531d88ffae4c34643a4982929233f0c25fcd807b0b009f6adf86078",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_bump_db-hq.ps",
+      "sha256": "49dd448f173813ab94de0bde8ae7127ed1ad4e3736d843dc38f219db11d72223",
+      "bytes": 67
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_flat.ps",
+      "sha256": "2e52ee96c4f587671f8a4a3fcfaee3745f6e688f3a29cefb97e38f7cf97fb4db",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_flat.vs",
+      "sha256": "dc054e39ed652cea6f8a4e7ace6b65e7aaef9d2927209f99a7f5954286a888a3",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_flat_d.ps",
+      "sha256": "9f3a2ae98ba1ad412b2d7f74b1f78f238176dc62be72e5ceab0b3616408d265c",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_flat_d.vs",
+      "sha256": "fae151eadce66b7d413eb45befc10fb7e4cae8a07497c2536524eaff028be2b7",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_steep-hq.ps",
+      "sha256": "d116d336f0ed73e7bde16b615488992bb26303e5a18d4fb6910f091852225f66",
+      "bytes": 87
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_steep_d-hq.ps",
+      "sha256": "ac4ce40063aa1d37f72484aabb0f2bccda0243a8f7de294334439e9c56b80c4d",
+      "bytes": 89
+    },
+    {
+      "path": "shaders/gl/deffer_base_lmh_steep_db-hq.ps",
+      "sha256": "767184bd6aca06a14b4db9df16a8a2373fdf111ca70335fd483c4a90d8682624",
+      "bytes": 68
+    },
+    {
+      "path": "shaders/gl/deffer_base_steep-hq.ps",
+      "sha256": "8b4ec953a4a419574da2819a553b14cd4d48b5ff9751a77accb4c76a7aafe44d",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/deffer_base_steep_d-hq.ps",
+      "sha256": "0d84c6a816780588010ac491035e4bd0cd5e55aff09d123ef005d0a175cc55e5",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/deffer_base_steep_db-hq.ps",
+      "sha256": "28adcfbe0268e914ce385fa0490613d215e7ebce787aceffc7016935d65d386e",
+      "bytes": 64
+    },
+    {
+      "path": "shaders/gl/deffer_detail_s_flat.vs",
+      "sha256": "6e84442c39f9637dd053694d250489e6a03f6388835a6b294f90b6b824093078",
+      "bytes": 1214
+    },
+    {
+      "path": "shaders/gl/deffer_detail_w_flat.vs",
+      "sha256": "39f395d28fa171e735be200699d51570966729e3105ccd330931d46e9c3e993f",
+      "bytes": 1670
+    },
+    {
+      "path": "shaders/gl/deffer_impl_flat.ps",
+      "sha256": "16931396b7c42561d07a191452f9b0d3082018bc55f7e51df9fb5e75b2a7fdcd",
+      "bytes": 2197
+    },
+    {
+      "path": "shaders/gl/deffer_impl_flat_d.ps",
+      "sha256": "c902748de30a6e441adfc5364709d6c0fa40f0fe05aed2b812b60a91b9461f57",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_impl_flat_d.vs",
+      "sha256": "dedee97814b4d78f99420ef80f6717516756482141e51ce2d2a0c3ec1d351e77",
+      "bytes": 109
+    },
+    {
+      "path": "shaders/gl/deffer_model_bump-hq.vs",
+      "sha256": "a3caf64d9bafa78312441e8fd5cde1462a2d7ebd097a20014114161274bdb665",
+      "bytes": 55
+    },
+    {
+      "path": "shaders/gl/deffer_model_bump.vs",
+      "sha256": "0f034895952020ebdd5458bf7cef3ca43336266eb90717a138fa5d3bcfa65eed",
+      "bytes": 2039
+    },
+    {
+      "path": "shaders/gl/deffer_model_bump_d-hq.vs",
+      "sha256": "07fd33360110402698440db4cf5c3661c5ee063caf17ec1c2faf7daf6e0de3cc",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_model_bump_d.vs",
+      "sha256": "7a42cf974114c6709a35897d5989f316063381afc7f90fa2062cef8f1ab4becc",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_model_flat.vs",
+      "sha256": "e196f828c86365341db224711f865c949566d4bb8da1d0de07e330cff6eb61c8",
+      "bytes": 1077
+    },
+    {
+      "path": "shaders/gl/deffer_model_flat_d.vs",
+      "sha256": "1a3d7ec4ceab33fbfc7647b39e8537cd7b8780970273c6c8f35c1e534abf24ec",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_particle.ps",
+      "sha256": "df743fa17bd15d89ad5d5e4a903c4c18ce0025aed7990959c657e69fd1f0a204",
+      "bytes": 2054
+    },
+    {
+      "path": "shaders/gl/deffer_particle.vs",
+      "sha256": "cf4b979012f81d733cd95fe221c78921500390bdad91bd55356e4e0ef032f138",
+      "bytes": 618
+    },
+    {
+      "path": "shaders/gl/deffer_tree_bump-hq.vs",
+      "sha256": "14167737788928c0394adb9216bcabecb6106af53ee6feda583074ae1339196f",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_tree_bump.vs",
+      "sha256": "c8a1bda8d186eae74311e27416872d7b515bdf520945e69b24da07545c0aef2e",
+      "bytes": 2509
+    },
+    {
+      "path": "shaders/gl/deffer_tree_bump_d-hq.vs",
+      "sha256": "8678a062fe50c3ae7c83d3887c189740e81b1c3a7f37bb7ce1bd6876a5dd8376",
+      "bytes": 75
+    },
+    {
+      "path": "shaders/gl/deffer_tree_bump_d.vs",
+      "sha256": "0a900df4b8afe5bf61032cc2c0b7d1b661ddcff35dad614a51ab1d603b55348f",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_tree_flat.vs",
+      "sha256": "72b9790a0e3806838e3145b65804f9d2c8e38dc5964fe35ca0ec89c08ff9e0bf",
+      "bytes": 1670
+    },
+    {
+      "path": "shaders/gl/deffer_tree_flat_d.vs",
+      "sha256": "40bbd46ce05482c4eb5e368e0b4c257a26f845e6f086a8e607c757cfd143c7c8",
+      "bytes": 53
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_bump-hq.vs",
+      "sha256": "15fad7c769fc0455768a58d8377489497b75260c32c101b58a0ce64fb65ed703",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_bump.vs",
+      "sha256": "de19f9824e92b2cfd2dafa474ecd15c60c893a1578dc5a37376126f7ec7ee9b1",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_bump_d-hq.vs",
+      "sha256": "d6353e6129cacdd5c60eff23b1f14b08c4d4dae6a523ddfe726334d1df811ff9",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_bump_d.vs",
+      "sha256": "033f0af6e6ff636eecd3bf6e8dc7cf0ff37283ed02541a3f6e22b803027315ce",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_flat.vs",
+      "sha256": "dbabac47484a9548d2397958fae52a321bff7897e58cafa62ba903085ac32289",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/deffer_tree_s_flat_d.vs",
+      "sha256": "3f98038d1ccb86ea6154e9e186b82cb2bf324da5b78b43d94e6a62e27d05a4a8",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/gl/depth_downs.ps",
+      "sha256": "f5f6d7f501c2158ccc9571e095ce9733d9b387cd7161c06954acc9b650d81ca4",
+      "bytes": 2038
+    },
+    {
+      "path": "shaders/gl/details_lod.s",
+      "sha256": "956326cc4be09fd02b35311303fdeb7286c7d10b0e4b8b65ae222de604bec9b9",
+      "bytes": 1462
+    },
+    {
+      "path": "shaders/gl/distort.ps",
+      "sha256": "e7a3ef30b3f8fa05311b3ee80adec58348011c3ae930f676fe57bf35b56450c1",
+      "bytes": 465
+    },
+    {
+      "path": "shaders/gl/distort.s",
+      "sha256": "821d47e998a9d488637c5663722fdcbc1eb7f67278f1c0199604764b73678f62",
+      "bytes": 318
+    },
+    {
+      "path": "shaders/gl/dof.h",
+      "sha256": "94c181154b89adfcf396698758c2260ebfab316ac9061a16a849ed459b1ac433",
+      "bytes": 2657
+    },
+    {
+      "path": "shaders/gl/dumb.ps",
+      "sha256": "df7280371c09084fae64768bbcb6eab2e78513b9b39eadd5cc36d5cf187f0342",
+      "bytes": 211
+    },
+    {
+      "path": "shaders/gl/dumb.vs",
+      "sha256": "a85c1217c14d4a74b039c58ac049458f380dc8688af1c81b61e1b51d70cd2b6c",
+      "bytes": 253
+    },
+    {
+      "path": "shaders/gl/editor.vs",
+      "sha256": "5da6a279030c8a597b818c65f1f843188c87863c5750d9b535b96278e08a377b",
+      "bytes": 238
+    },
+    {
+      "path": "shaders/gl/effects_bullet_tracer.s",
+      "sha256": "594ce39c557d48cc86c78d37b77c8132c3f778075920458df15005a12e4cd2b6",
+      "bytes": 302
+    },
+    {
+      "path": "shaders/gl/effects_flare.s",
+      "sha256": "016fdf5570f4f9e27ed6591b9fb0e6ff8323a918160312a5752b1a2e294c6d5c",
+      "bytes": 437
+    },
+    {
+      "path": "shaders/gl/effects_lightning.s",
+      "sha256": "f9795ff2ecfb931ac47234e2221afb52da610a01a2fb5314a4b456a30c644a41",
+      "bytes": 315
+    },
+    {
+      "path": "shaders/gl/effects_lightplanes.s",
+      "sha256": "bd0f57170f743e9c593aa7cd4478eefaecbef7a7d4fb285c4111deec9effe026",
+      "bytes": 313
+    },
+    {
+      "path": "shaders/gl/effects_rain.s",
+      "sha256": "4cfa220fcdf5d17b50ee22b90f8647a22a2e6ac0a47851131298e98243fc5040",
+      "bytes": 325
+    },
+    {
+      "path": "shaders/gl/effects_sun.s",
+      "sha256": "d47e199c0c08d32c716fdccd6d51053d03d7c4fe7d195815423be96bba6ba687",
+      "bytes": 436
+    },
+    {
+      "path": "shaders/gl/effects_sun.vs",
+      "sha256": "d33ac1b80022c49d321343ba31ba85c36a34d3107e99dfe017974481730ba6a7",
+      "bytes": 384
+    },
+    {
+      "path": "shaders/gl/effects_wallmark.s",
+      "sha256": "a7da9482c66be15b7607f0562390689711bfea76a05c57c0b6b3b707ef987ed7",
+      "bytes": 317
+    },
+    {
+      "path": "shaders/gl/effects_wallmark.vs",
+      "sha256": "6a31e21b70e154cd6ac45abbfbeed7687f1ebc0515d2d55a1273080c2b073655",
+      "bytes": 302
+    },
+    {
+      "path": "shaders/gl/effects_wallmarkblend.s",
+      "sha256": "15bb79df60c5fa2330fbf52befd7f20bed2eb5669aa2bc6e419c9f3301ebbc59",
+      "bytes": 368
+    },
+    {
+      "path": "shaders/gl/effects_wallmarkmult.s",
+      "sha256": "ccb8f2b025a7ff38fa64988e8e19dd9dd6376f31b981dd6132540f6c8c848aa0",
+      "bytes": 366
+    },
+    {
+      "path": "shaders/gl/effects_wallmarkset.s",
+      "sha256": "4a4966e377eff8d87051754919dbbdf836f9957ddbe223e4df2c04da05b64998",
+      "bytes": 315
+    },
+    {
+      "path": "shaders/gl/effects_water.s",
+      "sha256": "8e2fb918f0096688cbf910b398e1099cf677ccbb6e67b77327bc35ea2c9ad8c3",
+      "bytes": 1894
+    },
+    {
+      "path": "shaders/gl/effects_waterryaska.s",
+      "sha256": "c92f8df34f45e3db04349cbc6bd48104eb1f0373f6d8f1e00cc8d6c042b03d74",
+      "bytes": 1962
+    },
+    {
+      "path": "shaders/gl/effects_waterstuden.s",
+      "sha256": "c75dafdfd972cf413c2d6acc7da30d45eba16d30a2e3f35285642d3da1e673ad",
+      "bytes": 1961
+    },
+    {
+      "path": "shaders/gl/font2.ps",
+      "sha256": "dab3f878c4c5e06f96e20d2b6b89c2a218d39ca8a8123b91eb928f78e3460b42",
+      "bytes": 252
+    },
+    {
+      "path": "shaders/gl/friendly_indicator.s",
+      "sha256": "2565fc10c3b543c40ec981793e081b9f3e19c736a7095379ef2be1903bb82e9e",
+      "bytes": 251
+    },
+    {
+      "path": "shaders/gl/fxaa.ps",
+      "sha256": "cae88c58f38dd61b469dede83a0b076250d1539439f429ad54407a4d64531d77",
+      "bytes": 44000
+    },
+    {
+      "path": "shaders/gl/fxaa_main.ps",
+      "sha256": "aeff4832a8c8f13ec54d4a6de3d7bd13eb8298707fc4b4def1c863fd4fd35157",
+      "bytes": 1456
+    },
+    {
+      "path": "shaders/gl/fxaa_main.vs",
+      "sha256": "872d5e3fc89c793b7480acfa4fa7e1c4b0d09f7eb594a0b8a7ea52c7281616e0",
+      "bytes": 441
+    },
+    {
+      "path": "shaders/gl/gather.ps",
+      "sha256": "318579dc36884da4a5205fdb6f80197d563e1b21c169016c72882966c97e453a",
+      "bytes": 1596
+    },
+    {
+      "path": "shaders/gl/hmodel.h",
+      "sha256": "87196f4a299b53f0d56b59c15fe37c4662cd73963ec8962ef15bc2a16ef70149",
+      "bytes": 3435
+    },
+    {
+      "path": "shaders/gl/hud3d.ps",
+      "sha256": "e4bd9521647412e84f7a5977d845058ea75a4ef0f60c4fe59b00e61a350d93a1",
+      "bytes": 134
+    },
+    {
+      "path": "shaders/gl/hud3d.vs",
+      "sha256": "0b92ab561003952d5ce23be78ddbeaa3f5040613bb7b009abbd86f0f7dca0c58",
+      "bytes": 198
+    },
+    {
+      "path": "shaders/gl/hud_crosshair.s",
+      "sha256": "20b821bef86cd20890b35ee06aa16faa51c180a98b07dce41b15c222b99a13e3",
+      "bytes": 206
+    },
+    {
+      "path": "shaders/gl/hud_crosshair.vs",
+      "sha256": "4d134e8a3b2692112e217d47d4c51cca014bced441fea024e090e1e906c25f8d",
+      "bytes": 491
+    },
+    {
+      "path": "shaders/gl/hud_font.ps",
+      "sha256": "815c83a92b0c917feefe87e7a604cc38eedf7054ca4c6f8421d83ccf74d42462",
+      "bytes": 287
+    },
+    {
+      "path": "shaders/gl/hud_font.s",
+      "sha256": "f796a0b56310f2ac996e6c0769c52e9a24de2ca7d01a5a0b969bb3d4eaa8d38f",
+      "bytes": 259
+    },
+    {
+      "path": "shaders/gl/hud_font2.s",
+      "sha256": "2f11cec4ff578cb2b908510f04b3295001cb2e94107f06bf5ac99e3fba3cf606",
+      "bytes": 257
+    },
+    {
+      "path": "shaders/gl/hud_movie.s",
+      "sha256": "9e24892c739e416eb9f601f7784e21b507a4f0dece532ae0800cc79a1d199f7a",
+      "bytes": 259
+    },
+    {
+      "path": "shaders/gl/hud_p3d.s",
+      "sha256": "54dfcf8ecb406f170c935879bfc692f33c85bcbcfdb9e9a32fc6bf2b0e7db7d9",
+      "bytes": 298
+    },
+    {
+      "path": "shaders/gl/iostructs/p_aa_aa.h",
+      "sha256": "a21182a9fa7084b33b920018b9f0c5549b74e020c4670bcb514218bdde15755c",
+      "bytes": 786
+    },
+    {
+      "path": "shaders/gl/iostructs/p_aa_aa_combine.h",
+      "sha256": "7fdc1ccd8c03bb5ad6de735f4879c5f346d72ec4d62a9893e6cb9c12a2056ffd",
+      "bytes": 1225
+    },
+    {
+      "path": "shaders/gl/iostructs/p_aa_aa_sun.h",
+      "sha256": "05729222ab1120095d683f1dd273a2293665255d2ead4912ee9e2bb9f95a4b0c",
+      "bytes": 1395
+    },
+    {
+      "path": "shaders/gl/iostructs/p_accum.h",
+      "sha256": "da7993524bcdaa6da5d68f58870b9725b1ea03bf41bb1f9f32267c0114ce0fb8",
+      "bytes": 885
+    },
+    {
+      "path": "shaders/gl/iostructs/p_build.h",
+      "sha256": "9dd49fdfde6bdaf73f4a4fe154282942067b26c58a3c697d448633868d1ec58b",
+      "bytes": 499
+    },
+    {
+      "path": "shaders/gl/iostructs/p_bumped.h",
+      "sha256": "3f07c3bad4af771dec60b2d86097a1ff5800722ae448ff1892039a9bcaa21e7d",
+      "bytes": 1936
+    },
+    {
+      "path": "shaders/gl/iostructs/p_bumped_atoc.h",
+      "sha256": "c29de07b166181891f1c27cf409c65dc685c2fba5ebc1f75e94961cef39299b7",
+      "bytes": 1222
+    },
+    {
+      "path": "shaders/gl/iostructs/p_clouds.h",
+      "sha256": "a9e615b3a4f4e7974629237441e7cda1d4f19af08ade26a2837e349b1254b19c",
+      "bytes": 601
+    },
+    {
+      "path": "shaders/gl/iostructs/p_combine.h",
+      "sha256": "a0dc9564a75714f06d67b9eed8068e1827466a1e98ea00bb1b1a78d0e3931ddd",
+      "bytes": 1164
+    },
+    {
+      "path": "shaders/gl/iostructs/p_dumb.h",
+      "sha256": "a92f3660548718432a3f9d7cf7fa2ee7ffa3cfab598dfc137c80aba01087e4fb",
+      "bytes": 89
+    },
+    {
+      "path": "shaders/gl/iostructs/p_filter.h",
+      "sha256": "2620a796caded60a44baca1f68e511587ec62de30bfc257400dd4f288b567e06",
+      "bytes": 899
+    },
+    {
+      "path": "shaders/gl/iostructs/p_flat.h",
+      "sha256": "86eaa5a19a63c2bac40e70ab72756ba8b39852b686662ba250bb729f86727811",
+      "bytes": 1714
+    },
+    {
+      "path": "shaders/gl/iostructs/p_flat_atoc.h",
+      "sha256": "d0a2f5f831ee6dbfe1ab7c496d0f82f2bbe0a33dacfbaa84bf5a8d04f4a4157c",
+      "bytes": 1002
+    },
+    {
+      "path": "shaders/gl/iostructs/p_lmape.h",
+      "sha256": "4ea3a355cc9d20958586ada6e1a7e3cf95f0153953ae23ae874bcf8d0db2a59f",
+      "bytes": 1069
+    },
+    {
+      "path": "shaders/gl/iostructs/p_lod.h",
+      "sha256": "028bbc93dd75cf19514dba94f42adeb992b1343b007a42eff70334e4bf7a7067",
+      "bytes": 1664
+    },
+    {
+      "path": "shaders/gl/iostructs/p_lplanes.h",
+      "sha256": "f629ff58bc725d78888b7e9b3b435aa8241a17df9c71c0fb26afcb12d9d1c39a",
+      "bytes": 421
+    },
+    {
+      "path": "shaders/gl/iostructs/p_mark_msaa.h",
+      "sha256": "5f3ea122fa3f7e89dcafe02d1459ca6ac6dcdb280e2f2ce206115472549168e3",
+      "bytes": 833
+    },
+    {
+      "path": "shaders/gl/iostructs/p_model_def.h",
+      "sha256": "635b08fd3ae7aa247a1ed4ae586b1671e8e2851a090784b4ac068abce4b7dfd6",
+      "bytes": 548
+    },
+    {
+      "path": "shaders/gl/iostructs/p_model_env_lq.h",
+      "sha256": "124fbb0b873c2f8460e62c19ea077b6ac95b469c7ab3e2989f2c5c3a9bfb636b",
+      "bytes": 651
+    },
+    {
+      "path": "shaders/gl/iostructs/p_naa_aa_combine.h",
+      "sha256": "1894dbd5e563ea911e47d626f735840d818d6a285607d97a392ded0cbd6fdbdc",
+      "bytes": 1195
+    },
+    {
+      "path": "shaders/gl/iostructs/p_particle.h",
+      "sha256": "6f4368613734aaf4892a3e4cd25ecb6a4d21c14cc3fe1bb50fd5fb6a8911d6bd",
+      "bytes": 987
+    },
+    {
+      "path": "shaders/gl/iostructs/p_particle_deffer.h",
+      "sha256": "a8ea7ac85183dfdcabc24c8098e4d14809cdfefe31ccb36a8fba9146cf28dbf9",
+      "bytes": 1925
+    },
+    {
+      "path": "shaders/gl/iostructs/p_postpr.h",
+      "sha256": "dda3765cdf625bed3bafe90edd93a914f390385ca1cbc463f4c148300187ae92",
+      "bytes": 717
+    },
+    {
+      "path": "shaders/gl/iostructs/p_rain_apply.h",
+      "sha256": "6041dd04220a8c557ecea30da12b03f3d8707ca5be052421ced42069ec060e0d",
+      "bytes": 522
+    },
+    {
+      "path": "shaders/gl/iostructs/p_rain_layer.h",
+      "sha256": "c5a1d069c47aef823e6806e671d034f4637b2fe4f0123af23bd9997821754971",
+      "bytes": 534
+    },
+    {
+      "path": "shaders/gl/iostructs/p_rain_patch.h",
+      "sha256": "ca556446da020e84a9acd2274742fd0252787b0ffd8b612dd68a26eae4411179",
+      "bytes": 1131
+    },
+    {
+      "path": "shaders/gl/iostructs/p_shadow_aref.h",
+      "sha256": "021f809798021b8e7b2696403027dbbe1ee2c89f6c99838a28777bca8b82e83a",
+      "bytes": 261
+    },
+    {
+      "path": "shaders/gl/iostructs/p_simple.h",
+      "sha256": "47af0d2fa2e5b855e31f602d82f7c2f3ae523e86e9e1824fbb21ca8544a3de2b",
+      "bytes": 274
+    },
+    {
+      "path": "shaders/gl/iostructs/p_simple_color.h",
+      "sha256": "6fe12842652dec499f6b3d8b02bcd2caac15cbb9b149ab751ff9cae47e8d64a5",
+      "bytes": 175
+    },
+    {
+      "path": "shaders/gl/iostructs/p_sky.h",
+      "sha256": "2798ba81fe89be269e5eecb0dc7b90cd849f34cd81b81a72fdbba7db77768ea0",
+      "bytes": 753
+    },
+    {
+      "path": "shaders/gl/iostructs/p_ssao_calc.h",
+      "sha256": "a2fb21cbbe452dffe4913c6fabbc405de44d0875324ea35cbc6ca333de5b20f8",
+      "bytes": 1017
+    },
+    {
+      "path": "shaders/gl/iostructs/p_tl.h",
+      "sha256": "a904ef65a16ad22b5b38c9e89d6384638be890ecd9c839d7f3e3f157c1b21784",
+      "bytes": 287
+    },
+    {
+      "path": "shaders/gl/iostructs/p_tl0uv.h",
+      "sha256": "d788ef59e0b449ba138f0d9142ecf5f88bc80cb2ef028d091cbfa241b4ea0c6d",
+      "bytes": 209
+    },
+    {
+      "path": "shaders/gl/iostructs/p_tl_sun.h",
+      "sha256": "498fe7536058f7265311b93cafad1aff99d19ae61b3af94e8f4572a6abdc15c3",
+      "bytes": 931
+    },
+    {
+      "path": "shaders/gl/iostructs/p_vert.h",
+      "sha256": "43d88a9314b54e832fd32696d7658f75789ac62dcdc1d0f6092604ac9d8d7582",
+      "bytes": 517
+    },
+    {
+      "path": "shaders/gl/iostructs/p_volume.h",
+      "sha256": "57c9162cf1d75513b19033675900d3f398e98607370aba193d38b8512403ef89",
+      "bytes": 1018
+    },
+    {
+      "path": "shaders/gl/iostructs/p_volume_sun.h",
+      "sha256": "72c9a93ff484518c8e59c70c4b2d32f9d408f44fb5231558fe08c2d5904cb9ec",
+      "bytes": 813
+    },
+    {
+      "path": "shaders/gl/iostructs/p_volumetric.h",
+      "sha256": "1fd74365856332d15700ed8f70651dcfb85bb7d28909fa6c4acac4adedce3494",
+      "bytes": 1102
+    },
+    {
+      "path": "shaders/gl/iostructs/p_volumetric_combine.h",
+      "sha256": "584992af6617d30ab974577c98f485b785929a8852ca4c8e12e2931de3193555",
+      "bytes": 717
+    },
+    {
+      "path": "shaders/gl/iostructs/p_water.h",
+      "sha256": "19d32c7cacfbd436f886e3f31a223d086d2ec64f4ad7d3f9e352e6ddb759c62d",
+      "bytes": 2268
+    },
+    {
+      "path": "shaders/gl/iostructs/p_waterd.h",
+      "sha256": "72b5d1d2b75adc09430c9c68434fc986638d6692c4e0e8606327ade5fcf8cc49",
+      "bytes": 1255
+    },
+    {
+      "path": "shaders/gl/iostructs/v_aa_aa.h",
+      "sha256": "7af118709d80a428056120041bec0aa5a1201332386fc1150d5714e1721982f3",
+      "bytes": 1622
+    },
+    {
+      "path": "shaders/gl/iostructs/v_build.h",
+      "sha256": "86266a33944574b60c6d5420ee077c9babe0d279b65f5b85774885848dd37614",
+      "bytes": 1042
+    },
+    {
+      "path": "shaders/gl/iostructs/v_clouds.h",
+      "sha256": "20a629f7ac07da4b1bfbc1fcaf579b5be7f75b45fecfc603fa9d1927996e6595",
+      "bytes": 1152
+    },
+    {
+      "path": "shaders/gl/iostructs/v_combine.h",
+      "sha256": "dd647f7d236a9240ca840d921bdc3bfb78ef0768a402a77f594b931bb6c5bedc",
+      "bytes": 1130
+    },
+    {
+      "path": "shaders/gl/iostructs/v_detail.h",
+      "sha256": "238cb701e8c5e982e82f9e54cb5fba423722682eeed658a1a9d173a065ab8eba",
+      "bytes": 1343
+    },
+    {
+      "path": "shaders/gl/iostructs/v_dumb.h",
+      "sha256": "783f5cbc73b32ed9282c7e8425549cd0be3b426e600e695477f807269052399b",
+      "bytes": 294
+    },
+    {
+      "path": "shaders/gl/iostructs/v_editor.h",
+      "sha256": "51db71f89afc0d97e1736132d0a394c1024ddc0d70fd804da229fd7061baea0a",
+      "bytes": 551
+    },
+    {
+      "path": "shaders/gl/iostructs/v_filter.h",
+      "sha256": "0c781df1daa37307cc994470bb85f21803e92aeb52c7cd2d2795e14a1618a97c",
+      "bytes": 1856
+    },
+    {
+      "path": "shaders/gl/iostructs/v_lmape.h",
+      "sha256": "6c2514f37cc68c2c9e0e214016655dceb74b7fb33695ef94bceba14bd7a686b0",
+      "bytes": 1851
+    },
+    {
+      "path": "shaders/gl/iostructs/v_lod.h",
+      "sha256": "227cc32fcff88aab6f4c4c2803d784f853ce3a54e58165406e526fc2a003d4ca",
+      "bytes": 2032
+    },
+    {
+      "path": "shaders/gl/iostructs/v_lplanes.h",
+      "sha256": "0bf32e309a945241fc6bfa43dd518346c7ff970980d929ce214b162b002390b0",
+      "bytes": 1208
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_bump.h",
+      "sha256": "ff8c7a807846b28356e760a13b83aa6e57d98bfdf40791965ae883aac79a6366",
+      "bytes": 2992
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_def.h",
+      "sha256": "cb4ff125152ea05d2b2483b34c466c0758e56c4d6949e6b201ce7d090e5fbdab",
+      "bytes": 2274
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_def_lplanes.h",
+      "sha256": "cf5e909c56026584641ab6663e0565a9613cbb8cd0ae77bb8cc1745910434682",
+      "bytes": 2186
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_distort.h",
+      "sha256": "5215542047ade51184a39104ed2ed75fecc4eb6f8e6c27cc79e67bf47c91f8bf",
+      "bytes": 2163
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_env_lq.h",
+      "sha256": "1e1e5258a93638b818566966595aa4c3580ac48f14b02b52991bb98f98114897",
+      "bytes": 2455
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_flat.h",
+      "sha256": "4ed071d698f13e7f5ddb15f08c793dde391dd63765476bc9bed5cca5aedcaf93",
+      "bytes": 2753
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_shadow.h",
+      "sha256": "7c85f1b88c419328e064a0001f5f9f625cd2ebfa18a796c62cef9d3a8dcee5ca",
+      "bytes": 1862
+    },
+    {
+      "path": "shaders/gl/iostructs/v_model_shadow_aref.h",
+      "sha256": "818b65ad003d2c7e93fb10a9ebd91b1e57cdcf3499bb4d0fb8e23cac05fa7392",
+      "bytes": 1996
+    },
+    {
+      "path": "shaders/gl/iostructs/v_particle.h",
+      "sha256": "5bf88f876ccefe563181164786f243007653de2b9e1eea281b89f88a3e01c8d4",
+      "bytes": 1156
+    },
+    {
+      "path": "shaders/gl/iostructs/v_particle_flat.h",
+      "sha256": "e616983bd80c37ce555013ea1d83cfb7475f24403b4f0e0b741469c054689bc6",
+      "bytes": 1660
+    },
+    {
+      "path": "shaders/gl/iostructs/v_portal.h",
+      "sha256": "7f61e9b6ad158bade6e2a9d1917c848d4ae7266e9f6dcac754fded4c8820fb92",
+      "bytes": 803
+    },
+    {
+      "path": "shaders/gl/iostructs/v_postpr.h",
+      "sha256": "a487b6ea453531203a927961bde2f5634b4b12c2a38affc42da40cffd047efdb",
+      "bytes": 1483
+    },
+    {
+      "path": "shaders/gl/iostructs/v_shadow.h",
+      "sha256": "9859bbe86622d20f55d844a76c9fa11feae9ddfa8d0c65b429097bc76d277e70",
+      "bytes": 419
+    },
+    {
+      "path": "shaders/gl/iostructs/v_shadow_aref.h",
+      "sha256": "9332ccc583cefd48e8ebdb8269d0da66f0b8a3aea693e8e1cdbaf0d9b8518690",
+      "bytes": 1141
+    },
+    {
+      "path": "shaders/gl/iostructs/v_sky.h",
+      "sha256": "b14f43ece6b6233bb9d0b7341524bd017a22e1ed4666668622210f78492f3fc2",
+      "bytes": 1022
+    },
+    {
+      "path": "shaders/gl/iostructs/v_static_bump.h",
+      "sha256": "881e724b3f0ce129bcd1ec8fc99faf80bc7575f42e59e71f96c349797f071f11",
+      "bytes": 2388
+    },
+    {
+      "path": "shaders/gl/iostructs/v_static_flat.h",
+      "sha256": "df1bc1acb6cbe4ee8c5be831be3daaf1c74546ac70b19fd19ee2742d7d8b99ed",
+      "bytes": 2156
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tl.h",
+      "sha256": "09fe482a3f99f67b768d77649a5d646654add63494119a676fb7dd751af48b50",
+      "bytes": 600
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tl0uv.h",
+      "sha256": "3a68a9bca90db098d1b5de831a478d534a20363b5c6dcfb1dd231ec32a9a0a9d",
+      "bytes": 446
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tl2uv.h",
+      "sha256": "9269707ded6f7cbb1709c47a633b6b086d5c3759b4c8b18d798ba7e46eb23313",
+      "bytes": 839
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tree_bump.h",
+      "sha256": "ef049e795a6efeda5c50e064f43b9e886d3de2db2843f6d821289e330a0e47b8",
+      "bytes": 1814
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tree_flat.h",
+      "sha256": "326d5fd22c1610ac8b68c76f089b160a057526b2c5efbcd6d0089cdb0306a81a",
+      "bytes": 1580
+    },
+    {
+      "path": "shaders/gl/iostructs/v_tree_shadow.h",
+      "sha256": "a3a34f00a1b86872e8efd6574d54239fb64c3d81b29f41ea73f3e26c3cddfb37",
+      "bytes": 918
+    },
+    {
+      "path": "shaders/gl/iostructs/v_vert.h",
+      "sha256": "d57c6c0ae3723d2b6ed5fcff95df79b7c4a2b01ab9d470f9a94a71d26b25392b",
+      "bytes": 1502
+    },
+    {
+      "path": "shaders/gl/iostructs/v_volume.h",
+      "sha256": "c3bde3f0c37e91daefa1557ffba9a3490ac505320b6f50dcdb178440d76dd70d",
+      "bytes": 471
+    },
+    {
+      "path": "shaders/gl/iostructs/v_volumetric.h",
+      "sha256": "e5316adbb558ff10ab78687d01cc88e20f5c0519df360ecb95376af9a6fa2dce",
+      "bytes": 1306
+    },
+    {
+      "path": "shaders/gl/iostructs/v_water.h",
+      "sha256": "b5a74ac1fb94bb47e404800ce7ddfa2301e769e734f62a756bb26451d706473c",
+      "bytes": 3008
+    },
+    {
+      "path": "shaders/gl/iostructs/v_waterd.h",
+      "sha256": "d46e35599dda7fb102f075363d000ebe2b4a8f10b0f3f15b7f813399369dabe5",
+      "bytes": 2035
+    },
+    {
+      "path": "shaders/gl/iostructs/v_wmark.h",
+      "sha256": "ada7db6c8ff9b6dc0dceae02de76241a6bb70242e9afbd21aced41d28f83ba3d",
+      "bytes": 1313
+    },
+    {
+      "path": "shaders/gl/lmape.ps",
+      "sha256": "6d461b6e72a619081ff26c3b286ae8054999a767570d00c46ad1807fe55b5a7f",
+      "bytes": 825
+    },
+    {
+      "path": "shaders/gl/lmape.vs",
+      "sha256": "5a7a8a1a7407931ad40cc190c3aafd8d777b9ad534c39d522311d9c77a0d5545",
+      "bytes": 613
+    },
+    {
+      "path": "shaders/gl/lmodel.h",
+      "sha256": "2df603ca9d9ef767fc38b947ed38f6179663439cd6e6f0d34ccd9a6ab0292967",
+      "bytes": 2247
+    },
+    {
+      "path": "shaders/gl/lod.ps",
+      "sha256": "9c142da26517e0f8e634ed0148c3483be01cad624a5339cecaed7daf3df9fe31",
+      "bytes": 2945
+    },
+    {
+      "path": "shaders/gl/lod.vs",
+      "sha256": "5b5921bec072367fa536c444fbf1891bac2f79094f97abde8e78e0097484bbf7",
+      "bytes": 654
+    },
+    {
+      "path": "shaders/gl/mark_msaa_edges.ps",
+      "sha256": "8bf601ea580f032740cb22bf3f7c18fabb1adc4d2e21bb79d55904a137e8ecdc",
+      "bytes": 811
+    },
+    {
+      "path": "shaders/gl/mblur.h",
+      "sha256": "befe39430180eb42e633557a17a7535ced4fbe170418855ac67e7ee79643da98",
+      "bytes": 1755
+    },
+    {
+      "path": "shaders/gl/model_def_lplanes.vs",
+      "sha256": "0ce4f54127301f704dc53cf0651de517ce5048d3db94f8bfc699d21da6e98e11",
+      "bytes": 429
+    },
+    {
+      "path": "shaders/gl/model_def_lq.ps",
+      "sha256": "527d4d7f41d89bdb56e0e694ce8fd6ef0ad7989e3168820b5885b82f5069373a",
+      "bytes": 360
+    },
+    {
+      "path": "shaders/gl/model_def_lq.vs",
+      "sha256": "36f9ef5c6f3059ae73eb92f6ce66de4b25c55eb52c41e00a8ff45f5994deb584",
+      "bytes": 481
+    },
+    {
+      "path": "shaders/gl/model_distort.vs",
+      "sha256": "56eb8686310d997bc140a2ab6d9c8bee5256ecdd4f2fd486cfccc176d535f656",
+      "bytes": 416
+    },
+    {
+      "path": "shaders/gl/model_distort4ghost.vs",
+      "sha256": "650d045205606eedd86ef3019ae32ae631460fa6e6442d045d57112c935d8bd2",
+      "bytes": 424
+    },
+    {
+      "path": "shaders/gl/model_distort4glass.vs",
+      "sha256": "7074f9946a396eb103ee3bde2ff834d8e8c8475f17bba12d39e89769690c287b",
+      "bytes": 416
+    },
+    {
+      "path": "shaders/gl/model_env_lq.ps",
+      "sha256": "64985c705db8e91dcb5142a7c9759e28296e4bbc603e96b233c4e0cb4a0719d3",
+      "bytes": 578
+    },
+    {
+      "path": "shaders/gl/model_env_lq.vs",
+      "sha256": "ecb85a632395f8970a50728da0c4a1bbbaa8f1402e937b90ad3c6c597a649be2",
+      "bytes": 518
+    },
+    {
+      "path": "shaders/gl/models_lightplanes.s",
+      "sha256": "c52ffe4bbe2631d5cdfbbf2b8e371c0a9e03f03ff813753e8d214cd17d67735d",
+      "bytes": 329
+    },
+    {
+      "path": "shaders/gl/models_pautina.s",
+      "sha256": "fdeb7d7c9452ac6ccdf2602c413737e1cd3f93ceac657dc133c887c90db809fa",
+      "bytes": 1199
+    },
+    {
+      "path": "shaders/gl/models_selflight.s",
+      "sha256": "6777b039bc35d7a2df37eebb127f4c051b0deee1f3b392bcb40c5a9f40974c1c",
+      "bytes": 556
+    },
+    {
+      "path": "shaders/gl/models_selflight_det.s",
+      "sha256": "5ea811d6dfd1708e4c33bf3a9d1121d52db00bf29149df16c4697f9eb07e7012",
+      "bytes": 674
+    },
+    {
+      "path": "shaders/gl/models_selflightl.s",
+      "sha256": "5960213616dde6a728b975a8afde05eeee388d1c04efc6dc4b8cea8b2d2f8255",
+      "bytes": 556
+    },
+    {
+      "path": "shaders/gl/models_xanomaly.s",
+      "sha256": "e1842cc0ad7b66c062363e0b81fdaab69927708cd42d4a932d23c472111a97e1",
+      "bytes": 774
+    },
+    {
+      "path": "shaders/gl/models_xdistort.s",
+      "sha256": "d22203de0d61f21bc5911cc45d4d2e21f2985170f1d557c429f12e4268483a13",
+      "bytes": 809
+    },
+    {
+      "path": "shaders/gl/models_xdistortcolor.s",
+      "sha256": "e8a5a33ab0b6b3992da7884ff0f34413ea69510b40af5bed092c2fbb2181e01a",
+      "bytes": 799
+    },
+    {
+      "path": "shaders/gl/models_xdistortcolorl.s",
+      "sha256": "71c76a1ed1a9a409d797d71dd79746b032a80a4612d299ea95caa1be574438c1",
+      "bytes": 799
+    },
+    {
+      "path": "shaders/gl/models_xdistortcolorlinv.s",
+      "sha256": "c281b5001f39d03fb7ac784067ccb46947f2b21113d34ea7b914420ff7f5e115",
+      "bytes": 776
+    },
+    {
+      "path": "shaders/gl/models_xdistortinv.s",
+      "sha256": "b2f892dabbb10167a4902c02ee1b75a2082c4b5033711bd75d472bf3e38b5a26",
+      "bytes": 812
+    },
+    {
+      "path": "shaders/gl/models_xmonolith.s",
+      "sha256": "a7d27d6da5605584a4d4b317ff534b44e11b686a81550e2f38073f9c663bcfc4",
+      "bytes": 1402
+    },
+    {
+      "path": "shaders/gl/models_xwindows.s",
+      "sha256": "71be04220547317498ffa8936744a148e51b9fab7ad4667d70881e2d023ff615",
+      "bytes": 1399
+    },
+    {
+      "path": "shaders/gl/particle-clip.vs",
+      "sha256": "e483723c1c736575071cba04b7fe7acab37ad45be869da73052b4d6026f0d3cd",
+      "bytes": 292
+    },
+    {
+      "path": "shaders/gl/particle.ps",
+      "sha256": "0e6c9ebed9168018e4a87a8c1d314987309c236b93283bb2f006d896755d0959",
+      "bytes": 1237
+    },
+    {
+      "path": "shaders/gl/particle.vs",
+      "sha256": "5a802b438bb1ec808656bc0069bf206515a6816182119dcbd423e5d13b5700a2",
+      "bytes": 509
+    },
+    {
+      "path": "shaders/gl/particle_alphaonly.ps",
+      "sha256": "f3fad134f63476ab412fc223b26c9dd9f3227a46c64cce330473e71a71a278d3",
+      "bytes": 238
+    },
+    {
+      "path": "shaders/gl/particle_distort.ps",
+      "sha256": "55487ea36b35bc58466f388e2c80c142dbc22aa21d59a2acec3aeb33dadfb6d8",
+      "bytes": 1055
+    },
+    {
+      "path": "shaders/gl/particle_distort_hard.ps",
+      "sha256": "9092db6c9775744fc210356d78bb38cdcdf322a285f0b12d6d0365fbf5b93226",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/gl/particle_hard.ps",
+      "sha256": "8dc1c76623e9a92a2ec9aee6bfc3831f402fe72e6e30776ee48fb847f26d5acc",
+      "bytes": 49
+    },
+    {
+      "path": "shaders/gl/particle_s-aadd.ps",
+      "sha256": "a9c637c97c5d0c48b3f2ad21503bf9d1c9fbe828b42e29b0e615580737044ea2",
+      "bytes": 419
+    },
+    {
+      "path": "shaders/gl/particle_s-add.ps",
+      "sha256": "fc772bca919029ef48cd77b6d9600fe16317a47c1bef2e515497f9c8db5cdd51",
+      "bytes": 402
+    },
+    {
+      "path": "shaders/gl/particle_s-blend.ps",
+      "sha256": "38b1c5fb19aa1a0c88e0ada4f8a8df9cfa56619d0e280a318cec07a3cef65f4d",
+      "bytes": 353
+    },
+    {
+      "path": "shaders/gl/particles_xadd.s",
+      "sha256": "9246aa1c1371a1607eaa69a6f393234e8e9b68bdf5cae2ba9ac7badc6bbdc2fb",
+      "bytes": 812
+    },
+    {
+      "path": "shaders/gl/particles_xdistort.s",
+      "sha256": "44e525bf21e7e172eb64ee853eefeb0ed375d1ed458f86b19b1b2f7199c12253",
+      "bytes": 443
+    },
+    {
+      "path": "shaders/gl/portal.ps",
+      "sha256": "7e04f96f119e60143107ea979689ccc3306597326e03b396c3286cb6bb04ce8b",
+      "bytes": 317
+    },
+    {
+      "path": "shaders/gl/portal.s",
+      "sha256": "638f98f5cbe3afb6688373fbe44b50cba578f05278f8334b25e6c850280fe2e1",
+      "bytes": 318
+    },
+    {
+      "path": "shaders/gl/portal.vs",
+      "sha256": "da536f4156dde9756cd4a33a36a1d0356a87df7e3ceee5be1bf8dbfec23d7ff7",
+      "bytes": 560
+    },
+    {
+      "path": "shaders/gl/postprocess.ps",
+      "sha256": "175a78585893b993a6e675e021d723652a8ee536405356e6ae346335dc827d98",
+      "bytes": 891
+    },
+    {
+      "path": "shaders/gl/postprocess.s",
+      "sha256": "84d9dae79f139ff86017ab9ad3ac63036e89ec729500261c268c91c1211c8373",
+      "bytes": 1029
+    },
+    {
+      "path": "shaders/gl/postprocess_cm.ps",
+      "sha256": "61a71ef49beecb7619f8d21e611613804860427a491769faff52c9dc4da9d3e7",
+      "bytes": 1250
+    },
+    {
+      "path": "shaders/gl/rain_apply_gloss.ps",
+      "sha256": "414202e70a93a15b94318027e904f1624a51a2ef02b6f2e4af7a5193f519c014",
+      "bytes": 1129
+    },
+    {
+      "path": "shaders/gl/rain_apply_gloss_msaa.ps",
+      "sha256": "cd8d9c300d21c571650f4bd12b53ada1f118052a70b644e0ed31b17439d7823e",
+      "bytes": 32
+    },
+    {
+      "path": "shaders/gl/rain_apply_gloss_nomsaa.ps",
+      "sha256": "46e976ddec2f48194ad26edb01712fb3011644bfd21cc3073bc8a0dacb6b98f7",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/gl/rain_apply_normal.ps",
+      "sha256": "889ee5e112ece357326978cab9e70476249b1cdaf82cfdab67974b193eb8d27d",
+      "bytes": 880
+    },
+    {
+      "path": "shaders/gl/rain_apply_normal_msaa.ps",
+      "sha256": "5276c4137abe7dead40d433d538383428a878b971f0152f11380571e4f0234be",
+      "bytes": 31
+    },
+    {
+      "path": "shaders/gl/rain_apply_normal_nomsaa.ps",
+      "sha256": "9cc46a9f9282d2adef7c51bb039f086bbd2ab821a12f000e6ba8745aed72d5e0",
+      "bytes": 59
+    },
+    {
+      "path": "shaders/gl/rain_layer.ps",
+      "sha256": "5dcc2e444d10d6c9dd15039abf29f24ac3bc20900539681d9cef9bd6efff6014",
+      "bytes": 1213
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal.ps",
+      "sha256": "fd51e7954a2bb2d31d39ddf03b7e1a896f692709cab19ec189c3e5d9b3dc7ad0",
+      "bytes": 4271
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal_msaa.ps",
+      "sha256": "69f099db279ad36cdf72160391781a7dcd4b36dbc4a9382d161b11f80997fcc1",
+      "bytes": 33
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal_new.ps",
+      "sha256": "ac2817bd0fad1878d75f5f075208481ff80159914522a1846fe3f6f9bce4511d",
+      "bytes": 4167
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal_new_msaa.ps",
+      "sha256": "5b9a0c3ef7158aa837c6fc5682db80b1420de4826997feaef4b128607f99ada7",
+      "bytes": 37
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal_new_nomsaa.ps",
+      "sha256": "d3fc3b8c5f65483b356bc01bbba48e870521d83b3db86ed578759360ac70fef6",
+      "bytes": 65
+    },
+    {
+      "path": "shaders/gl/rain_patch_normal_nomsaa.ps",
+      "sha256": "30eb67c2566d8a8aea5ee76b3c5cb61ab4a21e644f3768da27ac5252b5eb8221",
+      "bytes": 61
+    },
+    {
+      "path": "shaders/gl/selflight.s",
+      "sha256": "3cd93f6a31ae86698cfb7111b17de46f0129e631880955a70693a50d023c1535",
+      "bytes": 275
+    },
+    {
+      "path": "shaders/gl/shadow.h",
+      "sha256": "6d3b03a892a5a49da49d4e43f217208e180e9a2072b1f01a7fb4dc0a92253e0f",
+      "bytes": 34180
+    },
+    {
+      "path": "shaders/gl/shadow_direct_base.vs",
+      "sha256": "a092e3bd2eb85eddbcaaed77442ac163c5aa725816f9d22c9a79a2e72cbeeb4d",
+      "bytes": 320
+    },
+    {
+      "path": "shaders/gl/shadow_direct_base_aref.ps",
+      "sha256": "565f79053bd9d5332e295cc1985a76a70706b7e333523e6ad580324a62160c2f",
+      "bytes": 501
+    },
+    {
+      "path": "shaders/gl/shadow_direct_base_aref.vs",
+      "sha256": "447b0759679828e0d7e27de73ef8d1bfbfe56dd3fe98e9255af600db3ecaeeac",
+      "bytes": 401
+    },
+    {
+      "path": "shaders/gl/shadow_direct_model.vs",
+      "sha256": "9eae723ab474dd549d0d9fc592fac41ba427289299bdca6ba7215b51df12e978",
+      "bytes": 379
+    },
+    {
+      "path": "shaders/gl/shadow_direct_model_aref.vs",
+      "sha256": "c167c8481dfe0e677aa46b23fce072b0df2b7dd5b2e141ed8995c8d80d7e3098",
+      "bytes": 401
+    },
+    {
+      "path": "shaders/gl/shadow_direct_tree.vs",
+      "sha256": "bab3773a5063c8d416066316ca6b530d889c23fad5877c6be0e3dd3734790e83",
+      "bytes": 1484
+    },
+    {
+      "path": "shaders/gl/shadow_direct_tree_aref.vs",
+      "sha256": "c43be7c9aee4b9266934c75287e1f026ea5d3264af5b9b73fe0f1eaf8b865046",
+      "bytes": 50
+    },
+    {
+      "path": "shaders/gl/shadow_direct_tree_s.vs",
+      "sha256": "97812d04ac2bc114508defba02090a7b390a59bffd945536c29433cc39daf89e",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/gl/shadow_direct_tree_s_aref.vs",
+      "sha256": "bcd3439e62215523f8c29deba8a61ec3710e3e11cc680214e1482c18548772f5",
+      "bytes": 52
+    },
+    {
+      "path": "shaders/gl/shared/cloudconfig.h",
+      "sha256": "dbcf950c2b4f2b64b34611d47228c0a2acc793fb9254c386262e28a22ebfde4e",
+      "bytes": 308
+    },
+    {
+      "path": "shaders/gl/shared/common.h",
+      "sha256": "1ee96e0fe83fd841267e086afff6ee31f6ed6557cd7cb9ef1efe2a52715f4426",
+      "bytes": 3961
+    },
+    {
+      "path": "shaders/gl/shared/waterconfig.h",
+      "sha256": "173d66c0a1faceec8694247d986439617822d3b3bd18b19d104f9b420e57c4b8",
+      "bytes": 2326
+    },
+    {
+      "path": "shaders/gl/shared/watermove.h",
+      "sha256": "9077dccb7b17d4a17d0aad211f9ded03122431bae086385e1625a0b8e84f3a6e",
+      "bytes": 807
+    },
+    {
+      "path": "shaders/gl/shared/wmark.h",
+      "sha256": "a173573d7ac3ab0315219bb77381fc6ad463865d46b8acf502b198edbae0f848",
+      "bytes": 530
+    },
+    {
+      "path": "shaders/gl/simple.ps",
+      "sha256": "2b5038936ea496917cc970da9b2ce9adc713678650a644ec19eabb7ce5e62859",
+      "bytes": 219
+    },
+    {
+      "path": "shaders/gl/simple_color.ps",
+      "sha256": "5558230a069791529aa60686f0856fbc5da33491f8141889b5460e1229b180d1",
+      "bytes": 105
+    },
+    {
+      "path": "shaders/gl/skin.h",
+      "sha256": "ea9a73b5b001fe140529617a6280b39ce6cfb00bdfe1b2efe4a9c579e3ad10f2",
+      "bytes": 6722
+    },
+    {
+      "path": "shaders/gl/sky2.ps",
+      "sha256": "9f7c40fd2baba3303c7aaa301409fa4589c9f9ff9cc00509406072cfd454a776",
+      "bytes": 761
+    },
+    {
+      "path": "shaders/gl/sky2.vs",
+      "sha256": "6745d5a003323a1c0fc6df4a2673a3cec4ce7a93c5edd4bc5eeb4c48bfac9380",
+      "bytes": 617
+    },
+    {
+      "path": "shaders/gl/sload.h",
+      "sha256": "aac6d5da55d1392c001a183b02f1429695f6789da97e9edce4a2eb2801139520",
+      "bytes": 7193
+    },
+    {
+      "path": "shaders/gl/ssao.ps",
+      "sha256": "d3775725ac1cc259f21f7393f01e0dbdfa4d5e369d967eb9b233334eaae3fa8e",
+      "bytes": 6010
+    },
+    {
+      "path": "shaders/gl/ssao_blur.ps",
+      "sha256": "8500debb3c3f0be3336dea6c0f8def2dfdde074743a2403a5a581fdfe0541e3d",
+      "bytes": 1526
+    },
+    {
+      "path": "shaders/gl/ssao_calc.ps",
+      "sha256": "6a7c77c89ee6fbe6ed1b2df565ad7435a8c48c1d174b999e3ca64aacf16ff379",
+      "bytes": 769
+    },
+    {
+      "path": "shaders/gl/ssao_calc_msaa.ps",
+      "sha256": "ce32bfecf9335bd6af4217bd5ca77077475d48d205c8bb1011732177f1d4979d",
+      "bytes": 25
+    },
+    {
+      "path": "shaders/gl/ssao_calc_nomsaa.ps",
+      "sha256": "a78719b86b0b053a0ba0609749de384eb6984eb5bdc6e90d067d51809e87e851",
+      "bytes": 49
+    },
+    {
+      "path": "shaders/gl/ssao_hbao.ps",
+      "sha256": "7d9ef5dd19aec7c0dcbac36308a654a4ffda0b9352ee160521c4a8ea0202955b",
+      "bytes": 15616
+    },
+    {
+      "path": "shaders/gl/ssao_hdao.ps",
+      "sha256": "1ef7b76bdf4069d7e553de00a8175d7a37cbe7af124007c6c10043c0acd1be9d",
+      "bytes": 13124
+    },
+    {
+      "path": "shaders/gl/ssao_hdao_new.ps",
+      "sha256": "3b735a2713b965b4c4359135e1c28bc58b40036764567d8f36d46f1cb02b80b0",
+      "bytes": 22352
+    },
+    {
+      "path": "shaders/gl/ssr.h",
+      "sha256": "f50db1dfcb3b67ba74c130c6aa383c0676051ae7dd6d5debcfa5563a03463626",
+      "bytes": 3851
+    },
+    {
+      "path": "shaders/gl/stub_default.ps",
+      "sha256": "b4ef107af58ea5b4324c283d481e8423290a5a3e13e9fb421574abaa960693b8",
+      "bytes": 353
+    },
+    {
+      "path": "shaders/gl/stub_default.s",
+      "sha256": "5e31e18d86f04dbdad96108b2db76ec1c12d0c5eca90f9538cd98f6ec01c8e38",
+      "bytes": 175
+    },
+    {
+      "path": "shaders/gl/stub_default.vs",
+      "sha256": "5d3a2bda97f0030d21999a7b96dcd5accc6e74434f3f53c6975e6deb1405723f",
+      "bytes": 298
+    },
+    {
+      "path": "shaders/gl/stub_default_ma.ps",
+      "sha256": "98fbc5d0f3f630532136c713c8cb682cbafaf7e566d48c06809c7b76ddc6a505",
+      "bytes": 514
+    },
+    {
+      "path": "shaders/gl/stub_notransform.vs",
+      "sha256": "f9c77c10fd36f1923601bd16b9d6aa762b889aba7e1ed482600cf97fbfafb005",
+      "bytes": 347
+    },
+    {
+      "path": "shaders/gl/stub_notransform_2uv.vs",
+      "sha256": "ee0f816a25c5b18ceac81ade1a94d8ecafcfd2c2d3501fa68b707bd111c4dd8f",
+      "bytes": 378
+    },
+    {
+      "path": "shaders/gl/stub_notransform_aa_aa.vs",
+      "sha256": "62b1dddfaca0ad4d036cbca9c036700858d423f1f0fe7f2a39b0d67dda04dcf1",
+      "bytes": 594
+    },
+    {
+      "path": "shaders/gl/stub_notransform_build.vs",
+      "sha256": "c1a5d7dc36de0d67b3a18995078bd17db4b42a76e2ccaa9eb1dd7d01ad33d14b",
+      "bytes": 528
+    },
+    {
+      "path": "shaders/gl/stub_notransform_filter.vs",
+      "sha256": "566826046a4f5cf522f18734bbe5ef3d8cdc3f93118e2d42157151945af21787",
+      "bytes": 617
+    },
+    {
+      "path": "shaders/gl/stub_notransform_postpr.vs",
+      "sha256": "af441fe49de2d4390d578ac8b4f5e14ab7db623fca850f8eb120793246947814",
+      "bytes": 589
+    },
+    {
+      "path": "shaders/gl/stub_notransform_t.vs",
+      "sha256": "21509d034341b7061ccb89ceafb4926880637af720228d5c0ac87b7edd6c9d86",
+      "bytes": 503
+    },
+    {
+      "path": "shaders/gl/stub_notransform_t_m2.vs",
+      "sha256": "0f8999f7136af0c0fb5f6e41e688a408ff3530d5ff9276e0b4e1cb6224f37300",
+      "bytes": 525
+    },
+    {
+      "path": "shaders/gl/stub_notransform_t_m4.vs",
+      "sha256": "59abf8fd935f2cdcaaec88cbb551f0749746950f0be758ee5df300ecbeffcdae",
+      "bytes": 525
+    },
+    {
+      "path": "shaders/gl/stub_notransform_t_ma.vs",
+      "sha256": "6289b58df3eba7c6864c69e6e87f5f352140669732bdac53edc815f6756ae246",
+      "bytes": 470
+    },
+    {
+      "path": "shaders/gl/stub_notransform_t_menu.vs",
+      "sha256": "5ed68dd7ad9a9ac5dd47cb7f432a750e6a43649d0f09d753df563aca0bc562b3",
+      "bytes": 496
+    },
+    {
+      "path": "shaders/gl/vert.ps",
+      "sha256": "a4e137efe309e6d678a295d97bac4fd9de3c4e78fa4c6fbfe89c235724e87352",
+      "bytes": 385
+    },
+    {
+      "path": "shaders/gl/vert.vs",
+      "sha256": "f71034f995774358d9238585cd08b02ac79d41d65dfa00622c8e9bddbc122406",
+      "bytes": 615
+    },
+    {
+      "path": "shaders/gl/water.ps",
+      "sha256": "ad4f6ade058c97d7b65993b855d5d91b293381ed3b50ce432df2a49669e0f279",
+      "bytes": 3371
+    },
+    {
+      "path": "shaders/gl/water.vs",
+      "sha256": "a3a6b112ce940e005514d293469579d92651c81edd47d95d70d4063531534c8f",
+      "bytes": 2248
+    },
+    {
+      "path": "shaders/gl/water_soft.ps",
+      "sha256": "b9a30361d7269df68119c4fa6d67bf2548e4e90d53da57b1e3889eb128a45993",
+      "bytes": 44
+    },
+    {
+      "path": "shaders/gl/water_soft.vs",
+      "sha256": "79cae788b3b7b2b9309337088b437df9012c9ebeee6e7c910d051880c78b2e04",
+      "bytes": 44
+    },
+    {
+      "path": "shaders/gl/waterd.ps",
+      "sha256": "465a019967bf67cc82d8170ea5ee725d970eced052dd73e8cd04d671da5c2d9d",
+      "bytes": 1301
+    },
+    {
+      "path": "shaders/gl/waterd.vs",
+      "sha256": "92befa26089bfcbf6047d429fc3aa7b00e2becdcbf8aed52e0aee98d89d45848",
+      "bytes": 933
+    },
+    {
+      "path": "shaders/gl/waterd_soft.ps",
+      "sha256": "04c7f97a217c997a6061e4e2b941e07f1e5bd2a049762197f90ca11d86c741ba",
+      "bytes": 45
+    },
+    {
+      "path": "shaders/gl/waterd_soft.vs",
+      "sha256": "a5129fcce6a60061bd64c0fe52c35600b475f1967eabd7dc48db826f6e3e747a",
+      "bytes": 45
+    },
+    {
+      "path": "shaders/gl/wmark.vs",
+      "sha256": "603211f8b761c58132ad447b5411ac82db4d838d104c4ec37ef9eff127b7a357",
+      "bytes": 681
+    },
+    {
+      "path": "shaders/gl/yuv2rgb.ps",
+      "sha256": "6fcf369d3cd74d7d751a2c1e689ceb813fa7b7575656774c7da7fc96ef1bffcc",
+      "bytes": 475
+    },
+    {
+      "path": "shaders/r1/add_point.ps",
+      "sha256": "ee7213e3063a9f4499d86734c734cfbb14ec3f5c58119f5cdd0a549890c9c860",
+      "bytes": 409
+    },
+    {
+      "path": "shaders/r1/add_point_dt.ps",
+      "sha256": "702c0849f3ac4155fcc4ed0864f59cec871d9bf018292e3389d0658dc83014ae",
+      "bytes": 71
+    },
+    {
+      "path": "shaders/r1/add_spot.ps",
+      "sha256": "35e3c7be899cafe435ec91560e29fa889dbf2058f3f3bb53981ccf2a98017d3f",
+      "bytes": 401
+    },
+    {
+      "path": "shaders/r1/add_spot_dt.ps",
+      "sha256": "11200b3eeddb8173441f3ea7fbfe8061ae131266a04ef9b9726b5d9750c74775",
+      "bytes": 70
+    },
+    {
+      "path": "shaders/r1/base_lplanes.vs",
+      "sha256": "13a03e82d40e85e60e91d00e9f43940ba10d191e38dd4ac0e81f00c54924adaf",
+      "bytes": 505
+    },
+    {
+      "path": "shaders/r1/common.h",
+      "sha256": "c08fae4dc99af4cedc455c16e70fd063a089c168a44f0c7f328d87412fd570ce",
+      "bytes": 4796
+    },
+    {
+      "path": "shaders/r1/detail_still.vs",
+      "sha256": "4496439b21b0f10b48d271003c49f61a584b705cc9bb854e72672f44de95227b",
+      "bytes": 737
+    },
+    {
+      "path": "shaders/r1/detail_wave.vs",
+      "sha256": "86c8d76a6385c72d6a484d6db7139daed8fd602b1e7ca31a6ae764adeb1dbdf6",
+      "bytes": 1209
+    },
+    {
+      "path": "shaders/r1/effects_wallmarkblend.s",
+      "sha256": "e9d6416f14fdf76e20986aa78a7b253bcac1b31e42ae2150055d85b598be35e6",
+      "bytes": 560
+    },
+    {
+      "path": "shaders/r1/effects_wallmarkmult.s",
+      "sha256": "b9efeeb312a43afa59958701a579f5a9db75ad95ca4de7a019639aafb5451b07",
+      "bytes": 1287
+    },
+    {
+      "path": "shaders/r1/impl.ps",
+      "sha256": "ec55ce2c8f5a44035ac7f458b19edeb1aad73c14040f05bb0bde21fc32d6a600",
+      "bytes": 952
+    },
+    {
+      "path": "shaders/r1/impl.vs",
+      "sha256": "efb7dcc9c0624745d577b352932ca89ba3c14ee142ed71524232bbd229095822",
+      "bytes": 928
+    },
+    {
+      "path": "shaders/r1/impl_dt.ps",
+      "sha256": "f3a7bf8d007a3c6763190566b9822c30da1292763e93b4a8a66f8e91b54abe41",
+      "bytes": 67
+    },
+    {
+      "path": "shaders/r1/impl_dt.vs",
+      "sha256": "6168f93a4fa914a04bb3fad03c00393ccd1321435dfa245bf59e7cc11091e27e",
+      "bytes": 41
+    },
+    {
+      "path": "shaders/r1/impl_point.vs",
+      "sha256": "e3d6a1754f09082d703607f1dd2bfefef6cd973fa5de485277d2fc579f924798",
+      "bytes": 67
+    },
+    {
+      "path": "shaders/r1/impl_point_dt.vs",
+      "sha256": "6aabb5689065b7576230ba55caa5fdbfc11daf733ec54c524e659ceac6ade1d2",
+      "bytes": 87
+    },
+    {
+      "path": "shaders/r1/impl_spot.vs",
+      "sha256": "766a7414098165afdbc2b8deab73eabdbe5226057a044e9cdccac428354e88ac",
+      "bytes": 48
+    },
+    {
+      "path": "shaders/r1/impl_spot_dt.vs",
+      "sha256": "8f0172643fc560fb7237f0bfd4eb7edc3eb002efa459d2f885f11b656bcef156",
+      "bytes": 68
+    },
+    {
+      "path": "shaders/r1/lmap.ps",
+      "sha256": "8375948f5c7398ff2d8b94856318249b75ac80272d33f764e8dd4e5f67128062",
+      "bytes": 1071
+    },
+    {
+      "path": "shaders/r1/lmap.vs",
+      "sha256": "3fbd402dbd3477046e44faf3c0e1f271bc0d88154c574dd39dffa334db84bd4a",
+      "bytes": 1012
+    },
+    {
+      "path": "shaders/r1/lmap_dt.ps",
+      "sha256": "ee8a4143b6e9991ee0b13fa80659fe27aba332fdd51ebe026deb188ecc7cbcdd",
+      "bytes": 67
+    },
+    {
+      "path": "shaders/r1/lmap_dt.vs",
+      "sha256": "51664d51ac3cfbcd7349024c93842119b9bf42cf4eb0d96ac5d12c9ef7b57f4d",
+      "bytes": 41
+    },
+    {
+      "path": "shaders/r1/lmap_point.vs",
+      "sha256": "801bf8aaf7188cac4702b699d728a9db444145bec571b112888796a482f6f3a6",
+      "bytes": 69
+    },
+    {
+      "path": "shaders/r1/lmap_point_dt.vs",
+      "sha256": "6aabb5689065b7576230ba55caa5fdbfc11daf733ec54c524e659ceac6ade1d2",
+      "bytes": 87
+    },
+    {
+      "path": "shaders/r1/lmap_spot.vs",
+      "sha256": "b84779246971dac795b2123b192d2157a93ed93b416cad99fe76e6d639cedd8b",
+      "bytes": 51
+    },
+    {
+      "path": "shaders/r1/lmap_spot_dt.vs",
+      "sha256": "8768cad44c2db07b55225cbbbd32c8110e21731894c5f7e07f7cfb56242b2965",
+      "bytes": 69
+    },
+    {
+      "path": "shaders/r1/model_def_hq.ps",
+      "sha256": "4513190d46cb978b9ab1231688adb56fec8156c34b7ef48ceeaf79750fbc3df7",
+      "bytes": 901
+    },
+    {
+      "path": "shaders/r1/model_def_hq.vs",
+      "sha256": "928882c1e76597a92f4f19d3ca1ac64c730a58e3c4493bbc6708dacb143a8a6a",
+      "bytes": 1137
+    },
+    {
+      "path": "shaders/r1/model_def_hq_dt.ps",
+      "sha256": "3489654234c208db4168e57333cc2ead433cc0248728106fac4f63d41aafeba8",
+      "bytes": 73
+    },
+    {
+      "path": "shaders/r1/model_def_hq_dt.vs",
+      "sha256": "63c87186119dcebd1017d2c3ba690bdcb1e9497a8b475d125e0992e1625559cc",
+      "bytes": 47
+    },
+    {
+      "path": "shaders/r1/model_def_point.vs",
+      "sha256": "96a95e2154ba02c0db353b80ae1b988e8239a66ccc6dfec75a1ed7fe992f6d14",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/r1/model_def_point_dt.vs",
+      "sha256": "06d45c012cbba73ae0cee9cc2af4afc4f76f1b8a96a9c8601d933bd9eafdad18",
+      "bytes": 75
+    },
+    {
+      "path": "shaders/r1/model_def_spot.vs",
+      "sha256": "95aeddab6b638fb0581170856252cb6beb0fa2bbe272a5ecab2368b538f804dc",
+      "bytes": 37
+    },
+    {
+      "path": "shaders/r1/model_def_spot_dt.vs",
+      "sha256": "8832cca3ccec9e896967ac61c391e41d6f4fd1849d8b3520b151c7b5e06c7075",
+      "bytes": 57
+    },
+    {
+      "path": "shaders/r1/shared_dynlight.vs",
+      "sha256": "cc8f6cf0f2fbd1a41fb83cf9aee16fe201a3bbc320b680411a0acd824530de77",
+      "bytes": 743
+    },
+    {
+      "path": "shaders/r1/shared_dynlight_model.vs",
+      "sha256": "4d8f1d07decde76e4fca536b934f4bfa4a98189fa4efe27a25d1dc5f54c1a9ee",
+      "bytes": 721
+    },
+    {
+      "path": "shaders/r1/shared_dynlight_tree.vs",
+      "sha256": "1327dfee32dc1eae0e6d344266256b769a1e94d33c97b232893d6fb4b75a9b5b",
+      "bytes": 1484
+    },
+    {
+      "path": "shaders/r1/simple.vs",
+      "sha256": "c18d248d7e4573ed4c3101931ec95f5c895c001b97b019b65e418aef319fcf51",
+      "bytes": 359
+    },
+    {
+      "path": "shaders/r1/simple_point.vs",
+      "sha256": "4fcded615d44dddbb0c34c13cb9344cc45b3bc7cf2550881a8cb5cb7e4ef1658",
+      "bytes": 63
+    },
+    {
+      "path": "shaders/r1/simple_spot.vs",
+      "sha256": "32785bc6566dcf708bb88f9c70f13b3559e2f94ddc5c06b850535545ebd1b502",
+      "bytes": 48
+    },
+    {
+      "path": "shaders/r1/skin.h",
+      "sha256": "f6bacd41d72d3eb6b1aab4b46448dfa101a9a8e5f00d6dfae28a73fe16788e22",
+      "bytes": 6859
+    },
+    {
+      "path": "shaders/r1/tree.vs",
+      "sha256": "8d89ebd9eb6e0cb1c7a4310d2a20a8a8e68df9f1ecdb57bf6067fff3f97fab45",
+      "bytes": 2585
+    },
+    {
+      "path": "shaders/r1/tree_s.vs",
+      "sha256": "2e28abdd30358d9898ecb0b9508023c4eb318469b8e19d05d23e26a858c92d3a",
+      "bytes": 20
+    },
+    {
+      "path": "shaders/r1/tree_s_dt.vs",
+      "sha256": "500c83e5de65631df2d48e017ad2b9815163708ff1b2a43acb9f8113d530119b",
+      "bytes": 41
+    },
+    {
+      "path": "shaders/r1/tree_s_point.vs",
+      "sha256": "05263df996648908e24b063641178a17c56a8c0882b2f80abda4aa6d396a63a9",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/r1/tree_s_point_dt.vs",
+      "sha256": "eb030f62eff20f8de787fe0cdf32c7874655a81c0242f76c3b4315da685358cd",
+      "bytes": 74
+    },
+    {
+      "path": "shaders/r1/tree_s_spot.vs",
+      "sha256": "ed64e1993cac235cbd279c0f7ed255cd1c1fd63577b47e16e448113e670be0da",
+      "bytes": 36
+    },
+    {
+      "path": "shaders/r1/tree_s_spot_dt.vs",
+      "sha256": "b7b13114cb940ea22ddaeb09dc220b6a6b82f4b4ad2fccd3a37f7ed1e291ef22",
+      "bytes": 56
+    },
+    {
+      "path": "shaders/r1/tree_w.vs",
+      "sha256": "5f2e67a275179023cf4645899ab973e645f27caf965283c3198572437cba921f",
+      "bytes": 41
+    },
+    {
+      "path": "shaders/r1/tree_w_dt.vs",
+      "sha256": "b2c2812b98424d994966697d3cde850eb32fc4ac05c12a26bef1eedeee99a6d0",
+      "bytes": 60
+    },
+    {
+      "path": "shaders/r1/tree_w_point.vs",
+      "sha256": "e269e260ced5d5591777ead19e5ffb931743bbefff08befff73e0644762361b0",
+      "bytes": 72
+    },
+    {
+      "path": "shaders/r1/tree_w_point_dt.vs",
+      "sha256": "916a1f77045278f5f40f7eb2e93579718a8b4a7d1a7048a4acc0f63d03dbfe4f",
+      "bytes": 90
+    },
+    {
+      "path": "shaders/r1/tree_w_spot.vs",
+      "sha256": "62141703f7dd62d6283929af1d523076e83778edf6b99f2a675cb4eac4712355",
+      "bytes": 54
+    },
+    {
+      "path": "shaders/r1/tree_w_spot_dt.vs",
+      "sha256": "185cd4911333474e469c1814f0737f551938bfafbfe52362c27c6d5ad10c8707",
+      "bytes": 72
+    },
+    {
+      "path": "shaders/r1/vert.ps",
+      "sha256": "1b7ae02bf522cce2e0dc2acde738eb824687d26ecda7c560170fcdf9d135a3d5",
+      "bytes": 671
+    },
+    {
+      "path": "shaders/r1/vert.vs",
+      "sha256": "d55f6592314f45537a9f85049d2acd6851f07c45956e83fe55ce67cc6ce0159e",
+      "bytes": 1044
+    },
+    {
+      "path": "shaders/r1/vert_dt.ps",
+      "sha256": "fa5ffae98cf5706d18bbdd8b635bd7e5215b5fcbdb0157c6312cdb9966a16644",
+      "bytes": 67
+    },
+    {
+      "path": "shaders/r1/vert_dt.vs",
+      "sha256": "2edf292aaca2278d6420508c11338034f82b136c7862b5fe12a2f762b21a9615",
+      "bytes": 41
+    },
+    {
+      "path": "shaders/r1/vert_point.vs",
+      "sha256": "d83dd7a596a5b1d3ee6a151229fac926963b800850a2013e5ea13a8991e9f039",
+      "bytes": 52
+    },
+    {
+      "path": "shaders/r1/vert_point_dt.vs",
+      "sha256": "d2a1837410c70042c6379c72055cae5db8fa8516360542aca91c8446eeeb16e9",
+      "bytes": 70
+    },
+    {
+      "path": "shaders/r1/vert_spot.vs",
+      "sha256": "fd3522a721ea78bc5bdb51dc46d615dba422716ee949d35fd1fe9f4d8fc0983e",
+      "bytes": 32
+    },
+    {
+      "path": "shaders/r1/vert_spot_dt.vs",
+      "sha256": "a190a8212a82f93443b758cfe0b9f795e86f3b721f5266a0050f2acdcc22071f",
+      "bytes": 52
+    },
+    {
+      "path": "shaders/r1/water.vs",
+      "sha256": "e2b12f904c7678f6d77ee0ef703a5d759123238c1820f011859c6c26a182257c",
+      "bytes": 987
+    },
+    {
+      "path": "shaders/r1/waterd.vs",
+      "sha256": "88cc00649fccb3e2bdd01a5279d2fe9db0b66307069c03c47d739e1aaecc2959",
+      "bytes": 651
+    },
+    {
+      "path": "shaders/r1/wmark.vs",
+      "sha256": "c8f6cc3a68e861347c4f9e9d7782916d67b25bb242f806440ca6ee96d7a9d188",
+      "bytes": 1612
+    },
+    {
+      "path": "shaders/r1/wmark_blend.vs",
+      "sha256": "bbd3b23ef21104a35dbadd9c3a3d76a56d5255bfde585fcdd301515d2252787d",
+      "bytes": 881
+    },
+    {
+      "path": "shaders/r1/wmark_point.vs",
+      "sha256": "8547e788eed89e18ecb032d83a78954cda0fd48a32fcd431a1a01561ccdd120d",
+      "bytes": 99
+    },
+    {
+      "path": "shaders/r1/wmark_spot.vs",
+      "sha256": "ae17d4f642eb0a5730e8d7ff8fdf35d9f3fd4d85027e76b461392c99adfd9cfb",
+      "bytes": 81
+    },
+    {
+      "path": "shaders/r2/common.h",
+      "sha256": "8e29b3f52e4122f0522dbd53ed6276c394d66862b178ded7c7666c3559af08f4",
+      "bytes": 14016
+    },
+    {
+      "path": "shaders/r2/shared/common.h",
+      "sha256": "dd27b0e681939d14f10c50770976936b7586539fba75e2b398d469662f92f64c",
+      "bytes": 1964
+    },
+    {
+      "path": "shaders/r2/skin.h",
+      "sha256": "d501171503adad27b07aa3b83f3c5329897400bfbc09a2e93fe1e667c4e565c6",
+      "bytes": 5962
+    },
+    {
+      "path": "shaders/r2/water.ps",
+      "sha256": "479fb9003eca0689471ff7772b87360621b09fb4a0ed09cee2bdc953969c947c",
+      "bytes": 3416
+    },
+    {
+      "path": "shaders/r2/water.vs",
+      "sha256": "26b576a70bf39d39654227689ee5ee12f2a241ebc44c2a313a9d1c7e8f41abfb",
+      "bytes": 3770
+    },
+    {
+      "path": "shaders/r3/common_defines.h",
+      "sha256": "903a3dc6c71f5ee0934610ca855c13c947de0fc8346431f382cb0b88e0499928",
+      "bytes": 982
+    },
+    {
+      "path": "shaders/r3/copvr_binocular.ps",
+      "sha256": "a428f146e311f3f0685baac0be848cc3421c4252b64cab32e363a8db9f5aeec5",
+      "bytes": 516
+    },
+    {
+      "path": "shaders/r3/copvr_binocular.s",
+      "sha256": "a1c7d45fefe66862b56d8174e286121cf1646dfc5ef24a73beb60cbb4693f032",
+      "bytes": 318
+    },
+    {
+      "path": "shaders/r3/copvr_minimap.ps",
+      "sha256": "1c1f8dd67da5a68bf955088efc0f4adc127f167d45c0954c89a75d6c7cb62761",
+      "bytes": 353
+    },
+    {
+      "path": "shaders/r3/copvr_minimap.s",
+      "sha256": "d0d56789dd6bd928d573221358f9eb432a9c98d593959615fdf5cda3d005fc41",
+      "bytes": 317
+    },
+    {
+      "path": "shaders/r3/copvr_pda.ps",
+      "sha256": "2f899a0f97cb5df99cb2d813d24a8afa05d0f0c6002a6071dbe7c06f8859b51f",
+      "bytes": 326
+    },
+    {
+      "path": "shaders/r3/copvr_pda.s",
+      "sha256": "21be5f23832150926b5fc1621389f69d0d55202a5fbb9a064953433c8449a38d",
+      "bytes": 319
+    },
+    {
+      "path": "shaders/r3/copvr_scope.ps",
+      "sha256": "4cc2f7fd3a600388563181c60f093f4a730ca62f41ded0286b679d5d4f76210a",
+      "bytes": 983
+    },
+    {
+      "path": "shaders/r3/copvr_scope.vs",
+      "sha256": "5125db2dfcd41a4ce25c64449462a0a695a3481e1e0d60ea8c8154aa3c1a1edf",
+      "bytes": 416
+    },
+    {
+      "path": "shaders/r3/copvr_scope_g36.s",
+      "sha256": "ae8bc4ea344a7c84785dd5c97651b316f9352f0a3c4753dde6f74c7deb34f66f",
+      "bytes": 376
+    },
+    {
+      "path": "shaders/r3/copvr_scope_pso.s",
+      "sha256": "7594312c576118c2709b816c72dbf5ac3736d32df2fffa2174237ca1da67c43a",
+      "bytes": 372
+    },
+    {
+      "path": "shaders/r3/copvr_scope_rpg.s",
+      "sha256": "cd86cce40af5a6111a0e4c4a2e7e5109a79d5c40f3f77c85f7d4681ccb758b48",
+      "bytes": 376
+    },
+    {
+      "path": "shaders/r3/copvr_scope_susat.s",
+      "sha256": "0426e8bf2236dd4eea5e8e5158f2031c53c84b8fe187db57eb8ea09a9df8491f",
+      "bytes": 376
+    },
+    {
+      "path": "shaders/r3/copvr_wrist.ps",
+      "sha256": "05c0da019f5aa2569a037e18478ee5ef80b783558bd367822ea45f3b2b87b6cc",
+      "bytes": 172
+    },
+    {
+      "path": "shaders/r3/copvr_wrist.s",
+      "sha256": "7601606c97e1a285f9c8847b78cb3f4b3b96cb492f16bb8f6a8075eda6f8a3b8",
+      "bytes": 315
+    },
+    {
+      "path": "shaders/r3/copvr_wrist.vs",
+      "sha256": "4e6e2ab3c0f38b2f106f87020e37aa05a985dc30a124312cec63543fbb19ac8e",
+      "bytes": 296
+    },
+    {
+      "path": "shaders/r3/copvr_zones.ps",
+      "sha256": "23a4f6338403836f96009547cf35fea148d4bcc4e0f98756e06339137c08c140",
+      "bytes": 75
+    },
+    {
+      "path": "shaders/r3/copvr_zones.s",
+      "sha256": "cd4a9e5d7e49feb576879af146b54124990f66d99ea17c196f3280b5ff18e0e2",
+      "bytes": 262
+    },
+    {
+      "path": "shaders/r3/copvr_zones.vs",
+      "sha256": "e42fc622c5b2a87cba3e38e7aac13bf69e9811da126d6d382c221493af1d2b58",
+      "bytes": 264
+    },
+    {
+      "path": "shaders/r3/editor.vs",
+      "sha256": "68cf4cb6a410f475619bd31ec531b5f4f7fb61e97ff0175a9646bdbc45553dbb",
+      "bytes": 336
+    },
+    {
+      "path": "shaders/r3/effects_wallmark.s",
+      "sha256": "7ad912bdf8c4633b74f23871803b4a50746dd66fc80c695d65d73a5a3502b512",
+      "bytes": 320
+    },
+    {
+      "path": "shaders/r3/shared/common.h",
+      "sha256": "a8563f4b4fffc44f63df9d3b00db0f83ff320e41634bb3466063eacd65572cf3",
+      "bytes": 2084
+    },
+    {
+      "path": "shaders/r3/skin.h",
+      "sha256": "e73cea44bc6a2c536079d4640371299112d34defc131f6b95f025a7931cd2d4c",
+      "bytes": 6388
+    },
+    {
+      "path": "shaders/r3/ssao.ps",
+      "sha256": "9aa7f413f7154e7b9876a10c44b736635c895a78d07a74d4053993490baa4886",
+      "bytes": 6220
+    },
+    {
+      "path": "shaders/r3/ssao_hdao.ps",
+      "sha256": "7af45d11ff15a3e2d865f8fc4397858d2ca7914b5bd09de1490224aa33c25731",
+      "bytes": 12032
+    },
+    {
+      "path": "shaders/r3/ssao_hdao_new.ps",
+      "sha256": "7aef4589e1b253e549c49d0ef6429501ee5a5eb6b00c0b4f7db4d2958e001c6d",
+      "bytes": 22508
+    },
+    {
+      "path": "sounds/copvr/mechanical/beretta_reload_insert.ogg",
+      "sha256": "b9619d0fe87b68814edea1a8aa088d8feecf5527804ab8a43c2e9a67c389512d",
+      "bytes": 8670
+    },
+    {
+      "path": "sounds/copvr/mechanical/beretta_reload_rack.ogg",
+      "sha256": "7d079d29b9854445371f8f817c33987256226ea95ec0dceb5058b95912088f8a",
+      "bytes": 7708
+    },
+    {
+      "path": "sounds/copvr/mechanical/beretta_reload_remove.ogg",
+      "sha256": "f2d9c7c5b5e237a0bae711a11aa59bc9d25e777ab9ee93f4c07a79436362bb44",
+      "bytes": 6181
+    },
+    {
+      "path": "sounds/copvr/mechanical/bm16_reload_lr_internal_insert.ogg",
+      "sha256": "ce696faba934dc20a4a3fd12d9e43b4f798b158e4833d05c919a0d2e5c9fb78e",
+      "bytes": 6185
+    },
+    {
+      "path": "sounds/copvr/mechanical/bm16_reload_lr_internal_rack.ogg",
+      "sha256": "c2c3563f6cc5285cd7ce19f4cd5d209533b92d6f32d2480d53c5ce793cbbedc4",
+      "bytes": 6921
+    },
+    {
+      "path": "sounds/copvr/mechanical/bm16_reload_lr_internal_remove.ogg",
+      "sha256": "d15fd9dfc11c8772e0c275dcc61682dd5571dbca2afe68b12341133623f60e1c",
+      "bytes": 9393
+    },
+    {
+      "path": "sounds/copvr/mechanical/bm16_reload_lr_rack.ogg",
+      "sha256": "c160cf584c94679ca43a74cb23910440cd37d127b75b1a19740ce48fb232a8b7",
+      "bytes": 6921
+    },
+    {
+      "path": "sounds/copvr/mechanical/fn2000_reload_insert.ogg",
+      "sha256": "5998516cc8663e7ba34ee9052b8dbe185fbf942f4941a3e069e93ad482989d5f",
+      "bytes": 8171
+    },
+    {
+      "path": "sounds/copvr/mechanical/fn2000_reload_rack.ogg",
+      "sha256": "34edb91a3b69683a6728ce302923d05f95113443d807d87e13ce6e9f9cf28ec1",
+      "bytes": 9911
+    },
+    {
+      "path": "sounds/copvr/mechanical/fn2000_reload_remove.ogg",
+      "sha256": "95726fa218e9e30eb2efa67d1eb05a99aa6eabd210625e80ad928cb8e08b2a37",
+      "bytes": 7538
+    },
+    {
+      "path": "sounds/copvr/mechanical/g36_reload_insert.ogg",
+      "sha256": "62080d37b7f313d5afa4f5346c95d17faa64c29891cfb16528ae361f0bf66fa4",
+      "bytes": 9127
+    },
+    {
+      "path": "sounds/copvr/mechanical/g36_reload_rack.ogg",
+      "sha256": "6e681cf7866e6f19e2994e5b995e2f08645593098cb5c44738ceaddc60c6c718",
+      "bytes": 9626
+    },
+    {
+      "path": "sounds/copvr/mechanical/g36_reload_remove.ogg",
+      "sha256": "a7b8ff2cf75075d46ba4f3152ce22b75d2e29fa193fc9e2bc333ba2d2c60e50e",
+      "bytes": 6894
+    },
+    {
+      "path": "sounds/copvr/mechanical/gauss_reload_insert.ogg",
+      "sha256": "5dec058da8124df9d82187a690d19b7108d9129757518c54bfd7344776bace7d",
+      "bytes": 10289
+    },
+    {
+      "path": "sounds/copvr/mechanical/gauss_reload_remove.ogg",
+      "sha256": "8c1a83b8f3508f32c88f8c88e84f4f60f1a80fc2374d0f9c8d22db88bbd4b84f",
+      "bytes": 7556
+    },
+    {
+      "path": "sounds/copvr/mechanical/groza_reload_insert.ogg",
+      "sha256": "9e1fd402ddffd9215e1158566ec3a4de426e0859a4df33313b54389435ab19c6",
+      "bytes": 9441
+    },
+    {
+      "path": "sounds/copvr/mechanical/groza_reload_rack.ogg",
+      "sha256": "18b6426a7f9346d7e1f7b485178cc1fb0496c8131c7fba8edf2cc7380e21f29b",
+      "bytes": 10872
+    },
+    {
+      "path": "sounds/copvr/mechanical/groza_reload_remove.ogg",
+      "sha256": "909cfe1418d5bc2a85d845022e219ae13ed13b72cc5ce20908605ada63b63bbe",
+      "bytes": 6973
+    },
+    {
+      "path": "sounds/copvr/mechanical/l85_reload_insert.ogg",
+      "sha256": "c155674dbefa9601b811bf82144f9affb880863090a320567801df55c2216003",
+      "bytes": 6634
+    },
+    {
+      "path": "sounds/copvr/mechanical/l85_reload_rack.ogg",
+      "sha256": "abc4084b1ec8075fd8ca5c820d5b295ccb468785677ce8fcef636e1b6ba0d50e",
+      "bytes": 9005
+    },
+    {
+      "path": "sounds/copvr/mechanical/l85_reload_remove.ogg",
+      "sha256": "f5fd012a440d3fbc1e6bb29905324d975f6e78e4b625db21b57aeb16931740a5",
+      "bytes": 8034
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_abakan_hud_finish.ogg",
+      "sha256": "afea53d39a31abc91b430800e2faf6e020f23539accd025f97f75cf2e554f4af",
+      "bytes": 5647
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_ak74_hud_finish.ogg",
+      "sha256": "4f1a2352d5e8eb8e969a57d969c2481b62b05d7f6c0a77dc63fb334d143c7740",
+      "bytes": 5647
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_fn2000_hud_finish.ogg",
+      "sha256": "19c315b0e53ebf749d2ffb3e287a8768a544ec008e11b8cd444b1a882fa72e30",
+      "bytes": 11170
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_groza_hud_finish.ogg",
+      "sha256": "061a9c1e18f77ae71d75580c4b596c112b538e9b1cdc771d2f5d3e14bcd91b30",
+      "bytes": 5647
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_lr300_hud_finish.ogg",
+      "sha256": "16ce95d134105ed434e92c475dce7b0dbe3ef5191daf54fe1b156c3edbdf47d2",
+      "bytes": 5647
+    },
+    {
+      "path": "sounds/copvr/mechanical/launcher_wpn_sig550_hud_finish.ogg",
+      "sha256": "89313f47c5776140f3bbdf3cfe7c647f2f9711e334259354bee06442fcd42d97",
+      "bytes": 11647
+    },
+    {
+      "path": "sounds/copvr/mechanical/mp5_reload_insert.ogg",
+      "sha256": "64a7c0ee4038ce4fac267e6a39fb7d734d7fe20324dbdf4bc0fe8dddbc2eef39",
+      "bytes": 8392
+    },
+    {
+      "path": "sounds/copvr/mechanical/mp5_reload_rack.ogg",
+      "sha256": "c75015e6d9d96736a5de5ac4831ce860343f621b49020d24beae200a9f4746ef",
+      "bytes": 8534
+    },
+    {
+      "path": "sounds/copvr/mechanical/mp5_reload_remove.ogg",
+      "sha256": "ca9a930538f6e213b359e22adaa5dc4a177b3e206a67e4d431b3b64b5f612b57",
+      "bytes": 6278
+    },
+    {
+      "path": "sounds/copvr/mechanical/pistol_reload_insert.ogg",
+      "sha256": "016ac4ee7809da6d9fc2ed550f176e875db4c27d1b263fbc0145993069b964f2",
+      "bytes": 8670
+    },
+    {
+      "path": "sounds/copvr/mechanical/pistol_reload_rack.ogg",
+      "sha256": "2de03641778ba0d87cac73bb806f28a9d4a594d84d0d50a0445cdffdbb1460dc",
+      "bytes": 7708
+    },
+    {
+      "path": "sounds/copvr/mechanical/pistol_reload_remove.ogg",
+      "sha256": "8c01a0547e08b74a39595754160eac2007091387d370a750aa81754db6a2cb65",
+      "bytes": 6181
+    },
+    {
+      "path": "sounds/copvr/mechanical/pkm_reload_insert.ogg",
+      "sha256": "a5ec7fb3c68a6b19baa67cca44355a58e13d01f215a5d7446025adef5bdecdd7",
+      "bytes": 9233
+    },
+    {
+      "path": "sounds/copvr/mechanical/pkm_reload_rack.ogg",
+      "sha256": "8e1dc4dd78855fbfd3db43c03dd6274a06dc8c245612cc0e105b132b9b92039f",
+      "bytes": 9744
+    },
+    {
+      "path": "sounds/copvr/mechanical/pkm_reload_remove.ogg",
+      "sha256": "9f2ad3403d124055208acfd6cc97613866c235b5eac63e7b305f6374cfc2209b",
+      "bytes": 6603
+    },
+    {
+      "path": "sounds/copvr/mechanical/rg6_reload_end_internal_rack.ogg",
+      "sha256": "db948e3d36e22e709fec01cebee0da30e19e03ff0b62bbb0ce8df2d57f4d6ac3",
+      "bytes": 4013
+    },
+    {
+      "path": "sounds/copvr/mechanical/rg6_reload_internal_insert.ogg",
+      "sha256": "9844df8ebb5dce693117bba2042ddc5447aa7acd0af6f140981e207b8a8e5623",
+      "bytes": 10415
+    },
+    {
+      "path": "sounds/copvr/mechanical/rg6_reload_rack.ogg",
+      "sha256": "10656926dca5f3028ebc15081fea130580735d628643ad661f69295b75605110",
+      "bytes": 10415
+    },
+    {
+      "path": "sounds/copvr/mechanical/rg6_reload_start_internal_remove.ogg",
+      "sha256": "03ba3019e15f07275a84779dfddbd34f80c63d8d62651f1f1dca12009f0fb96a",
+      "bytes": 6493
+    },
+    {
+      "path": "sounds/copvr/mechanical/rpg7_reload_internal_insert.ogg",
+      "sha256": "408063936fcaedf3869755c8cb017ab969bd6cf35083facc0a37320f4e002a42",
+      "bytes": 13754
+    },
+    {
+      "path": "sounds/copvr/mechanical/rpg7_reload_rack.ogg",
+      "sha256": "a9b3461d5120991a5e4507f0a5db3751311d75e261654d8c5df107bcbd69a0f1",
+      "bytes": 9297
+    },
+    {
+      "path": "sounds/copvr/mechanical/sig550_reload_insert.ogg",
+      "sha256": "198d1be41f78a22f6c03c674ae61c1e0d71fe9fc7b2900279b8204e08fdf3243",
+      "bytes": 9144
+    },
+    {
+      "path": "sounds/copvr/mechanical/sig550_reload_rack.ogg",
+      "sha256": "1b47b41d22476a620fa2644c4c35afe05ebb709468df038d2c47608dfdf50758",
+      "bytes": 9861
+    },
+    {
+      "path": "sounds/copvr/mechanical/sig550_reload_remove.ogg",
+      "sha256": "a23c86c92c5baf99c20c747db6b7bc7dafb4b6bdffc7315da243ec0facb0a137",
+      "bytes": 6728
+    },
+    {
+      "path": "sounds/copvr/mechanical/spas12_close_internal_rack.ogg",
+      "sha256": "0da3931eda0a6a4c75dd10287207b2f4defca642f39ab68a79ab2942f9037c3f",
+      "bytes": 7598
+    },
+    {
+      "path": "sounds/copvr/mechanical/spas12_close_rack.ogg",
+      "sha256": "626dff53f133af7d2c576d3c7246181cfffeb5168e939a89876d70a1a7df99e7",
+      "bytes": 7598
+    },
+    {
+      "path": "sounds/copvr/mechanical/spas12_open_internal_remove.ogg",
+      "sha256": "20115a488c613a69d2071e468d8badf74c1db0e80e1d55b4aaa239e2160f35bc",
+      "bytes": 9267
+    },
+    {
+      "path": "sounds/copvr/mechanical/spas12_reload_internal_insert.ogg",
+      "sha256": "b071ac3ff158e629f4ac0c8bc70fc6a9384300cc7db37fa9e891b523338ff651",
+      "bytes": 7776
+    },
+    {
+      "path": "sounds/copvr/mechanical/svd_reload_insert.ogg",
+      "sha256": "5fec90fee15ae84bdc81d4a798c0d01cffd1904b56bfacf1eb06f2590752c459",
+      "bytes": 10125
+    },
+    {
+      "path": "sounds/copvr/mechanical/svd_reload_rack.ogg",
+      "sha256": "4e31634a14588395bdb21bea91bb870047ab3e4755e5ff008a866e1b6aa70f6b",
+      "bytes": 8514
+    },
+    {
+      "path": "sounds/copvr/mechanical/svd_reload_remove.ogg",
+      "sha256": "e3158246ce8f75f80b8997c1030c55886bb31f8687453eab9c9cf67aca0d5f92",
+      "bytes": 7100
+    },
+    {
+      "path": "sounds/copvr/mechanical/svu_reload_insert.ogg",
+      "sha256": "8129d23bb9948095845f116e0c0f2dc47aefac4ea4bbc3c14df3412e35ca3033",
+      "bytes": 8244
+    },
+    {
+      "path": "sounds/copvr/mechanical/svu_reload_rack.ogg",
+      "sha256": "06c84cf0f67d8c7bf095ca15652e3629ed4d1235bcf030b271ef189c3fab815b",
+      "bytes": 10086
+    },
+    {
+      "path": "sounds/copvr/mechanical/svu_reload_remove.ogg",
+      "sha256": "580f14ba83a0bc532f77507f3d9a9f5037668a9438d3d45bebfa1798bb86138c",
+      "bytes": 7066
+    },
+    {
+      "path": "sounds/copvr/mechanical/toz34_reload_internal_insert.ogg",
+      "sha256": "3b6c44e061b844c5f8074cadd970532a5bbcf8bf0c1363621dc05c4529b5ab63",
+      "bytes": 5828
+    },
+    {
+      "path": "sounds/copvr/mechanical/toz34_reload_internal_rack.ogg",
+      "sha256": "dc3430ffeb25b07402cca0d5ebf9f58d2d90c82f2f82dc7a0bb3626bf88a6401",
+      "bytes": 7809
+    },
+    {
+      "path": "sounds/copvr/mechanical/toz34_reload_internal_remove.ogg",
+      "sha256": "f116854ed1c5237665e93d3e75cf9bbd3d5a67ed48910bd44382dc759e29a398",
+      "bytes": 6915
+    },
+    {
+      "path": "sounds/copvr/mechanical/toz34_reload_rack.ogg",
+      "sha256": "b08e14125c5f1901565518625408932b69923e0bb16ad26e4195d27e469d3682",
+      "bytes": 7809
+    },
+    {
+      "path": "sounds/copvr/mechanical/w1300_close_internal_rack.ogg",
+      "sha256": "be09ca7d3cd7ff29a9ddf46a174ade098c96229187d473263e981094e9e746f5",
+      "bytes": 5950
+    },
+    {
+      "path": "sounds/copvr/mechanical/w1300_close_rack.ogg",
+      "sha256": "1582d24977991346e09e003cd47a6fa4d60d67bc6c20486079db1e95189d2c6a",
+      "bytes": 5950
+    },
+    {
+      "path": "sounds/copvr/mechanical/w1300_load_internal_insert.ogg",
+      "sha256": "251fab77c4a3afc56822b8a7d9942dc1adc4544428ac0cb3b4ba1c356ff92cd9",
+      "bytes": 7735
+    },
+    {
+      "path": "sounds/copvr/mechanical/w1300_open_internal_remove.ogg",
+      "sha256": "bd9d2747a91ba03b407b888edd565ebd6e78d2280315c0ea5e42369945792446",
+      "bytes": 7384
+    },
+    {
+      "path": "textures/copvr/zone.dds",
+      "sha256": "f956491e59397a8e884e1f6149d746795388e039863e9029b90685b1405ce226",
+      "bytes": 132
+    },
+    {
+      "path": "textures/ui/ui_actor_pda.dds",
+      "sha256": "fb936919df346c2d1bbc6937774a899a1ffb539298a37d30eb57f83143468ad7",
+      "bytes": 1048704
+    }
+  ],
+  "graphics_source_sha256": "ed00a71e5964bc940c314d4f7a590db1ccfa6741eed25f81baa30fc94cef5479"
+}

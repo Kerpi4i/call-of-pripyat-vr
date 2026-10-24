@@ -1,0 +1,14 @@
+# Estimated torso anchors and all zone visualization, alpha 2x
+
+Replace direct headset-origin body slots with an estimated pelvis/torso rig. Use tracked head position/orientation and the existing height calibration; no visible body mesh or additional tracking device is introduced. Body heading retains the existing bounded head-yaw/movement-axis rules.
+
+Estimate a neck point from the headset (10 cm down, 8 cm back in the head frame), separating ordinary head rotation from torso movement. Keep a persistent horizontal pelvis anchor while leaning. Infer geometric spine shortening from horizontal neck displacement, then treat residual height loss as crouch. Waist/back quick-slot anchors remain yaw-only; the chest anchor follows a point along the inferred spine and tilts partially with it. Pure upright crouch lowers both anchors together. Keep the estimated pelvis at least 30 cm above the floor and separate fixed chest/quick rows at maximum compressed crouch.
+
+Upright sustained room-scale motion uses entry/exit hysteresis (20 cm / 6 cm and 250 ms) to move the anchor without immediately treating a lean as a step. Large displacement is bounded by inferred spine reach. Joystick travel and snap turns apply through the existing tracking-to-world base immediately. This is a heuristic from headset motion, not actual pelvis tracking; ambiguous shallow lean/step cases and extreme floor poses need headset evaluation.
+
+Chest interactions (detector/binocular, grenade chord and inventory stow) use the chest frame. Quick slots and rear knife/bolt/reload activator use the pelvis-based frame. Torch and head weapon rack retain explicit headset-relative placement. All interaction and debug rendering paths use their respective shared frames. Height recalibration (right-stick click while standing) and current-view-owner changes reset the estimator. Existing physical crouch/hit collider behavior is unchanged.
+
+Enable [body] debug_zones=true and debug_other_zones=true. Show chest cyan, quick rows pink, rear waist orange, head weapon rack purple, temples yellow. Also display weapon reload port green, foregrip blue and charging handle pale yellow whenever a matching weapon is held, without requiring a reload proxy first. Respect configured handle-bone/reload offsets. No visible character body is enabled.
+
+Validation: body estimator tests cover upright placement, squat, hip-centred lean, neck-only look-down, deep crouch floor/row bounds, room-scale anchor following and recalibration. Existing body zone/heading tests and other current math suites passed. First builds succeeded; final build contains room-scale hysteresis and deep-crouch separation. No game launch. Begin headset evaluation standing upright and recalibrate height before comparing lean/crouch reach.
+Final xrGame build succeeded; body estimator, body zones, hand filter, knife, optics and scope state tests passed; engine patch checks passed.

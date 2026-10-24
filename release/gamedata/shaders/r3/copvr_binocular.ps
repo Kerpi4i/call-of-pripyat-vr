@@ -1,0 +1,9 @@
+Texture2D s_base; SamplerState smp_rtlinear;
+uniform float4 screen_res;
+float4 main(float4 P:SV_Position,float2 uv:TEXCOORD0,float2 tube:TEXCOORD1):SV_Target {
+    float2 sampleUV=float2(.5+(uv.x-.5)*screen_res.y*screen_res.z,uv.y);
+    float valid=all(uv>=0)&&all(uv<=1)?1:0;
+    // One angular pupil shared by both eyes, never independent left/right tube tests.
+    float opening=1-smoothstep(.85,1.0,length(tube));
+    return float4(s_base.Sample(smp_rtlinear,saturate(sampleUV)).rgb*opening*valid,1);
+}

@@ -1,0 +1,222 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Call of Pripyat VR — Alpha 0.1.0</h1>
+<p>Unofficial, free PC VR modification for the <strong>original Steam S.T.A.L.K.E.R.: Call of Pripyat 1.6.02</strong>. Built on OpenXRay. Requires the purchased original game; no game archives are supplied. The owner confirmed installation and launch on 2026-10-25; individual feature regression remains incomplete. It is not affiliated with or endorsed by GSC Game World, Valve or Meta.</p>
+<h2>Requirements and scope</h2>
+<ul>
+<li>Windows 10/11 x64, .NET Framework 4.8 for setup/launcher, a DX11-capable GPU and a working 64-bit OpenXR runtime. No Python, Visual Studio or PowerShell configuration is needed to play through the EXE launcher.</li>
+<li>The tested setup is <strong>Meta Quest 2 + Touch controllers + USB Quest Link</strong>. Other headsets, Air Link, Steam Link, Virtual Desktop, SteamVR runtime and seated play are unverified. Bare-hand tracking is not implemented.</li>
+<li>Original/classic Steam game only. Enhanced Edition, Anomaly, other overhaul mods, multiplayer and cross-mod compatibility are not supported by this alpha. A full campaign playthrough has not been completed.</li>
+<li>There is no measured minimum GPU or guaranteed frame-rate target yet. The development machine uses an RX 6900 XT; this is not a minimum specification.</li>
+</ul>
+<h2>Install and start</h2>
+<ol>
+<li>Install the original Steam game and launch it normally once to confirm it works. Close it.</li>
+<li>Open Meta Quest Link on the PC. Set it as the active OpenXR runtime, connect the headset over USB and enter Quest Link.</li>
+<li>Run <code>CoPVR-0.1.0-alpha.1-Setup.exe</code>. Confirm the detected original game folder or choose it manually. Choose a <strong>separate, empty mod folder</strong>, outside the Steam game directory. ASCII/Latin characters are required in both paths for this alpha. Installation needs no administrator rights in a user-writable folder.</li>
+<li>Open the desktop shortcut or <code>CoPVR.exe</code>. Click <strong>Play in VR</strong>. Setup does not start the game automatically.</li>
+<li>Stand upright, face your intended forward direction and <strong>click the right stick</strong> in gameplay. This recalibrates the room origin, forward heading, eye height and standing collision height. Calibration is blocked when crouching. Release triggers/sticks before entering gameplay.</li>
+<li>Start a new game for the acceptance test. Existing saves can be copied manually into <code>data/savedgames</code>, but back them up first. Do not overwrite your original saves with VR saves; new weapon-state data is not guaranteed to be readable by the original executable.</li>
+</ol>
+<p>The portable ZIP is an alternative: extract into a new user-writable folder, open <code>CoPVR.exe</code>, choose <strong>Change game folder</strong>, then Play. It does not register an uninstaller or create a shortcut.</p>
+<p>All game archives remain in the original installation. The mod's <code>data/</code> directory contains its settings, saves, logs, screenshots and shader cache. Normal Steam launch remains separate. To uninstall a setup installation, use Windows Installed Apps or run <code>Uninstall.ps1</code> after closing the launcher/game; <code>data/</code> is preserved. With the portable edition, keep <code>data/</code> and remove the extracted mod folder manually.</p>
+<h2>Controller terminology</h2>
+<p><strong>Grip</strong> means the side/lower middle-finger trigger. <strong>Trigger</strong> means the front/upper index-finger trigger, sometimes called the bumper in development notes. Every grab uses a fresh grip press; passing through a zone while already holding something must not replace it. Interactions are measured at the virtual palm.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left stick</td>
+<td>Head-relative movement</td>
+</tr>
+<tr>
+<td>Left stick click</td>
+<td>Sprint; unavailable during physical crouch</td>
+</tr>
+<tr>
+<td>Right stick left/right</td>
+<td>30° snap turn</td>
+</tr>
+<tr>
+<td>Right stick down</td>
+<td>Cycle the equipped firearm's available fire modes; not holster</td>
+</tr>
+<tr>
+<td>Right stick up/down while looking through binoculars</td>
+<td>Adjust binocular magnification</td>
+</tr>
+<tr>
+<td>Right stick up/down in menus</td>
+<td>Scroll</td>
+</tr>
+<tr>
+<td>Right stick click</td>
+<td>Standing calibration</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Jump</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Inventory</td>
+</tr>
+<tr>
+<td>B</td>
+<td>PDA</td>
+</tr>
+<tr>
+<td>Y / left menu button</td>
+<td>Back / main menu</td>
+</tr>
+<tr>
+<td>Grip</td>
+<td>Grab, hold or take equipment from a body zone</td>
+</tr>
+<tr>
+<td>Trigger with a firearm</td>
+<td>Fire</td>
+</tr>
+<tr>
+<td>Trigger with an item</td>
+<td>Activate/use that item where supported</td>
+</tr>
+<tr>
+<td>Trigger with an empty hand</td>
+<td>Point at a target with that hand and use: dialogue, doors, switches, sleep and other native F actions</td>
+</tr>
+</tbody>
+</table>
+<p>Keyboard and mouse game input is disabled in VR. Use the Touch ray and trigger in menus; do not rely on a keyboard shortcut to recover a stuck menu. Windows controls remain available outside the game. Some native text-entry/edge-case menus are not covered by headset acceptance yet.</p>
+<h2>Body zones — use without looking down</h2>
+<p>The full character body and floating item belt are intentionally hidden. The zones use an estimated torso frame with constrained head-following and movement alignment; physical torso/hip tracking is not available.</p>
+<table>
+<thead>
+<tr>
+<th>Where to reach</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Behind/around the head</td>
+<td>Fresh grip takes the weapon from the corresponding native inventory weapon slot. Left hand selects the left slot; right hand the right slot. Returning/releasing a weapon in the head holster region stows it instantly with sound. Slot weapon type is not restricted to pistol/rifle.</td>
+</tr>
+<tr>
+<td>Beside either temple, very close to headset</td>
+<td>Short grip then release toggles flashlight. Hold grip about 0.65 seconds for night vision if your equipment supports it. A long hold does not also toggle the flashlight.</td>
+</tr>
+<tr>
+<td>Upper chest</td>
+<td>Left-hand grip takes the detector; right-hand grip takes binoculars. Release equipment to return it. Native simultaneous-equipment restrictions remain except explicitly relaxed detector/bolt combinations.</td>
+</tr>
+<tr>
+<td>Upper chest, grip + index trigger</td>
+<td>Take a primed grenade. Throw by moving your hand and releasing grip. Releasing inside the chest zone cancels priming and returns it. Do not use this chord accidentally.</td>
+</tr>
+<tr>
+<td>Two adjacent zones below the chest</td>
+<td>Left hand: left zone = quick slot 1, right = slot 2. Right hand: left zone = slot 3, right = slot 4. Assign their contents in the inventory.</td>
+</tr>
+<tr>
+<td>Behind the waist</td>
+<td>Left-hand grip normally selects knife; right-hand grip selects bolt. With a firearm equipped, the free rear hand can supply an auxiliary bolt. Knife extraction is inhibited in the conflicting right-firearm case.</td>
+</tr>
+<tr>
+<td>Behind the waist, free hand, grip + index trigger</td>
+<td>Take the appropriate reload object for the firearm in the other hand: magazine, shell, rocket or launcher grenade. This is a reload proxy, not a loose inventory ammo box.</td>
+</tr>
+<tr>
+<td>Upper chest stow region</td>
+<td>Release an eligible held world/inventory item to store it in the inventory. This shares the chest equipment region; it is not a separate invisible pickup pocket.</td>
+</tr>
+</tbody>
+</table>
+<p>To find zones, use <strong>Settings → Gameplay → VR: interaction zones</strong>, then Apply. The choice is saved. Outlines are off by default. The outline shows the zone volume, not a solid object. Some equipment/physical interactions have priority over overlapping gestures; first release both triggers and try with an empty hand if nothing is taken.</p>
+<h2>Hands, items, inventory and PDA</h2>
+<ul>
+<li>Hold grip to keep an item; release to drop/throw it unless a stow/return rule applies. Knife, detector and binocular equipment return rather than becoming loose world items. Bolts are thrown, and a replacement becomes available after throwing.</li>
+<li>A weapon picked up from the world becomes equipped when grabbed at its grip. Weapons can be transferred between hands. A real support-grip contact stabilizes two-hand aim and improves accuracy.</li>
+<li>World items can be picked up, inspected, passed and thrown. Crates, bodies and other selected physics objects have experimental grabbing. Held objects ignore player collision to avoid camera shaking. Scripted/quest objects are not guaranteed to behave like ordinary pickups.</li>
+<li>Pull an inventory item out with ray + grip. Use trigger for normal UI selection/dragging. To unload a firearm, start dragging it in inventory, looting or trade and press grip. The most recent implementations in all three windows require regression testing.</li>
+<li>Change ammunition type <strong>in the inventory</strong>, by dragging compatible ammunition onto the weapon. A loose ammo box taken from inventory/world cannot act as the body reload proxy.</li>
+<li>Activate supported consumables with the trigger in the holding hand. They no longer require moving to the mouth or a separate use zone. If released outside stow they can be dropped.</li>
+<li>Inventory, looting, trade, dialogue and PDA retain their classic layouts inside VR. Game overlays retain the stereoscopic world behind them. Main menu/loading use a panel. Text-entry, complex PDA pages and every trade workflow have not all been retested.</li>
+<li>Right hand has a minimap; left hand has native health/status information. Wrist panels are an alpha implementation. The standard flat HUD, quickbar and doubled interaction hints are suppressed.</li>
+</ul>
+<h2>Firearms and manual reload</h2>
+<p>Automatic reload on an empty magazine is disabled. Native reload/draw/holster/cocking animations are suppressed where replaced by tracked interaction; selected jam and final insertion animations intentionally remain. Original sounds or cropped mechanical sound segments are used.</p>
+<h3>Detachable magazines (including pistol magazines, PKM box and Gauss battery)</h3>
+<ol>
+<li>Grip the installed magazine with the free hand near its socket; remove it and release to discard.</li>
+<li>Reach behind the waist with the free hand and hold <strong>grip + trigger</strong> for a fresh compatible magazine.</li>
+<li>Move it into the weapon's magazine socket. It seats on contact while still held. Releasing an unused fresh magazine elsewhere returns the proxy.</li>
+<li>Grip the slide/charging handle, pull fully back and release to chamber. Gauss does not require this manual chambering step.</li>
+<li>A jam is cleared by a complete charging-handle cycle; changing the magazine is not mandatory. A partial pull is insufficient.</li>
+</ol>
+<p><strong>Important limitation:</strong> discarded magazines are temporary visual props, not persistent ammunition containers. Remaining ammunition is returned to the shared ammunition pool on removal; fresh magazines consume loose reserve rounds when installed. This is not a tactical magazine-retention simulation. Magazine hiding on dropped/world weapons and every weapon variant still require validation.</p>
+<h3>Internal magazines and single-round weapons</h3>
+<table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Reload interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Winchester 1300 / Chaser-13</td>
+<td>Take individual shells behind the waist; insert one at a time at the loading port. Cycle the pump through its support grip after each shot. Partial topping-up is supported.</td>
+</tr>
+<tr>
+<td>SPAS-12</td>
+<td>Pull the action fully open before inserting shells at the loading port. Close the action to fire; the prototype requires pumping after shots. This is the mod's interaction design, not a claim about real SPAS operating modes.</td>
+</tr>
+<tr>
+<td>BM-16 / TOZ-34</td>
+<td>Grip the separate break-action contact forward of the ordinary support grip; open the barrels, eject spent shells, insert one shell per chamber, and close by gesture/handling the action. Ordinary support grip alone must not break the gun open.</td>
+</tr>
+<tr>
+<td>Protecta / Eliminator</td>
+<td>Insert shells individually at the receiver loading window. Manual cocking is required after loading from empty, not for topping up a nonempty gun.</td>
+</tr>
+<tr>
+<td>RPG-7</td>
+<td>Take a full-size rocket and release it at the muzzle reload zone. The final native insertion animation/sound completes loading. No separate chambering gesture.</td>
+</tr>
+<tr>
+<td>RG-6 / Bulldog-6</td>
+<td>Grip its latch contact and pull rearward roughly 4 cm to open. Load individual VOG rounds into the open drum; indexing is animated. Re-grip/pull the latch to close. The opening arc is 180°. Exact hand alignment and every firing/loading sequence need regression testing.</td>
+</tr>
+</tbody>
+</table>
+<h3>Underbarrel launchers</h3>
+<p>Hold the support grip and press that hand's index trigger to toggle grenade-launcher mode. Obtain a matching grenade from the rear-waist reload chord, then release at the underbarrel muzzle zone. A final native loading animation is intentional. Repeat the support-trigger toggle or holster to return to rifle mode. Physical muzzle origins were recently corrected and are not yet confirmed in-headset for every launcher.</p>
+<h2>Knife, optics and movement</h2>
+<ul>
+<li>Knife attacks use physical swept blade movement and speed-dependent damage, not the original button attack. Player/NPC collision was disabled for melee access, but the latest contact-path correction is not yet headset-confirmed. Bullet/knife hit detection remains enabled.</li>
+<li>Binoculars and detachable/integrated scopes use additional rendered views, reticles and a tunnel mask. Binocular zoom uses right-stick up/down. Support grip improves firearm accuracy; the additional optics bonus requires support grip and an aligned viewing eye.</li>
+<li>Weak adaptive hand smoothing is enabled; throws and knife speed use raw motion history. This is controller tracking, not optical tracking of bare fingers.</li>
+<li>Physical crouching changes the player collision volume. Crouching halves movement speed and disables sprint; the latest speed/calibration changes need acceptance. There is no crouch-toggle requirement for standing play.</li>
+<li>Sound orientation follows the headset. Camera motion in the wounded-NPC help sequence and sleep interaction were previously confirmed fixed; broader scripted camera coverage is incomplete.</li>
+</ul>
+<h2>Graphics and stability</h2>
+<p>Release graphics are snapshotted from the developer's <strong>current</strong> working configuration, including 2560×1440 render dimensions and its current quality/distance values. Monitor name and refresh-rate identity are removed for portability. This may be demanding; reduce settings in-game if necessary. Some settings need a full restart.</p>
+<p>DX11/R4, borderless window, MSAA off and HDAO off/HBAO selected are compatibility constraints enforced before launching. Other quality settings persist. Do not manually re-enable exclusive fullscreen/MSAA/HDAO for this alpha: a prior imported combination caused a black-screen system hang, and its precise cause was not isolated. The corrected launch was confirmed to work.</p>
+<p>The latest 5 cm near-plane change targets world-surface depth flicker. Its headset result is <strong>unverified</strong>. Very close geometry may clip; lens protection has been adapted. Foliage shimmer may remain.</p>
+<h2>What has actually been tested?</h2>
+<p>See <a href="FEATURE-STATUS.en.html">FEATURE-STATUS.en.md</a>. “Confirmed” means the tester reported the feature working at an earlier checkpoint on Quest 2. It does not mean every weapon, save, game location or the final installer has passed. Installer extraction, code builds and unit tests cannot certify headset comfort or campaign completion.</p>
+<p>Known high-priority checks: clean install, save/load after death (a historical crash was not explicitly confirmed resolved), all newly changed launcher/reload/calibration paths, interaction-zone toggle, latest depth-flicker correction, every weapon variant and long sessions.</p>
+<h2>Troubleshooting and bug reports</h2>
+<ul>
+<li>No VR: confirm USB Quest Link is entered and Meta's 64-bit OpenXR runtime is active. The launcher checks the runtime registration, not whether the headset is actually ready.</li>
+<li>No movement/grabs after menu or lost tracking: release both grips/triggers, center sticks, regain tracking/focus, then try again. Do not recalibrate while crouching.</li>
+<li>Wrong zone alignment: stand upright and calibrate. Enable zone outlines in Gameplay. Body position is estimated from headset/controllers, so unusual lean/stance may still cause errors.</li>
+<li>Missing graphics/runtime DLL: reinstall the complete package rather than copying only <code>CoPVR.exe</code>. Windows/.NET requirements still apply.</li>
+<li>Before reporting, copy <code>data/logs/</code>, state the mod version, headset/runtime/GPU, save used and reproducible steps. Attach screenshots/video if useful. Review logs for your Windows username/local paths before sharing publicly. Do not upload original game archives.</li>
+<li>For a black screen/system hang, stop further tests and report what happened. The launcher cannot prevent or recover every GPU/driver hang.</li>
+</ul>
+<p>There is no automatic upload, update service or telemetry in the launcher. No publication is performed by setup.</p></html>

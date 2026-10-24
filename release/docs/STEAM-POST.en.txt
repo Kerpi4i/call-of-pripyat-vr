@@ -1,0 +1,22 @@
+TITLE
+Call of Pripyat VR — free alpha for Quest 2 / Touch (original Steam version)
+
+POST
+[h1]Explore the Zone in PC VR[/h1]
+I've been working on an unofficial VR mod for the original Steam version of S.T.A.L.K.E.R.: Call of Pripyat 1.6.02, built on OpenXRay.
+
+The alpha includes stereoscopic rendering and headset tracking, tracked Touch hands, weapon handling in either hand, two-hand support, physical reloads, stereo binoculars and scopes, grabbing/throwing items, body-based equipment zones, menu rays and physical crouching. It includes its own installer and EXE launcher, plus detailed English and Ukrainian control guides.
+
+[b]Requirements:[/b] the purchased original Steam game (not Enhanced Edition), a Windows x64 PC, and a PC VR connection. Development testing used Meta Quest 2, Touch controllers and USB Quest Link. This is not a standalone Quest APK. Other headsets/runtimes and full campaign completion have not been verified.
+
+[b]This is an alpha, not a finished VR conversion.[/b] Some interactions and weapon variants still need testing. Discarded magazines currently use a shared ammunition pool rather than retaining individual ammunition. Independent dual-firearm use is not supported. The release notes distinguish features previously confirmed in-headset from newer, unverified changes and list known stability issues.
+
+The mod installs separately and references the original game's resources. It does not replace your Steam game files. Please back up saves and start with a new game for testing.
+
+[b]Download and instructions:[/b]
+https://github.com/Kerpi4i/call-of-pripyat-vr/releases/tag/v0.1.0-alpha.1
+
+Bug reports with the version, headset/runtime, GPU and clear reproduction steps are welcome. Please read the controls first, especially body slots and manual reloading.
+
+This is a free, unofficial fan modification, not affiliated with or endorsed by GSC Game World, Valve or Meta. Credit to OpenXRay and the OpenXR ecosystem.
+

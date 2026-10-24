@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Feature status — Alpha 0.1.0 candidate</h1>
+<p>Evidence is from the development session on Quest 2 / Touch / USB Link. Historical confirmations are <strong>not</strong> final-build regression acceptance. No complete campaign or multi-headset qualification is claimed.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Evidence / remaining work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stereo world, head tracking, both-eye lighting</td>
+<td>Explicitly confirmed; Skadovsk doubling/noise and one-eye lighting were reported fixed.</td>
+</tr>
+<tr>
+<td>Touch aiming, shooting, haptics, left/right grips, hand transfer, support aim</td>
+<td>Confirmed during earlier iterations; final per-weapon sweep still needed.</td>
+</tr>
+<tr>
+<td>Free hands, knife/binocular/detector poses</td>
+<td>User reported all grips working after pose corrections; every animation/model variant not certified.</td>
+</tr>
+<tr>
+<td>World pickup, inspection, transfer, throw; grip-to-equip weapon</td>
+<td>Confirmed. Throw strength was subsequently increased; exact range is not measured.</td>
+</tr>
+<tr>
+<td>UI rays, skip startup logos, loading acknowledgement</td>
+<td>Confirmed. Latest setup path and new-game flow must be retested.</td>
+</tr>
+<tr>
+<td>Stereo inventory/dialogue/PDA overlays</td>
+<td>Confirmed at earlier checkpoint. Closing-transition fixes and every PDA page still need regression.</td>
+</tr>
+<tr>
+<td>Body-zone prototypes, flashlight/head-follow, sleep, head-relative movement and audio</td>
+<td>Explicit earlier confirmations exist. Later geometry/calibration changes still need final regression.</td>
+</tr>
+<tr>
+<td>Physical crouch changes collision height</td>
+<td>Explicitly confirmed. New full calibration, speed halving and sprint block are code/build tested, not headset-confirmed.</td>
+</tr>
+<tr>
+<td>Binocular zoom, stereo view, scope lenses/tube/reticles</td>
+<td>Earlier optical result confirmed good; latest near-plane change requires checking again.</td>
+</tr>
+<tr>
+<td>Physical magazine reload and internal/single-round shotgun/RPG reload</td>
+<td>User reported the reload group working before later refinements. Precise contact/sound/visibility fixes, all 26 mag profiles and seven internal profiles require systematic testing.</td>
+</tr>
+<tr>
+<td>Inventory unload</td>
+<td>Confirmed in inventory. Loot/trade support was added later and needs explicit confirmation.</td>
+</tr>
+<tr>
+<td>Underbarrel loading/switching, all launcher projectile origins</td>
+<td>Implemented; later muzzle correction not headset-confirmed.</td>
+</tr>
+<tr>
+<td>RG-6 pull latch, 180° opening, drum indexing; SPAS open-action requirement</td>
+<td>Implemented/refined after feedback; no explicit final confirmation.</td>
+</tr>
+<tr>
+<td>Jam clearing by full charging-handle stroke</td>
+<td>Implemented after user report; final behavior unconfirmed.</td>
+</tr>
+<tr>
+<td>Firearm + auxiliary bolt</td>
+<td>Added without the rolled-back independent-weapon system; latest path unconfirmed.</td>
+</tr>
+<tr>
+<td>Grenades, consumable activation, four quick slots, ammo-type dragging</td>
+<td>Implemented; complete use/cancel/throw inventory-consumption regression pending.</td>
+</tr>
+<tr>
+<td>Physics crates/bodies, collision suppression</td>
+<td>Earlier group confirmation; arbitrary physics props/quest pickups remain experimental.</td>
+</tr>
+<tr>
+<td>Wrist HUD/minimap, depth/hand overlap, status icons</td>
+<td>Implemented and iterated; final presentation/occlusion needs checking.</td>
+</tr>
+<tr>
+<td>Shadows from obsolete actor/arms model</td>
+<td>Multiple fixes, including final tracked palette; latest fix unconfirmed across all lights.</td>
+</tr>
+<tr>
+<td>No player/NPC physical collision</td>
+<td>Latest early-contact correction unconfirmed; hit detection intentionally remains.</td>
+</tr>
+<tr>
+<td>Graphics import compatibility</td>
+<td>Corrected launch confirmed working after a prior black-screen system hang. Graphics snapshot is now the release default.</td>
+</tr>
+<tr>
+<td>Zone-visibility menu toggle; 5 cm near clip/depth flicker fix</td>
+<td>Build and code/unit checks only. No headset confirmation yet.</td>
+</tr>
+<tr>
+<td>Death → load save</td>
+<td>Historical crash reported repeatedly; later changes lack explicit successful tester confirmation. High-priority release test.</td>
+</tr>
+<tr>
+<td>Installer, EXE launcher, uninstall</td>
+<td>Installation and launch confirmed by owner on 2026-10-25; automated extraction/self-check passed. Uninstall/reinstall and every UI workflow are not individually confirmed.</td>
+</tr>
+</tbody>
+</table>
+<p>Not supported: standalone Quest/APK, bare-hand tracking, full-body tracking, simultaneous independent dual firearms, multiplayer, Enhanced Edition, official Steam achievements/cloud-save integration, Anomaly/overhaul compatibility. The independent dual-item experiment was rolled back because it could leave hands unable to equip. Native detector combinations have selective relaxations, not unrestricted two independent item lifecycles.</p>
+<p>Prototype semantics: discarded magazines are temporary visuals with shared-pool ammunition accounting. Equipment slots use estimated torso anchors. There is no guarantee of realistic anatomy, physics for every quest prop, individual retained-magazine ammo or full campaign completion.</p></html>

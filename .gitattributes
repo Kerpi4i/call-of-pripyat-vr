@@ -1,0 +1,12 @@
+* text=auto
+*.cs text eol=crlf
+*.ps1 text eol=crlf
+*.md text eol=lf
+*.patch -text
+*.ogf -text
+*.omf -text
+*.dds -text
+*.ogg -text
+*.zip -text
+# The engine/game XML and scripts include Windows-1251 resources.
+release/gamedata/** -text

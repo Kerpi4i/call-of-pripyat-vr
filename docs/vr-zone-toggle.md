@@ -1,0 +1,1 @@
+Interaction-zone visibility is controlled by Settings > Gameplay > VR: interaction zones. Apply takes effect immediately; native user.ltx persistence stores copvr_show_interaction_zones on/off. Default off. The equipment debug_zones entry is superseded; debug_other_zones still selects additional geometry. UI XML parsed successfully; headset validation pending. Game not launched.

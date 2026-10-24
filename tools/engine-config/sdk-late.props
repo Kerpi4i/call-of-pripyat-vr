@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\engine-build\Microsoft.Windows.SDK.CPP.x64.10.0.19041.5\build\native\Microsoft.Windows.SDK.cpp.x64.props" />
+  <PropertyGroup>
+    <CopVrSdkRoot>$(MSBuildThisFileDirectory)..\engine-build\Microsoft.Windows.SDK.CPP.10.0.19041.5\c\</CopVrSdkRoot>
+    <CopVrSdkLibRoot>$(MSBuildThisFileDirectory)..\engine-build\Microsoft.Windows.SDK.CPP.x64.10.0.19041.5\c\</CopVrSdkLibRoot>
+    <IncludePath>$(CopVrSdkRoot)Include\10.0.19041.0\ucrt;$(CopVrSdkRoot)Include\10.0.19041.0\shared;$(CopVrSdkRoot)Include\10.0.19041.0\um;$(CopVrSdkRoot)Include\10.0.19041.0\winrt;$(IncludePath)</IncludePath>
+    <LibraryPath>$(CopVrSdkLibRoot)um\x64;$(CopVrSdkLibRoot)ucrt\x64;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(CopVrSdkRoot)bin\10.0.19041.0\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+</Project>
+

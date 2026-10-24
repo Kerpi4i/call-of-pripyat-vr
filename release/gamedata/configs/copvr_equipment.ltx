@@ -1,0 +1,1173 @@
+; Units: metres. Rotations: heading, pitch, bank in degrees.
+; Restart the game after editing. Defaults are provisional, headset validation pending.
+[body]
+standing_mode = true
+debug_zones = false
+debug_other_zones = true
+grenade = -0.34, -0.63, 0.00
+frame_position = 0, 0, 0
+frame_rotation = 0, 0, 0
+left_hip = -0.39, -0.88, -0.12
+right_hip = 0.39, -0.88, -0.12
+left_shoulder = -0.27, -0.16, -0.25
+right_shoulder = 0.27, -0.16, -0.25
+; Equipment follows a shallow waist arc rather than a floating front shelf.
+belt_0 = -0.27, -0.61, 0.13
+belt_1 = -0.09, -0.61, 0.20
+belt_2 = 0.09, -0.61, 0.20
+belt_3 = 0.27, -0.61, 0.13
+; Quick slots remain individually adjustable for reach and separation.
+belt_5 = -0.30, -0.83, 0.05
+belt_6 = -0.10, -0.83, 0.14
+belt_7 = 0.10, -0.83, 0.14
+belt_8 = 0.30, -0.83, 0.05
+
+; Per-item corrections to the authored HUD wrist attachments.
+; Zero means the skeleton's authored right grip and its calibrated left counterpart.
+[hands]
+; Weak adaptive pose filtering in tracking space; raw velocities retained for throws/melee.
+smoothing_enabled = true
+position_min_cutoff = 12
+rotation_min_cutoff = 10
+position_smoothing_beta = 20
+rotation_smoothing_beta = 8
+; Bullet/pellet cone while an actual tracked support grip is held.
+supported_dispersion_scale = 0.55
+; Additional multiplier only while an eye sees the aligned scope pupil.
+scoped_dispersion_scale = 0.40
+; Controller grip origin is the palm interaction point, not the wrist bone.
+left_palm = 0, 0, 0
+right_palm = 0, 0, 0
+
+[wpn_pm]
+right_grip_position = 0, 0, 0
+right_grip_rotation = 0, 0, 0
+left_grip_position = 0, 0, 0
+left_grip_rotation = 0, 0, 0
+
+[wpn_ak74u]
+right_grip_position = 0, 0, 0
+right_grip_rotation = 0, 0, 0
+left_grip_position = 0, 0, 0
+left_grip_rotation = 0, 0, 0
+
+
+; Experimental physical binocular optics; metres and degrees, restart after edits.
+[binocular_vr]
+vertical_fov = 15
+lens_spacing = 0.0953
+lens_radius = 0.0195
+lens_center = -0.000074, 0.028715, 0.085084
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+; Detachable optics: lens plane 5 mm outward from measured internal glass polygon, toward player.
+
+[scope_vr_wpn_abakan_hud]
+lens_center = 0.000456, 0.120199, -0.053868
+lens_radius = 0.0130
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_ak74_hud]
+lens_center = 0.001209, 0.118833, -0.077726
+lens_radius = 0.0130
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_groza_hud]
+lens_center = -0.000126, 0.173426, -0.173461
+lens_radius = 0.0140
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_lr300_hud]
+lens_center = 0.002026, 0.154333, -0.017177
+lens_radius = 0.0160
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_protecta_hud]
+lens_center = 0.000612, 0.194872, 0.026867
+lens_radius = 0.0125
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_sig550_hud]
+lens_center = 0.000852, 0.145016, 0.038881
+lens_radius = 0.0165
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_val_hud]
+lens_center = -0.003079, 0.099876, -0.088507
+lens_radius = 0.0135
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_test]
+enabled = false
+save_name = copvr_scope_test
+unlimited_weight = false
+
+; Integrated optics: lens plane 5 mm outward from measured internal glass polygon, toward player.
+
+[scope_vr_wpn_fn2000_hud]
+lens_center = 0.000000, 0.131140, -0.083759
+lens_radius = 0.0115
+scope_bone = body
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_g36_hud]
+lens_center = 0.000515, 0.153795, -0.029227
+lens_radius = 0.0150
+scope_bone = body
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_gauss_hud]
+lens_center = 0.000524, 0.139995, 0.013187
+lens_radius = 0.0140
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_l85_hud]
+lens_center = 0.001697, 0.127276, -0.166616
+lens_radius = 0.0140
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_rpg7_hud]
+lens_center = -0.042873, 0.123872, -0.168580
+lens_radius = 0.0115
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_svd_hud]
+lens_center = -0.000049, 0.117508, -0.034309
+lens_radius = 0.0130
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_svu_hud]
+lens_center = 0.002106, 0.131457, -0.181791
+lens_radius = 0.0150
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[scope_vr_wpn_vintorez_hud]
+lens_center = -0.000833, 0.099651, -0.086344
+lens_radius = 0.0135
+scope_bone = wpn_scope
+optics_position = 0, 0, 0
+optics_rotation = 0, 0, 0
+
+[integrated_scope_test]
+enabled = false
+save_name = copvr_integrated_scope_test
+unlimited_weight = false
+
+[all_weapons_test]
+enabled = false
+save_name = copvr_all_weapons_test
+unlimited_weight = false
+
+[magazine_vr_wpn_abakan_hud]
+model = copvr\magazines\wpn_abakan_hud
+center = 0.000532, -0.074506, 0.158677
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.000532, -0.074506, 0.158677
+manual_rack = true
+
+[magazine_vr_wpn_ak74_hud]
+model = copvr\magazines\wpn_ak74_hud
+center = 0.000964, -0.082288, 0.161414
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.000964, -0.082288, 0.161414
+manual_rack = true
+
+[magazine_vr_wpn_ak74u_hud]
+model = copvr\magazines\wpn_ak74u_hud
+center = -0.000144, -0.085567, 0.183393
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.000144, -0.085567, 0.183393
+manual_rack = true
+
+[magazine_vr_wpn_beretta_hud]
+model = copvr\magazines\wpn_beretta92fs_hud
+center = 0.001043, -0.016093, 0.001208
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.001043, -0.056093, 0.001208
+manual_rack = true
+
+[magazine_vr_wpn_colt1911_hud]
+model = copvr\magazines\wpn_colt1911_hud
+center = -0.001000, -0.025517, -0.011398
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = -0.001000, -0.065517, -0.011398
+manual_rack = true
+
+[magazine_vr_wpn_desert_eagle_hud]
+model = copvr\magazines\wpn_desert_eagle_hud
+center = -0.000262, -0.026862, -0.005862
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = -0.000262, -0.066862, -0.005862
+manual_rack = true
+
+[magazine_vr_wpn_fn2000_hud]
+model = copvr\magazines\wpn_fn2000_hud
+center = 0.000301, -0.046166, -0.127109
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.000301, -0.046166, -0.127109
+manual_rack = true
+
+[magazine_vr_wpn_fort_hud]
+model = copvr\magazines\wpn_fort_hud
+center = 0.000606, -0.026044, -0.004934
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.000606, -0.066044, -0.004934
+manual_rack = true
+
+[magazine_vr_wpn_g36_hud]
+model = copvr\magazines\wpn_g36_hud
+center = -0.001439, -0.064959, 0.151062
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.001439, -0.064959, 0.151062
+manual_rack = true
+
+[magazine_vr_wpn_gauss_hud]
+model = copvr\magazines\wpn_gauss_hud
+center = -0.000866, -0.025212, 0.154574
+bone = magazin
+bolt_bone = lock
+pistol = false
+socket_center = -0.000866, -0.025212, 0.154574
+manual_rack = false
+
+[magazine_vr_wpn_groza_hud]
+model = copvr\magazines\wpn_groza_hud
+center = 0.002506, -0.066525, -0.154144
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.002506, -0.066525, -0.154144
+manual_rack = true
+
+[magazine_vr_wpn_hpsa_hud]
+model = copvr\magazines\wpn_hpsa_hud
+center = 0.000503, -0.028038, -0.006433
+bone = joint4
+bolt_bone = joint2
+pistol = true
+socket_center = 0.000503, -0.068038, -0.006433
+manual_rack = true
+
+[magazine_vr_wpn_l85_hud]
+model = copvr\magazines\wpn_l85_hud
+center = -0.000058, -0.072649, -0.120151
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.000058, -0.072649, -0.120151
+manual_rack = true
+
+[magazine_vr_wpn_lr300_hud]
+model = copvr\magazines\wpn_lr300_hud
+center = 0.000410, -0.048835, 0.127418
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.000410, -0.048835, 0.127418
+manual_rack = true
+
+[magazine_vr_wpn_mp5_hud]
+model = copvr\magazines\wpn_mp5_hud
+center = -0.000308, -0.054093, 0.140645
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.000308, -0.054093, 0.140645
+manual_rack = true
+
+[magazine_vr_wpn_pb_hud]
+model = copvr\magazines\wpn_pb_hud
+center = -0.000343, -0.023841, 0.000220
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = -0.000343, -0.063841, 0.000220
+manual_rack = true
+
+[magazine_vr_wpn_pkm_hud]
+model = copvr\magazines\wpn_pkm_hud
+center = -0.002201, -0.046307, 0.210701
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.002201, -0.046307, 0.210701
+manual_rack = true
+
+[magazine_vr_wpn_pm_hud]
+model = copvr\magazines\wpn_pm_hud
+center = 0.000987, -0.025578, -0.000547
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.000987, -0.065578, -0.000547
+manual_rack = true
+
+[magazine_vr_wpn_sig220_hud]
+model = copvr\magazines\wpn_sig220_hud
+center = 0.000061, -0.023551, 0.000375
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.000061, -0.063551, 0.000375
+manual_rack = true
+
+[magazine_vr_wpn_sig550_hud]
+model = copvr\magazines\wpn_sig550_hud
+center = -0.001494, -0.037093, 0.135261
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.001494, -0.037093, 0.135261
+manual_rack = true
+
+[magazine_vr_wpn_svd_hud]
+model = copvr\magazines\wpn_svd_hud
+center = 0.000348, -0.022865, 0.204781
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.000348, -0.022865, 0.204781
+manual_rack = true
+
+[magazine_vr_wpn_svu_hud]
+model = copvr\magazines\wpn_svu_hud
+center = 0.002455, -0.038078, -0.152850
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = 0.002455, -0.038078, -0.152850
+manual_rack = true
+
+[magazine_vr_wpn_usp_hud]
+model = copvr\magazines\wpn_usp45_hud
+center = 0.000081, -0.037048, -0.007762
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.000081, -0.077048, -0.007762
+manual_rack = true
+
+[magazine_vr_wpn_val_hud]
+model = copvr\magazines\wpn_val_hud
+center = -0.002014, -0.057663, 0.137619
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.002014, -0.057663, 0.137619
+manual_rack = true
+
+[magazine_vr_wpn_vintorez_hud]
+model = copvr\magazines\wpn_vintorez_hud
+center = -0.000369, -0.026772, 0.133762
+bone = magazin
+bolt_bone = zatvor
+pistol = false
+socket_center = -0.000369, -0.026772, 0.133762
+manual_rack = true
+
+[magazine_vr_wpn_walther_hud]
+model = copvr\magazines\wpn_walter99_hud
+center = 0.002784, -0.036778, -0.006054
+bone = cartridge
+bolt_bone = breachblock
+pistol = true
+socket_center = 0.002784, -0.076778, -0.006054
+manual_rack = true
+
+[handle_vr_wpn_abakan_hud]
+bone = zatvor
+contact = -0.036391, 0.073839, 0.256638
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_ak74_hud]
+bone = zatvor
+contact = -0.041132, 0.057961, 0.185366
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_ak74u_hud]
+bone = zatvor
+contact = -0.041524, 0.061088, 0.189089
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_beretta_hud]
+bone = breachblock
+contact = -0.000667, 0.054807, -0.005059
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_bm16_hud]
+bone = lock
+contact = 0.005267, 0.001691, 0.024301
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_colt1911_hud]
+bone = breachblock
+contact = -0.000506, 0.050324, -0.001486
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_desert_eagle_hud]
+bone = breachblock
+contact = -0.002237, 0.061321, -0.019857
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_fn2000_hud]
+bone = zatvor
+contact = -0.052408, 0.061995, 0.116633
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_fort_hud]
+bone = breachblock
+contact = -0.000921, 0.047014, -0.001477
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_g36_hud]
+bone = zatvor
+contact = 0.007610, 0.105594, 0.162733
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_gauss_hud]
+bone = lock
+contact = -0.005731, -0.012626, 0.079658
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_groza_hud]
+bone = zatvor
+contact = -0.029053, 0.061400, -0.095318
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_hpsa_hud]
+bone = joint2
+contact = -0.000123, 0.044289, -0.002886
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_l85_hud]
+bone = zatvor
+contact = -0.026963, 0.061397, -0.112229
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_lr300_hud]
+bone = zatvor
+contact = -0.020966, 0.064997, 0.106581
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_mp5_hud]
+bone = zatvor
+contact = -0.038439, 0.106457, 0.291129
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_pb_hud]
+bone = breachblock
+contact = 0.000008, 0.047545, -0.012127
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_pkm_hud]
+bone = zatvor
+contact = -0.051484, 0.030884, 0.131013
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_pm_hud]
+bone = breachblock
+contact = -0.000754, 0.051307, -0.012937
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_protecta_hud]
+bone = zatvor_jnt
+contact = 0.029078, 0.128629, 0.381368
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_rg-6_hud]
+bone = lock
+contact = -0.003185, -0.047071, 0.113937
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_rpg7_hud]
+bone = lock
+contact = -0.002595, -0.000146, -0.034745
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_sig220_hud]
+bone = breachblock
+contact = 0.000451, 0.054884, -0.001510
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_sig550_hud]
+bone = zatvor
+contact = -0.035408, 0.076356, 0.165790
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_spas12_hud]
+bone = zatvor
+contact = -0.018546, 0.048673, 0.136888
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_svd_hud]
+bone = zatvor
+contact = -0.027103, 0.044554, 0.279765
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_svu_hud]
+bone = zatvor
+contact = -0.030491, 0.040880, -0.065334
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_toz34_hud]
+bone = lock
+contact = 0.004332, -0.025983, 0.062684
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_usp_hud]
+bone = breachblock
+contact = -0.000087, 0.058176, -0.022753
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_val_hud]
+bone = zatvor
+contact = -0.032602, 0.036721, 0.150473
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_vintorez_hud]
+bone = zatvor
+contact = -0.030845, 0.036781, 0.151923
+axis = 0, 0, -1
+travel = 0.075
+
+[handle_vr_wpn_walther_hud]
+bone = breachblock
+contact = 0.002942, 0.052521, -0.021583
+axis = 0, 0, -1
+travel = 0.035
+
+[handle_vr_wpn_winchester1300_hud]
+bone = zatvor
+contact = -0.029005, 0.036561, 0.481432
+axis = 0, 0, -1
+travel = 0.075
+
+[reload_grip_wpn_abakan_hud]
+bone = magazin
+center = 0.000532172154635191, -0.07450559455901384, 0.15867699682712555
+alias = anm_reload
+
+[reload_grip_wpn_ak74_hud]
+bone = magazin
+center = 0.0009642890654504299, -0.08228845614939928, 0.16141436249017715
+alias = anm_reload
+
+[reload_grip_wpn_ak74u_hud]
+bone = magazin
+center = -0.00014411937445402145, -0.08556728810071945, 0.1833932213485241
+alias = anm_reload
+
+[reload_grip_wpn_beretta_hud]
+bone = cartridge
+center = 0.001043225172907114, -0.01609250158071518, 0.001207754947245121
+alias = anm_reload
+
+[reload_grip_wpn_colt1911_hud]
+bone = cartridge
+center = -0.0009998353198170662, -0.025517105124890804, -0.01139805931597948
+alias = anm_reload
+
+[reload_grip_wpn_desert_eagle_hud]
+bone = cartridge
+center = -0.00026202481240034103, -0.02686246484518051, -0.005861682817339897
+alias = anm_reload
+
+[reload_grip_wpn_fn2000_hud]
+bone = magazin
+center = 0.0003013443201780319, -0.04616589657962322, -0.12710919976234436
+alias = anm_reload
+
+[reload_grip_wpn_fort_hud]
+bone = cartridge
+center = 0.000605656998232007, -0.0260436637327075, -0.004933868534862995
+alias = anm_reload
+
+[reload_grip_wpn_g36_hud]
+bone = magazin
+center = -0.0014392840676009655, -0.0649586794897914, 0.15106169134378433
+alias = anm_reload
+
+[reload_grip_wpn_gauss_hud]
+bone = magazin
+center = -0.0008662240579724312, -0.025211782194674015, 0.15457355976104736
+alias = anm_reload
+
+[reload_grip_wpn_groza_hud]
+bone = magazin
+center = 0.002505616284906864, -0.06652517430484295, -0.15414393320679665
+alias = anm_reload
+
+[reload_grip_wpn_hpsa_hud]
+bone = joint4
+center = 0.0005029365420341492, -0.028037930838763714, -0.006432871334254742
+alias = anm_reload
+
+[reload_grip_wpn_l85_hud]
+bone = magazin
+center = -5.806470289826393e-05, -0.07264922838658094, -0.12015103548765182
+alias = anm_reload
+
+[reload_grip_wpn_lr300_hud]
+bone = magazin
+center = 0.0004101507365703583, -0.04883468709886074, 0.1274176612496376
+alias = anm_reload
+
+[reload_grip_wpn_mp5_hud]
+bone = magazin
+center = -0.0003084354102611542, -0.05409287288784981, 0.1406450718641281
+alias = anm_reload
+
+[reload_grip_wpn_pb_hud]
+bone = cartridge
+center = -0.0003430123906582594, -0.0238411882892251, 0.00021952111274003983
+alias = anm_reload
+
+[reload_grip_wpn_pkm_hud]
+bone = magazin
+center = -0.0022007934749126434, -0.04630744969472289, 0.21070054918527603
+alias = anm_reload
+
+[reload_grip_wpn_pm_hud]
+bone = cartridge
+center = 0.000986604718491435, -0.025578192435204983, -0.000546921044588089
+alias = anm_reload
+
+[reload_grip_wpn_sig220_hud]
+bone = cartridge
+center = 6.107799708843231e-05, -0.02355111576616764, 0.00037526246160268784
+alias = anm_reload
+
+[reload_grip_wpn_sig550_hud]
+bone = magazin
+center = -0.0014940453693270683, -0.03709255997091532, 0.1352606974542141
+alias = anm_reload
+
+[reload_grip_wpn_svd_hud]
+bone = magazin
+center = 0.00034783827140927315, -0.022865312173962593, 0.20478105545043945
+alias = anm_reload
+
+[reload_grip_wpn_svu_hud]
+bone = magazin
+center = 0.00245461892336607, -0.03807799704372883, -0.15285026654601097
+alias = anm_reload
+
+[reload_grip_wpn_usp_hud]
+bone = cartridge
+center = 8.051050826907158e-05, -0.03704818710684776, -0.0077623529359698296
+alias = anm_reload
+
+[reload_grip_wpn_val_hud]
+bone = magazin
+center = -0.0020140893757343292, -0.05766317993402481, 0.1376185491681099
+alias = anm_reload
+
+[reload_grip_wpn_vintorez_hud]
+bone = magazin
+center = -0.000369255430996418, -0.026771511882543564, 0.13376156240701675
+alias = anm_reload
+
+[reload_grip_wpn_walther_hud]
+bone = cartridge
+center = 0.002784231211990118, -0.03677829448133707, -0.006053740158677101
+alias = anm_reload
+
+[reload_grip_wpn_winchester1300_hud]
+bone = cartridger
+center = 0.000951048918068409, 0.07417674362659454, 0.30166707932949066
+alias = anm_add_cartridge
+
+[reload_grip_wpn_spas12_hud]
+bone = joint2
+center = -0.0020713950507342815, 0.04819777049124241, 0.20566970109939575
+alias = anm_add_cartridge
+
+[reload_grip_wpn_bm16_hud]
+bone = cartridgell
+center = -0.01788969850167632, 0.06537913344800472, 0.14404239505529404
+alias = anm_reload_2
+
+[reload_grip_wpn_toz34_hud]
+bone = cartridgel
+center = 0.00013315817341208458, 0.01520086987875402, 0.1529495194554329
+alias = anm_reload_2
+
+[reload_grip_wpn_rpg7_hud]
+bone = grenade
+center = -3.503449261188507e-05, 0.05421644123271108, 0.15982168912887573
+alias = anm_reload
+
+[reload_grip_wpn_rg-6_hud]
+bone = grenade
+center = 0.0010016243904829025, 0.0016277572140097618, 0.19534706324338913
+alias = anm_add_cartridge
+
+[mechanical_audio_wpn_abakan_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_ak74_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_ak74u_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_beretta_hud]
+volume = 0.80
+remove = copvr\mechanical\beretta_reload_remove
+insert = copvr\mechanical\beretta_reload_insert
+rack = copvr\mechanical\beretta_reload_rack
+
+[mechanical_audio_wpn_bm16_hud]
+volume = 1.00
+rack = copvr\mechanical\bm16_reload_lr_rack
+
+[mechanical_audio_wpn_colt1911_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_desert_eagle_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_fn2000_hud]
+volume = 1.00
+remove = copvr\mechanical\fn2000_reload_remove
+insert = copvr\mechanical\fn2000_reload_insert
+rack = copvr\mechanical\fn2000_reload_rack
+
+[mechanical_audio_wpn_fort_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_g36_hud]
+volume = 1.00
+remove = copvr\mechanical\g36_reload_remove
+insert = copvr\mechanical\g36_reload_insert
+rack = copvr\mechanical\g36_reload_rack
+
+[mechanical_audio_wpn_gauss_hud]
+volume = 1.00
+remove = copvr\mechanical\gauss_reload_remove
+insert = copvr\mechanical\gauss_reload_insert
+
+[mechanical_audio_wpn_groza_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_hpsa_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_l85_hud]
+volume = 1.00
+remove = copvr\mechanical\l85_reload_remove
+insert = copvr\mechanical\l85_reload_insert
+rack = copvr\mechanical\l85_reload_rack
+
+[mechanical_audio_wpn_lr300_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_mp5_hud]
+volume = 1.00
+remove = copvr\mechanical\mp5_reload_remove
+insert = copvr\mechanical\mp5_reload_insert
+rack = copvr\mechanical\mp5_reload_rack
+
+[mechanical_audio_wpn_pb_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_pkm_hud]
+volume = 0.70
+remove = copvr\mechanical\pkm_reload_remove
+insert = copvr\mechanical\pkm_reload_insert
+rack = copvr\mechanical\pkm_reload_rack
+
+[mechanical_audio_wpn_pm_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_protecta_hud]
+volume = 1.00
+rack = copvr\mechanical\spas12_close_rack
+
+[mechanical_audio_wpn_rg-6_hud]
+volume = 1.00
+rack = copvr\mechanical\rg6_reload_rack
+
+[mechanical_audio_wpn_rpg7_hud]
+volume = 1.00
+rack = copvr\mechanical\rpg7_reload_rack
+
+[mechanical_audio_wpn_sig220_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_sig550_hud]
+volume = 1.00
+remove = copvr\mechanical\sig550_reload_remove
+insert = copvr\mechanical\sig550_reload_insert
+rack = copvr\mechanical\sig550_reload_rack
+
+[mechanical_audio_wpn_spas12_hud]
+volume = 1.00
+rack = copvr\mechanical\spas12_close_rack
+
+[mechanical_audio_wpn_svd_hud]
+volume = 1.00
+remove = copvr\mechanical\svd_reload_remove
+insert = copvr\mechanical\svd_reload_insert
+rack = copvr\mechanical\svd_reload_rack
+
+[mechanical_audio_wpn_svu_hud]
+volume = 1.00
+remove = copvr\mechanical\svu_reload_remove
+insert = copvr\mechanical\svu_reload_insert
+rack = copvr\mechanical\svu_reload_rack
+
+[mechanical_audio_wpn_toz34_hud]
+volume = 1.00
+rack = copvr\mechanical\toz34_reload_rack
+
+[mechanical_audio_wpn_usp_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_val_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_vintorez_hud]
+volume = 0.70
+remove = copvr\mechanical\groza_reload_remove
+insert = copvr\mechanical\groza_reload_insert
+rack = copvr\mechanical\groza_reload_rack
+
+[mechanical_audio_wpn_walther_hud]
+volume = 0.80
+remove = copvr\mechanical\pistol_reload_remove
+insert = copvr\mechanical\pistol_reload_insert
+rack = copvr\mechanical\pistol_reload_rack
+
+[mechanical_audio_wpn_winchester1300_hud]
+volume = 1.00
+rack = copvr\mechanical\w1300_close_rack
+
+[internal_audio_wpn_winchester1300_hud]
+volume = 1.0
+remove = copvr\mechanical\w1300_open_internal_remove
+insert = copvr\mechanical\w1300_load_internal_insert
+rack = copvr\mechanical\w1300_close_internal_rack
+
+[internal_audio_wpn_spas12_hud]
+volume = 1.0
+remove = copvr\mechanical\spas12_open_internal_remove
+insert = copvr\mechanical\spas12_reload_internal_insert
+rack = copvr\mechanical\spas12_close_internal_rack
+
+[internal_audio_wpn_bm16_hud]
+volume = 1.0
+remove = copvr\mechanical\bm16_reload_lr_internal_remove
+insert = copvr\mechanical\bm16_reload_lr_internal_insert
+rack = copvr\mechanical\bm16_reload_lr_internal_rack
+
+[internal_audio_wpn_toz34_hud]
+volume = 1.0
+remove = copvr\mechanical\toz34_reload_internal_remove
+insert = copvr\mechanical\toz34_reload_internal_insert
+rack = copvr\mechanical\toz34_reload_internal_rack
+
+[internal_audio_wpn_rg-6_hud]
+volume = 1.0
+remove = copvr\mechanical\rg6_reload_start_internal_remove
+insert = copvr\mechanical\rg6_reload_internal_insert
+rack = copvr\mechanical\rg6_reload_end_internal_rack
+
+[internal_audio_wpn_protecta_hud]
+volume = 1.0
+insert = copvr\mechanical\spas12_reload_internal_insert
+rack = copvr\mechanical\spas12_close_internal_rack
+
+[internal_audio_wpn_rpg7_hud]
+volume = 1.0
+insert = copvr\mechanical\rpg7_reload_internal_insert
+
+[internal_round_12g]
+model = copvr\rounds\shell12g
+center = 0.00013315817341208458, 0.01520086987875402, 0.1529495194554329
+
+[internal_round_rocket]
+model = dynamics\weapons\wpn_rpg7\wpn_rpg7_grenade
+center = 2.7939677238464355e-08, -3.725290298461914e-09, 0.006974637508392334
+
+[internal_round_vog25]
+model = copvr\rounds\vog25
+center = 0.0010016243904829025, 0.0016277572140097618, 0.19534706324338913
+
+[internal_vr_wpn_winchester1300_hud]
+round_profile = internal_round_12g
+kind = 1
+port0 = 0, 0.045, 0.19
+pump_bone = zatvor
+bolt_bone = zatvor
+feed_bone = cartridger
+travel = 0.1
+
+[internal_vr_wpn_spas12_hud]
+round_profile = internal_round_12g
+kind = 1
+port0 = 0, 0.005, 0.16
+pump_bone = joint1
+bolt_bone = zatvor
+feed_bone = joint2
+travel = 0.09
+load_requires_open = 1
+
+[internal_vr_wpn_bm16_hud]
+round_profile = internal_round_12g
+kind = 2
+hinge = bend_reload
+chamber0 = cartridgell
+chamber1 = cartridgerr
+port0 = -0.01788969850167632, 0.06537913344800472, 0.10662495541572571
+port1 = 0.015964037273079157, 0.06537913344800472, 0.10662495541572571
+finish_fraction = 0.90
+max_angle = 0.65
+
+[internal_vr_wpn_toz34_hud]
+round_profile = internal_round_12g
+kind = 2
+hinge = bend_reload
+chamber0 = cartridgel
+chamber1 = cartridger
+port0 = 0.00013315817341208458, 0.01520086987875402, 0.11986630606651306
+port1 = 0.00013315817341208458, 0.04202590882778168, 0.12006608593463898
+finish_fraction = 0.90
+max_angle = 0.65
+
+[internal_vr_wpn_rg-6_hud]
+round_profile = internal_round_vog25
+kind = 5
+port0 = 0.0010016243904829025, 0.0016277572140097618, 0.2781638389825821
+latch = -0.0001, -0.0471, 0.114
+hinge = reload
+drum = rotategrenades
+feed_bone = grenade
+open_motion = rg6_reload_start
+
+[internal_vr_wpn_protecta_hud]
+round_profile = internal_round_12g
+kind = 4
+port0 = 0.0342, 0.125, -0.01
+
+[internal_vr_wpn_rpg7_hud]
+round_profile = internal_round_rocket
+kind = 3
+port0 = 0, 0.054, 0.216
+finish_fraction = 0.60
+
+[launcher_round_wpn_ak74_hud]
+model = copvr\rounds\launcher_wpn_ak74_hud
+center = 7.591396570205688e-05, -0.01184215722605586, 0.4461710453033447
+
+[launcher_grip_wpn_ak74_hud]
+bone = grenade
+alias = anm_reload_g
+center = 7.591396570205688e-05, -0.01184215722605586, 0.4461710453033447
+
+[launcher_vr_wpn_ak74_hud]
+bone = wpn_body
+port = 0.0, -0.011, 0.553
+round_profile = launcher_round_wpn_ak74_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_ak74_hud_finish
+
+[launcher_round_wpn_abakan_hud]
+model = copvr\rounds\launcher_wpn_abakan_hud
+center = 7.591396570205688e-05, -0.025435690535232425, 0.5011995434761047
+
+[launcher_grip_wpn_abakan_hud]
+bone = grenade
+alias = anm_reload_g
+center = 7.591396570205688e-05, -0.025435690535232425, 0.5011995434761047
+
+[launcher_vr_wpn_abakan_hud]
+bone = wpn_body
+port = 0.0, -0.027, 0.603
+round_profile = launcher_round_wpn_abakan_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_abakan_hud_finish
+
+[launcher_round_wpn_lr300_hud]
+model = copvr\rounds\launcher_wpn_lr300_hud
+center = -0.0005339235067367554, -0.009817133191972971, 0.3299228250980377
+
+[launcher_grip_wpn_lr300_hud]
+bone = grenade
+alias = anm_reload_g
+center = -0.0005339235067367554, -0.009817133191972971, 0.3299228250980377
+
+[launcher_vr_wpn_lr300_hud]
+bone = wpn_body
+port = 0.0, -0.009, 0.601
+round_profile = launcher_round_wpn_lr300_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_lr300_hud_finish
+
+[launcher_round_wpn_groza_hud]
+model = copvr\rounds\launcher_wpn_groza_hud
+center = 0.002415984869003296, 0.0033410750329494476, 0.22844141721725464
+
+[launcher_grip_wpn_groza_hud]
+bone = grenade
+alias = anm_reload_g
+center = 0.002415984869003296, 0.0033410750329494476, 0.22844141721725464
+
+[launcher_vr_wpn_groza_hud]
+bone = wpn_body
+port = 0.0, 0.003, 0.321
+round_profile = launcher_round_wpn_groza_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_groza_hud_finish
+
+[launcher_round_wpn_fn2000_hud]
+model = copvr\rounds\launcher_wpn_fn2000_hud
+center = 0.001820332370698452, -0.008165828883647919, 0.1669897735118866
+
+[launcher_grip_wpn_fn2000_hud]
+bone = grenade
+alias = anm_reload_g
+center = 0.001820332370698452, -0.008165828883647919, 0.1669897735118866
+
+[launcher_vr_wpn_fn2000_hud]
+bone = wpn_body
+port = 0.0, -0.008, 0.408
+round_profile = launcher_round_wpn_fn2000_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_fn2000_hud_finish
+
+[launcher_round_wpn_sig550_hud]
+model = copvr\rounds\launcher_wpn_sig550_hud
+center = 0.00010300613939762115, -0.027832235384266824, 0.37351830303668976
+
+[launcher_grip_wpn_sig550_hud]
+bone = grenade
+alias = anm_reload_g
+center = 0.00010300613939762115, -0.027832235384266824, 0.37351830303668976
+
+[launcher_vr_wpn_sig550_hud]
+bone = wpn_body
+port = 0.0, -0.028, 0.678
+round_profile = launcher_round_wpn_sig550_hud
+finish_fraction = 0.65
+finish_sound = copvr\mechanical\launcher_wpn_sig550_hud_finish
+
+[underbarrel_test]
+enabled = false
+save_name = copvr_underbarrel_test
+unlimited_weight = false
+
+[jam_test]
+enabled = false
+save_name = copvr_jam_test
+unlimited_weight = false

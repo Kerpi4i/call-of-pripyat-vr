@@ -1,0 +1,18 @@
+name: Source checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  portable-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pure C++ tests
+        run: |
+          mkdir -p build
+          for file in tests/*_tests.cpp; do
+            # bridge ABI test loads a Windows DLL and is covered by the local release gate.
+            case "$file" in *bridge_abi*) continue;; esac
+            g++ -std=c++17 -O2 -Isrc -Ithird_party/openxr/include "$file" -o build/test
+            ./build/test
+          done
+      - name: Validate release metadata and resource manifests
+        run: python3 tools/check-release-resources.py

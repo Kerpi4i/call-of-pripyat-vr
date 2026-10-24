@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Release gate / Перевірка перед публікацією</h1>
+<p>Candidate: <strong>0.1.0-alpha.1</strong>. A checked item must have a date, tester and result. Leave untested items unchecked. The automated extraction check does not replace interactive/headset checks. No public upload until the owner approves the accepted candidate.</p>
+<h2>Automated / Автоматично</h2>
+<ul>
+<li>[ ] Native engine + bridge final build succeeds / Фінальна збірка рушія й bridge.</li>
+<li>[ ] All 24 pure/ABI tests pass / Усі 24 тести.</li>
+<li>[ ] Resource/geometry/audio validators and hashes pass / Ресурси, звуки й хеші.</li>
+<li>[ ] Installer verification extraction into a new empty folder passes; original archives/config remain byte-identical / Розпакування без зміни оригіналів.</li>
+<li>[ ] Launcher <code>--self-check</code> passes in extracted folder / Перевірка комплектності лаунчера.</li>
+<li>[ ] Normal and delay-loaded dependencies classified; no required bundled DLL missing / DLL-перевірка.</li>
+<li>[ ] No private saves, logs, local user paths, test kits or unlimited weight / Немає персональних даних та тестових читів.</li>
+</ul>
+<h2>Interactive clean install / Чиста установка вручну</h2>
+<ul>
+<li>[ ] Close the development game. Keep the development build separate / Закрити гру, не змішувати з розробкою.</li>
+<li>[ ] Install with the actual Setup EXE into a new folder, using original unmodified Steam game / Встановити справжнім інсталятором у нову папку.</li>
+<li>[ ] Verify Steam detection and manual folder selection, error for wrong folder / Автопошук і помилки вибору.</li>
+<li>[ ] Verify no administrator prompt is required for default location / Без адміністратора.</li>
+<li>[ ] Check desktop shortcut, Installed Apps entry, EN/UK launcher controls and offline HTML guide / Ярлик, запис видалення, обидві мови й інструкція.</li>
+<li>[ ] Launch with USB Link and confirm stereo menu, both Touch rays, new game/loading / USB Link, меню, промені, нова гра.</li>
+<li>[ ] Verify current-config graphics defaults and that in-game changes survive relaunch / Графіка та її збереження.</li>
+<li>[ ] Toggle zone outlines, Apply, return to game, relaunch and confirm persistence / Видимість зон і збереження.</li>
+<li>[ ] Calibrate upright, lean, physically crouch; verify movement speed/sprint/collision / Калібрування, нахил, присяд.</li>
+<li>[ ] Verify left/right weapon grips, support aim, physical reload, jam clearance, bolt/knife/grenade/detector/binocular / Основні взаємодії.</li>
+<li>[ ] Verify chest/quick/rear/head/temple zones without overlap replacing held items / Зони без випадкової заміни предмета.</li>
+<li>[ ] Verify world grabs/throws/quest pickup and held-object camera stability / Лут, кидки, квестові предмети, камера.</li>
+<li>[ ] Inventory, trade, loot, PDA, sleep, dialogue and wrist UI / Усі інтерфейси.</li>
+<li>[ ] Confirm the depth-flicker fix at wall/ground intersections; binocular/scope near-eye behavior / Мерехтіння й оптика.</li>
+<li>[ ] Save → reload; die → load at least twice; verify no crash / Збереження і двічі завантаження після смерті.</li>
+<li>[ ] At least one sustained session: record duration, frame timing and crashes / Тривала сесія з результатами.</li>
+<li>[ ] Uninstall: managed files removed, data preserved, original game launches normally / Видалення зі збереженням data та оригінальної гри.</li>
+<li>[ ] Reinstall and portable ZIP flow checked / Повторна установка й portable.</li>
+</ul>
+<h2>Publish / Публікація</h2>
+<ul>
+<li>[ ] Update feature-status tables with these results; do not erase known unverified items / Оновити таблиці фактичними результатами.</li>
+<li>[ ] Review attribution, notices, assets, source patch and exact package hashes / Перевірити атрибуцію й пакет.</li>
+<li>[ ] Record GitHub owner/repo, tag, actual release URL; replace Steam draft marker / Вказати справжні реквізити.</li>
+<li>[ ] Owner approves publication of this exact checksum / Власник дозволяє публікацію саме цього пакета.</li>
+</ul>
+<p>Owner reported installation and launch working on <strong>2026-10-25</strong> and authorized publication. This does not individually certify every unchecked regression item. / Власник підтвердив роботу установки й запуску <strong>2026-10-25</strong> та дозволив публікацію; окремі неперевірені регресійні пункти лишаються відкритими.</p></html>

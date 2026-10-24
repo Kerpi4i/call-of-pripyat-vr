@@ -1,0 +1,2 @@
+Texture2D s_base; SamplerState smp_rtlinear;
+float4 main(float4 P:SV_Position,float4 C:COLOR0,float2 uv:TEXCOORD0):SV_Target { return s_base.Sample(smp_rtlinear,uv)*C; }

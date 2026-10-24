@@ -1,0 +1,42 @@
+; Units: metres. Rotations: heading, pitch, bank in degrees.
+; Restart the game after editing. Defaults are provisional, headset validation pending.
+[body]
+; Standing: physical crouch + right-stick click height calibration.
+; Set false for seated play with the previous button crouch.
+standing_mode = true
+grenade = -0.34, -0.63, -0.24
+frame_position = 0, 0, 0
+frame_rotation = 0, 0, 0
+left_hip = -0.39, -0.88, -0.12
+right_hip = 0.39, -0.88, -0.12
+left_shoulder = -0.27, -0.16, -0.25
+right_shoulder = 0.27, -0.16, -0.25
+; Equipment follows a shallow waist arc rather than a floating front shelf.
+belt_0 = -0.27, -0.61, 0.13
+belt_1 = -0.09, -0.61, 0.20
+belt_2 = 0.09, -0.61, 0.20
+belt_3 = 0.27, -0.61, 0.13
+; Quick slots remain individually adjustable for reach and separation.
+belt_5 = -0.30, -0.83, 0.10
+belt_6 = -0.10, -0.83, 0.20
+belt_7 = 0.10, -0.83, 0.20
+belt_8 = 0.30, -0.83, 0.10
+
+; Per-item corrections to the authored HUD wrist attachments.
+; Zero means the skeleton's authored right grip and its calibrated left counterpart.
+[hands]
+; Controller grip origin is the palm interaction point, not the wrist bone.
+left_palm = 0, 0, 0
+right_palm = 0, 0, 0
+
+[wpn_pm]
+right_grip_position = 0, 0, 0
+right_grip_rotation = 0, 0, 0
+left_grip_position = 0, 0, 0
+left_grip_rotation = 0, 0, 0
+
+[wpn_ak74u]
+right_grip_position = 0, 0, 0
+right_grip_rotation = 0, 0, 0
+left_grip_position = 0, 0, 0
+left_grip_rotation = 0, 0, 0
