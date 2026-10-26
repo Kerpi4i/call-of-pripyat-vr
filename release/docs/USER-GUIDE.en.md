@@ -1,4 +1,4 @@
-# Call of Pripyat VR — Alpha 0.1.0
+# Call of Pripyat VR вЂ” Alpha 0.1.0
 
 Unofficial, free PC VR modification for the **original Steam S.T.A.L.K.E.R.: Call of Pripyat 1.6.02**. Built on OpenXRay. Requires the purchased original game; no game archives are supplied. The owner confirmed installation and launch on 2026-10-25; individual feature regression remains incomplete. It is not affiliated with or endorsed by GSC Game World, Valve or Meta.
 
@@ -13,7 +13,7 @@ Unofficial, free PC VR modification for the **original Steam S.T.A.L.K.E.R.: Cal
 
 1. Install the original Steam game and launch it normally once to confirm it works. Close it.
 2. Open Meta Quest Link on the PC. Set it as the active OpenXR runtime, connect the headset over USB and enter Quest Link.
-3. Run `CoPVR-0.1.0-alpha.1-Setup.exe`. Confirm the detected original game folder or choose it manually. Choose a **separate, empty mod folder**, outside the Steam game directory. ASCII/Latin characters are required in both paths for this alpha. Installation needs no administrator rights in a user-writable folder.
+3. Run `CoPVR-0.1.0-alpha.2-Setup.exe`. Confirm the detected original game folder or choose it manually. Choose a **separate, empty mod folder**, outside the Steam game directory. ASCII/Latin characters are required in both paths for this alpha. Installation needs no administrator rights in a user-writable folder.
 4. Open the desktop shortcut or `CoPVR.exe`. Click **Play in VR**. Setup does not start the game automatically.
 5. Stand upright, face your intended forward direction and **click the right stick** in gameplay. This recalibrates the room origin, forward heading, eye height and standing collision height. Calibration is blocked when crouching. Release triggers/sticks before entering gameplay.
 6. Start a new game for the acceptance test. Existing saves can be copied manually into `data/savedgames`, but back them up first. Do not overwrite your original saves with VR saves; new weapon-state data is not guaranteed to be readable by the original executable.
@@ -30,7 +30,7 @@ All game archives remain in the original installation. The mod's `data/` directo
 |---|---|
 | Left stick | Head-relative movement |
 | Left stick click | Sprint; unavailable during physical crouch |
-| Right stick left/right | 30° snap turn |
+| Right stick left/right | 30В° snap turn |
 | Right stick down | Cycle the equipped firearm's available fire modes; not holster |
 | Right stick up/down while looking through binoculars | Adjust binocular magnification |
 | Right stick up/down in menus | Scroll |
@@ -46,7 +46,7 @@ All game archives remain in the original installation. The mod's `data/` directo
 
 Keyboard and mouse game input is disabled in VR. Use the Touch ray and trigger in menus; do not rely on a keyboard shortcut to recover a stuck menu. Windows controls remain available outside the game. Some native text-entry/edge-case menus are not covered by headset acceptance yet.
 
-## Body zones — use without looking down
+## Body zones вЂ” use without looking down
 
 The full character body and floating item belt are intentionally hidden. The zones use an estimated torso frame with constrained head-following and movement alignment; physical torso/hip tracking is not available.
 
@@ -61,7 +61,7 @@ The full character body and floating item belt are intentionally hidden. The zon
 | Behind the waist, free hand, grip + index trigger | Take the appropriate reload object for the firearm in the other hand: magazine, shell, rocket or launcher grenade. This is a reload proxy, not a loose inventory ammo box. |
 | Upper chest stow region | Release an eligible held world/inventory item to store it in the inventory. This shares the chest equipment region; it is not a separate invisible pickup pocket. |
 
-To find zones, use **Settings → Gameplay → VR: interaction zones**, then Apply. The choice is saved. Outlines are off by default. The outline shows the zone volume, not a solid object. Some equipment/physical interactions have priority over overlapping gestures; first release both triggers and try with an empty hand if nothing is taken.
+To find zones, use **Settings в†’ Gameplay в†’ VR: interaction zones**, then Apply. The choice is saved. Outlines are off by default. The outline shows the zone volume, not a solid object. Some equipment/physical interactions have priority over overlapping gestures; first release both triggers and try with an empty hand if nothing is taken.
 
 ## Hands, items, inventory and PDA
 
@@ -97,7 +97,7 @@ Automatic reload on an empty magazine is disabled. Native reload/draw/holster/co
 | BM-16 / TOZ-34 | Grip the separate break-action contact forward of the ordinary support grip; open the barrels, eject spent shells, insert one shell per chamber, and close by gesture/handling the action. Ordinary support grip alone must not break the gun open. |
 | Protecta / Eliminator | Insert shells individually at the receiver loading window. Manual cocking is required after loading from empty, not for topping up a nonempty gun. |
 | RPG-7 | Take a full-size rocket and release it at the muzzle reload zone. The final native insertion animation/sound completes loading. No separate chambering gesture. |
-| RG-6 / Bulldog-6 | Grip its latch contact and pull rearward roughly 4 cm to open. Load individual VOG rounds into the open drum; indexing is animated. Re-grip/pull the latch to close. The opening arc is 180°. Exact hand alignment and every firing/loading sequence need regression testing. |
+| RG-6 / Bulldog-6 | Grip its latch contact and pull rearward roughly 4 cm to open. Load individual VOG rounds into the open drum; indexing is animated. Re-grip/pull the latch to close. The opening arc is 180В°. Exact hand alignment and every firing/loading sequence need regression testing. |
 
 ### Underbarrel launchers
 
@@ -113,15 +113,15 @@ Hold the support grip and press that hand's index trigger to toggle grenade-laun
 
 ## Graphics and stability
 
-Release graphics are snapshotted from the developer's **current** working configuration, including 2560×1440 render dimensions and its current quality/distance values. Monitor name and refresh-rate identity are removed for portability. This may be demanding; reduce settings in-game if necessary. Some settings need a full restart.
+Release graphics are snapshotted from the developer's **current** working configuration, including 2560Г—1440 render dimensions and its current quality/distance values. Monitor name and refresh-rate identity are removed for portability. This may be demanding; reduce settings in-game if necessary. Some settings need a full restart.
 
-DX11/R4, borderless window, MSAA off and HDAO off/HBAO selected are compatibility constraints enforced before launching. Other quality settings persist. Do not manually re-enable exclusive fullscreen/MSAA/HDAO for this alpha: a prior imported combination caused a black-screen system hang, and its precise cause was not isolated. The corrected launch was confirmed to work.
+DX11/R4, borderless window and HDAO off/HBAO are enforced compatibility settings. MSAA is no longer forced off: 4x improved visual quality in Quest 2 development tests. A prior incompatible imported settings combination caused a black-screen system hang; broad hardware qualification remains incomplete. Same-frame local shadow reuse, GPU tile relocation and pipelined shadow preparation are enabled. Point-face culling and conservative sun-frustum experiments are not enabled. Dynamic shadows are omitted only inside binocular imagery; weapon scopes and the main stereo world retain shadows. SSAO/static shading can remain visible inside binoculars.
 
 The latest 5 cm near-plane change targets world-surface depth flicker. Its headset result is **unverified**. Very close geometry may clip; lens protection has been adapted. Foliage shimmer may remain.
 
 ## What has actually been tested?
 
-See [FEATURE-STATUS.en.md](FEATURE-STATUS.en.md). “Confirmed” means the tester reported the feature working at an earlier checkpoint on Quest 2. It does not mean every weapon, save, game location or the final installer has passed. Installer extraction, code builds and unit tests cannot certify headset comfort or campaign completion.
+See [FEATURE-STATUS.en.md](FEATURE-STATUS.en.md). вЂњConfirmedвЂќ means the tester reported the feature working at an earlier checkpoint on Quest 2. It does not mean every weapon, save, game location or the final installer has passed. Installer extraction, code builds and unit tests cannot certify headset comfort or campaign completion.
 
 Known high-priority checks: clean install, save/load after death (a historical crash was not explicitly confirmed resolved), all newly changed launcher/reload/calibration paths, interaction-zone toggle, latest depth-flicker correction, every weapon variant and long sessions.
 

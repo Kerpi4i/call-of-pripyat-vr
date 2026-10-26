@@ -6,13 +6,16 @@ static ID3D11RenderTargetView* copvrUIRT{};
 static ID3D11RenderTargetView* copvrSavedRT[4]{};
 static ID3D11DepthStencilView* copvrSavedZB{};
 static ref_rt copvrWristRT[2],copvrOpticsRT[2];
-static bool copvrOpticsPassActive=false; static int copvrOpticsEye=0;
+static bool copvrOpticsPassActive=false,copvrOpticsBinocular=false; static int copvrOpticsEye=0;
 static u32 copvrOpticsFrame[2]={u32(-1),u32(-1)};
+extern "C" __declspec(dllexport) int copvr_binocular_pass() {return copvrOpticsPassActive&&copvrOpticsBinocular?1:0;}
 extern "C" __declspec(dllexport) int copvr_optics_pass() { return copvrOpticsPassActive?1:0; }
 extern "C" __declspec(dllexport) int copvr_optics_ready(int eye) { return eye>=0&&eye<2&&copvrOpticsRT[eye]&&copvrOpticsFrame[eye]==Device.dwFrame; }
 extern "C" __declspec(dllexport) void copvr_set_optics_pass(int active) {
     for(int eye=0;eye<2;++eye) if(!copvrOpticsRT[eye]) copvrOpticsRT[eye].create(eye?"$user$copvr_optics_right":"$user$copvr_optics_left",Device.dwWidth,Device.dwHeight,D3DFMT_A8R8G8B8);
-    copvrOpticsPassActive=active!=0; if(active) { copvrOpticsEye=active-1; copvrOpticsFrame[copvrOpticsEye]=u32(-1); }
+    const int eye=(active&0xff)-1;
+    copvrOpticsPassActive=eye>=0&&eye<2;copvrOpticsBinocular=copvrOpticsPassActive&&(active&0x100)!=0;
+    if(copvrOpticsPassActive) {copvrOpticsEye=eye;copvrOpticsFrame[eye]=u32(-1);}
 }
 extern "C" __declspec(dllexport) int copvr_copy_optics(void* texture) {
     if(!texture||!copvrOpticsPassActive) return 0;

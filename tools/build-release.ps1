@@ -6,7 +6,7 @@ if(!$SkipNativeBuild){
     & (Join-Path $PSScriptRoot 'build-bridge.ps1')
     & (Join-Path $PSScriptRoot 'build-engine.ps1') -Target Game
 }
-$version='0.1.0-alpha.1'
+$version='0.1.0-alpha.2'
 $stage=Join-Path $root "build\release-$version"
 if(Test-Path -LiteralPath $stage){throw "Staging directory exists; preserve it or select a new version: $stage"}
 New-Item -ItemType Directory -Force $stage,(Join-Path $root 'dist') | Out-Null
@@ -44,7 +44,7 @@ Copy-Item -LiteralPath (Join-Path $stage 'CoPVR.exe.config') -Destination ($setu
 & git -C (Join-Path $root 'engine') diff --binary --output=../patches/openxray-vr.patch
 & python (Join-Path $PSScriptRoot 'package-source.py')
 if($LASTEXITCODE -ne 0){throw 'Source archive failed'}
-$hashes=Get-ChildItem -LiteralPath (Join-Path $root 'dist') -File | Where-Object Name -ne 'SHA256SUMS.txt' | ForEach-Object { (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()+'  '+$_.Name }
-$hashes | Set-Content -LiteralPath (Join-Path $root 'dist\SHA256SUMS.txt') -Encoding ascii
+$hashes=Get-ChildItem -LiteralPath (Join-Path $root 'dist') -File | Where-Object { $_.Name -like "CoPVR-$version-*" -or $_.Name -eq "VALIDATION-$version.md" } | ForEach-Object { (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()+'  '+$_.Name }
+$hashes | Set-Content -LiteralPath (Join-Path $root "dist\SHA256SUMS-$version.txt") -Encoding ascii
 Write-Output "Release candidate prepared: $setup"
 Write-Output 'No installer, launcher or game was started. Clean installation/headset acceptance is still required before publication.'

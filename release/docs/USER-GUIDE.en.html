@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Call of Pripyat VR — Alpha 0.1.0</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Call of Pripyat VR вЂ” Alpha 0.1.0</h1>
 <p>Unofficial, free PC VR modification for the <strong>original Steam S.T.A.L.K.E.R.: Call of Pripyat 1.6.02</strong>. Built on OpenXRay. Requires the purchased original game; no game archives are supplied. The owner confirmed installation and launch on 2026-10-25; individual feature regression remains incomplete. It is not affiliated with or endorsed by GSC Game World, Valve or Meta.</p>
 <h2>Requirements and scope</h2>
 <ul>
@@ -11,7 +11,7 @@
 <ol>
 <li>Install the original Steam game and launch it normally once to confirm it works. Close it.</li>
 <li>Open Meta Quest Link on the PC. Set it as the active OpenXR runtime, connect the headset over USB and enter Quest Link.</li>
-<li>Run <code>CoPVR-0.1.0-alpha.1-Setup.exe</code>. Confirm the detected original game folder or choose it manually. Choose a <strong>separate, empty mod folder</strong>, outside the Steam game directory. ASCII/Latin characters are required in both paths for this alpha. Installation needs no administrator rights in a user-writable folder.</li>
+<li>Run <code>CoPVR-0.1.0-alpha.2-Setup.exe</code>. Confirm the detected original game folder or choose it manually. Choose a <strong>separate, empty mod folder</strong>, outside the Steam game directory. ASCII/Latin characters are required in both paths for this alpha. Installation needs no administrator rights in a user-writable folder.</li>
 <li>Open the desktop shortcut or <code>CoPVR.exe</code>. Click <strong>Play in VR</strong>. Setup does not start the game automatically.</li>
 <li>Stand upright, face your intended forward direction and <strong>click the right stick</strong> in gameplay. This recalibrates the room origin, forward heading, eye height and standing collision height. Calibration is blocked when crouching. Release triggers/sticks before entering gameplay.</li>
 <li>Start a new game for the acceptance test. Existing saves can be copied manually into <code>data/savedgames</code>, but back them up first. Do not overwrite your original saves with VR saves; new weapon-state data is not guaranteed to be readable by the original executable.</li>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>Right stick left/right</td>
-<td>30° snap turn</td>
+<td>30В° snap turn</td>
 </tr>
 <tr>
 <td>Right stick down</td>
@@ -91,7 +91,7 @@
 </tbody>
 </table>
 <p>Keyboard and mouse game input is disabled in VR. Use the Touch ray and trigger in menus; do not rely on a keyboard shortcut to recover a stuck menu. Windows controls remain available outside the game. Some native text-entry/edge-case menus are not covered by headset acceptance yet.</p>
-<h2>Body zones — use without looking down</h2>
+<h2>Body zones вЂ” use without looking down</h2>
 <p>The full character body and floating item belt are intentionally hidden. The zones use an estimated torso frame with constrained head-following and movement alignment; physical torso/hip tracking is not available.</p>
 <table>
 <thead>
@@ -135,7 +135,7 @@
 </tr>
 </tbody>
 </table>
-<p>To find zones, use <strong>Settings → Gameplay → VR: interaction zones</strong>, then Apply. The choice is saved. Outlines are off by default. The outline shows the zone volume, not a solid object. Some equipment/physical interactions have priority over overlapping gestures; first release both triggers and try with an empty hand if nothing is taken.</p>
+<p>To find zones, use <strong>Settings в†’ Gameplay в†’ VR: interaction zones</strong>, then Apply. The choice is saved. Outlines are off by default. The outline shows the zone volume, not a solid object. Some equipment/physical interactions have priority over overlapping gestures; first release both triggers and try with an empty hand if nothing is taken.</p>
 <h2>Hands, items, inventory and PDA</h2>
 <ul>
 <li>Hold grip to keep an item; release to drop/throw it unless a stow/return rule applies. Knife, detector and binocular equipment return rather than becoming loose world items. Bolts are thrown, and a replacement becomes available after throwing.</li>
@@ -189,7 +189,7 @@
 </tr>
 <tr>
 <td>RG-6 / Bulldog-6</td>
-<td>Grip its latch contact and pull rearward roughly 4 cm to open. Load individual VOG rounds into the open drum; indexing is animated. Re-grip/pull the latch to close. The opening arc is 180°. Exact hand alignment and every firing/loading sequence need regression testing.</td>
+<td>Grip its latch contact and pull rearward roughly 4 cm to open. Load individual VOG rounds into the open drum; indexing is animated. Re-grip/pull the latch to close. The opening arc is 180В°. Exact hand alignment and every firing/loading sequence need regression testing.</td>
 </tr>
 </tbody>
 </table>
@@ -204,11 +204,11 @@
 <li>Sound orientation follows the headset. Camera motion in the wounded-NPC help sequence and sleep interaction were previously confirmed fixed; broader scripted camera coverage is incomplete.</li>
 </ul>
 <h2>Graphics and stability</h2>
-<p>Release graphics are snapshotted from the developer's <strong>current</strong> working configuration, including 2560×1440 render dimensions and its current quality/distance values. Monitor name and refresh-rate identity are removed for portability. This may be demanding; reduce settings in-game if necessary. Some settings need a full restart.</p>
-<p>DX11/R4, borderless window, MSAA off and HDAO off/HBAO selected are compatibility constraints enforced before launching. Other quality settings persist. Do not manually re-enable exclusive fullscreen/MSAA/HDAO for this alpha: a prior imported combination caused a black-screen system hang, and its precise cause was not isolated. The corrected launch was confirmed to work.</p>
+<p>Release graphics are snapshotted from the developer's <strong>current</strong> working configuration, including 2560Г—1440 render dimensions and its current quality/distance values. Monitor name and refresh-rate identity are removed for portability. This may be demanding; reduce settings in-game if necessary. Some settings need a full restart.</p>
+<p>DX11/R4, borderless window and HDAO off/HBAO are enforced compatibility settings. MSAA is no longer forced off: 4x improved visual quality in Quest 2 development tests. A prior incompatible imported settings combination caused a black-screen system hang; broad hardware qualification remains incomplete. Same-frame local shadow reuse, GPU tile relocation and pipelined shadow preparation are enabled. Point-face culling and conservative sun-frustum experiments are not enabled. Dynamic shadows are omitted only inside binocular imagery; weapon scopes and the main stereo world retain shadows. SSAO/static shading can remain visible inside binoculars.</p>
 <p>The latest 5 cm near-plane change targets world-surface depth flicker. Its headset result is <strong>unverified</strong>. Very close geometry may clip; lens protection has been adapted. Foliage shimmer may remain.</p>
 <h2>What has actually been tested?</h2>
-<p>See <a href="FEATURE-STATUS.en.html">FEATURE-STATUS.en.md</a>. “Confirmed” means the tester reported the feature working at an earlier checkpoint on Quest 2. It does not mean every weapon, save, game location or the final installer has passed. Installer extraction, code builds and unit tests cannot certify headset comfort or campaign completion.</p>
+<p>See <a href="FEATURE-STATUS.en.html">FEATURE-STATUS.en.md</a>. вЂњConfirmedвЂќ means the tester reported the feature working at an earlier checkpoint on Quest 2. It does not mean every weapon, save, game location or the final installer has passed. Installer extraction, code builds and unit tests cannot certify headset comfort or campaign completion.</p>
 <p>Known high-priority checks: clean install, save/load after death (a historical crash was not explicitly confirmed resolved), all newly changed launcher/reload/calibration paths, interaction-zone toggle, latest depth-flicker correction, every weapon variant and long sessions.</p>
 <h2>Troubleshooting and bug reports</h2>
 <ul>

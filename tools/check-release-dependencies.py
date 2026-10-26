@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parent.parent
 vswhere=Path(os.environ['ProgramFiles(x86)'])/'Microsoft Visual Studio/Installer/vswhere.exe'
 vs=subprocess.check_output([str(vswhere),'-latest','-property','installationPath'],text=True).strip()
 dump=next((Path(vs)/'VC/Tools/MSVC').glob('*/bin/Hostx64/x64/dumpbin.exe'))
-folder=root/'build/release-0.1.0-alpha.1/bin'
+folder=root/'build/release-0.1.0-alpha.2/bin'
 packaged={p.name.lower() for p in folder.iterdir()};failures=[];optional=[]
 for p in folder.iterdir():
     if p.suffix.lower() not in {'.exe','.dll'}:continue

@@ -61,7 +61,7 @@ internal sealed class Launcher : Form {
             if(Product.Running())throw new Exception(T("An xrEngine process is already running.","Процес xrEngine вже запущений."));
             if(!File.Exists(Product.Runtime()))throw new Exception(T("No active 64-bit OpenXR runtime. Select Meta Quest Link as the OpenXR runtime in the Meta PC app.","Немає активного 64-бітного OpenXR. Виберіть Meta Quest Link як середовище OpenXR у програмі Meta на ПК."));
             Product.Prepare(Product.Root,Game);
-            var p=Process.Start(new ProcessStartInfo(Path.Combine(Product.Root,"bin","xrEngine.exe"),"-fsltx fsgame.ltx -noprefetch -copvr -nointro -r4"){WorkingDirectory=Product.Root,UseShellExecute=false});
+            var p=Process.Start(new ProcessStartInfo(Path.Combine(Product.Root,"bin","xrEngine.exe"),"-fsltx fsgame.ltx -noprefetch -copvr -nointro -r4 -copvr_eye 2080x2096 -copvr_shadow_cache -copvr_shadow_tiles -copvr_shadow_pipeline -copvr_skip_base_camera_work"){WorkingDirectory=Product.Root,UseShellExecute=false});
             play.Enabled=false;p.Exited+=(s,e)=>{if(!IsDisposed)BeginInvoke(new Action(()=>play.Enabled=true));};p.EnableRaisingEvents=true;
         }catch(Exception ex){MessageBox.Show(ex.Message,Text,MessageBoxButtons.OK,MessageBoxIcon.Error);}
     }

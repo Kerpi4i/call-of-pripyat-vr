@@ -20,6 +20,9 @@ inline shared_str handleProfile(CWeapon* weapon) {
     auto ini=equipmentConfig();return ini&&ini->section_exist(section)?shared_str(section):shared_str("");
 }
 inline bool handleContact(CWeapon* weapon,attachable_hud_item* hud,u16& bone,Fvector& contact,Fvector& axis,float& travel) {
+    // Pump shotguns are cycled exclusively through their articulated support grip.
+    // Suppress this contact for both grabbing and debug-zone rendering.
+    if(auto gun=weapon?weapon->cast_weapon_magazined():nullptr;gun&&gun->VRInternalKind()==1)return false;
     auto ini=equipmentConfig();const auto profile=handleProfile(weapon);
     if(!ini||!profile.size()||!hud||!hud->m_model||hud->m_parent_hud_item!=weapon)return false;
     bone=hud->m_model->LL_BoneID(ini->r_string(profile,"bone"));if(bone==BI_NONE)return false;
@@ -58,7 +61,7 @@ inline void updateWeaponHandle(CActor& actor,const CopVrControls& controls,const
     Fmatrix aim;Fvector grip;
     if(launcherProfile(weapon).size()){resetWeaponHandle();return;}
     if(auto gun=weapon?weapon->cast_weapon_magazined():nullptr) {
-        if(gun->VRInternalKind()==2||gun->VRInternalKind()==3||gun->VRInternalKind()==5||(gun->VRInternalKind()==1&&supportGrip().active())){resetWeaponHandle();return;}
+        if(gun->VRInternalKind()==1||gun->VRInternalKind()==2||gun->VRInternalKind()==3||gun->VRInternalKind()==5){resetWeaponHandle();return;}
     }
     if(!allowed||secondaryActive||occupiedHands()[side]||!weapon||!hud||hud->m_parent_hud_item!=weapon||
         !hud->m_model||weapon->IsPending()||!hand(controls,side,camera,aim,grip)) { resetWeaponHandle();return; }

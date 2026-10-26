@@ -1,5 +1,5 @@
 TITLE
-Call of Pripyat VR — free alpha for Quest 2 / Touch (original Steam version)
+Call of Pripyat VR вЂ” free alpha for Quest 2 / Touch (original Steam version)
 
 POST
 [h1]Explore the Zone in PC VR[/h1]
@@ -16,7 +16,7 @@ The alpha includes stereoscopic rendering and headset tracking, tracked Touch ha
 The mod installs separately and references the original game's resources. It does not replace your Steam game files. Please back up saves and start with a new game for testing.
 
 [b]Download and instructions:[/b]
-[url=https://github.com/Kerpi4i/call-of-pripyat-vr/releases/tag/v0.1.0-alpha.1]Download Alpha 0.1.0 and read the release notes[/url]
+[url=https://github.com/Kerpi4i/call-of-pripyat-vr/releases/tag/v0.1.0-alpha.2]Download Alpha 0.1.0 and read the release notes[/url]
 [url=https://github.com/Kerpi4i/call-of-pripyat-vr/blob/main/release/docs/USER-GUIDE.en.md]Installation and controls[/url]
 [url=https://github.com/Kerpi4i/call-of-pripyat-vr/issues]Bug reports[/url]
 
@@ -24,3 +24,6 @@ Bug reports with the version, headset/runtime, GPU and clear reproduction steps 
 
 This is a free, unofficial fan modification, not affiliated with or endorsed by GSC Game World, Valve or Meta. Credit to OpenXRay and the OpenXR ecosystem.
 
+
+
+Alpha.2 update: clearer per-eye rendering, default MSAA 4x and local-shadow performance work. Heavy scenes/binoculars can still drop frames. Full campaign remains untested; quests/cutscenes may fail. Install in a new empty folder and keep old saves.

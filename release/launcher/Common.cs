@@ -8,7 +8,7 @@ using System.Diagnostics;
 using Microsoft.Win32;
 
 internal static class Product {
-    internal const string Version = "0.1.0-alpha.1";
+    internal const string Version = "0.1.0-alpha.2";
     internal static string Root { get { return AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'); } }
     internal static string Q(string value) { return "\"" + value.Replace("\"", "") + "\""; }
     internal static bool ValidGame(string path) {
@@ -57,7 +57,7 @@ internal static class Product {
     internal static void Compatibility(string file) {
         var values=new Dictionary<string,string>{
             {"renderer","renderer_r4"},{"rs_fullscreen","off"},{"vid_window_mode","st_opt_windowed_borderless"},
-            {"r3_msaa","st_opt_off"},{"r3_msaa_alphatest","st_opt_off"},{"r2_ssao_hdao","off"},{"r2_ssao_hbao","on"},{"r2_ssao_mode","hbao"}};
+            {"r2_ssao_hdao","off"},{"r2_ssao_hbao","on"},{"r2_ssao_mode","hbao"}};
         var lines=File.ReadAllLines(file).Where(l=>!values.ContainsKey(l.Trim().Split(new[]{' ','\t'},StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()??"")).ToList();
         lines.AddRange(values.Select(p=>p.Key+" "+p.Value)); File.WriteAllLines(file,lines,Encoding.ASCII);
     }

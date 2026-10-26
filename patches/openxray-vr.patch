@@ -59,6 +59,32 @@ index b794608..a24a2d2 100644
      // set sun params
      if (sun)
      {
+diff --git a/src/Layers/xrRender/Light_Render_Direct_ComputeXFS.cpp b/src/Layers/xrRender/Light_Render_Direct_ComputeXFS.cpp
+index 27246e1..470f292 100644
+--- a/src/Layers/xrRender/Light_Render_Direct_ComputeXFS.cpp
++++ b/src/Layers/xrRender/Light_Render_Direct_ComputeXFS.cpp
+@@ -54,7 +54,9 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
+     float intensity = (intensity0 + intensity1) / 2.f; // intensity1 tends to underestimate...
+ 
+     // compute how much duelling frusta occurs	[-1..1]-> 1 + [-0.5 .. +0.5]
+-    float duel_dot = 1.f - 0.5f * Device.vCameraDirection.dotproduct(L_dir);
++    // A head pitch must not resize/repack the vertical cubemap faces in VR.
++    const float duel_dot = strstr(Core.Params,"-copvr") ? 1.f :
++        1.f - 0.5f * Device.vCameraDirection.dotproduct(L_dir);
+ 
+     // compute how large the light is - give more texels to larger lights, assume 8m as being optimal radius
+     float sizefactor = L->range / 8.f; // 4m = .5, 8m=1.f, 16m=2.f, 32m=4.f
+@@ -79,6 +81,10 @@ void CLight_Compute_XFORM_and_VIS::compute_xf_spot(light* L)
+     int _epsilon = iCeil(float(_size) * 0.01f);
+     int _diff = _abs(int(_size) - int(_cached_size));
+     L->X.S.size = (_diff >= _epsilon) ? _size : _cached_size;
++    // Share the first computed adaptive size across views of this simulation
++    // frame. Repeated per-eye hysteresis updates previously changed packing.
++    if(strstr(Core.Params,"-copvr_shadow_cache"))
++        L->X.S.size=L->copvrShadowSize.select(Device.dwFrame,L->X.S.size);
+ 
+     // make N pixel border
+     L->X.S.view.build_camera_dir(L_pos, L_dir, L_up);
 diff --git a/src/Layers/xrRender/ParticleEffect.cpp b/src/Layers/xrRender/ParticleEffect.cpp
 index 6609a3e..2be4c20 100644
 --- a/src/Layers/xrRender/ParticleEffect.cpp
@@ -225,6 +251,66 @@ index 52eb42d..df121d9 100644
      // Visualization	(rain)
      ref_shader SH_Rain;
      ref_geom hGeom_Rain;
+diff --git a/src/Layers/xrRender/light.h b/src/Layers/xrRender/light.h
+index e0cc196..da0e161 100644
+--- a/src/Layers/xrRender/light.h
++++ b/src/Layers/xrRender/light.h
+@@ -1,3 +1,4 @@
++#include "../../../../src/vr_shadow_size.hpp"
+ #pragma once
+ 
+ #include "xrCDB/ISpatial.h"
+@@ -62,6 +63,8 @@ public:
+     ref_shader s_volumetric_msaa[8];
+ #endif //	(RENDER==R_R3) || (RENDER==R_R4) || (RENDER==R_GL)
+ 
++    copvr::FrameShadowSize copvrShadowSize;
++
+     u32 m_xform_frame;
+     Fmatrix m_xform;
+ 
+diff --git a/src/Layers/xrRender/light_smapvis.cpp b/src/Layers/xrRender/light_smapvis.cpp
+index 0350b55..74e8dd6 100644
+--- a/src/Layers/xrRender/light_smapvis.cpp
++++ b/src/Layers/xrRender/light_smapvis.cpp
+@@ -25,6 +25,13 @@ void smapvis::begin()
+ {
+     auto& dsgraph = RImplementation.get_context(id);
+     dsgraph.clear_Counters();
++    // This cache/query sequence assumes one view per simulation frame. VR
++    // repacks the atlas and renders two eyes while dwFrame remains unchanged.
++    if(strstr(Core.Params,"-copvr")) {
++        invisible.clear();state=state_counting;testQ_V=nullptr;
++        dsgraph.set_Feedback(nullptr,0);
++        return;
++    }
+     switch (state)
+     {
+     case state_counting:
+@@ -52,6 +59,7 @@ void smapvis::end()
+     dsgraph.get_Counters(ts, td);
+     RImplementation.Stats.ic_total += ts;
+     dsgraph.set_Feedback(0, 0);
++    if(strstr(Core.Params,"-copvr"))return;
+ 
+     switch (state)
+     {
+@@ -85,6 +93,7 @@ void smapvis::end()
+ 
+ void smapvis::flushoccq()
+ {
++    if(strstr(Core.Params,"-copvr"))return;
+     // the tough part
+     if (testQ_frame != Device.dwFrame)
+         return;
+@@ -115,6 +124,7 @@ void smapvis::flushoccq()
+ }
+ void smapvis::resetoccq()
+ {
++    if(strstr(Core.Params,"-copvr"))return;
+     if (testQ_frame == (Device.dwFrame + 1))
+         testQ_frame--;
+     flushoccq();
 diff --git a/src/Layers/xrRender/light_vis.cpp b/src/Layers/xrRender/light_vis.cpp
 index 6991cd1..5aee25f 100644
 --- a/src/Layers/xrRender/light_vis.cpp
@@ -288,10 +374,14 @@ index 8254b9e..6d1d07c 100644
  {
      if (!ThisInstanceIsGlobal())
 diff --git a/src/Layers/xrRenderPC_R4/r4_rendertarget_phase_combine.cpp b/src/Layers/xrRenderPC_R4/r4_rendertarget_phase_combine.cpp
-index 6237a2c..ec8b375 100644
+index 6237a2c..f849a0e 100644
 --- a/src/Layers/xrRenderPC_R4/r4_rendertarget_phase_combine.cpp
 +++ b/src/Layers/xrRenderPC_R4/r4_rendertarget_phase_combine.cpp
-@@ -3,6 +3,8 @@
+@@ -1,8 +1,12 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_profile.hpp"
++extern "C" int copvr_motion_view_index();
+ #include "xrEngine/IGame_Persistent.h"
  #include "xrEngine/Environment.h"
  #include "Layers/xrRender/dxEnvironmentRender.h"
  
@@ -300,7 +390,25 @@ index 6237a2c..ec8b375 100644
  #define STENCIL_CULL 0
  
  namespace xray::render::RENDER_NAMESPACE
-@@ -89,13 +91,14 @@ void CRenderTarget::phase_combine()
+@@ -30,7 +34,7 @@ void CRenderTarget::phase_combine()
+ 
+     if (s_hdao_cs)
+     {
+-        phase_hdao();
++        { copvr::RendererProfilePass timing("hdao",copvr_motion_view_index(),Device.dwFrame); phase_hdao(); }
+     }
+     else
+     {
+@@ -41,7 +45,7 @@ void CRenderTarget::phase_combine()
+         }
+         else if (RImplementation.o.ssao_blur_on)
+         {
+-            phase_ssao();
++            { copvr::RendererProfilePass timing("ssao",copvr_motion_view_index(),Device.dwFrame); phase_ssao(); }
+         }
+     }
+ 
+@@ -89,13 +93,14 @@ void CRenderTarget::phase_combine()
      Fmatrix m_previous, m_current;
      Fvector2 m_blur_scale;
      {
@@ -322,8 +430,26 @@ index 6237a2c..ec8b375 100644
          m_blur_scale.set(scale, -scale).div(12.f);
      }
  
+@@ -257,7 +262,7 @@ void CRenderTarget::phase_combine()
+     }
+ 
+     // for msaa we need a resolved color buffer - Holger
+-    phase_bloom(); // HDR RT invalidated here
++    { copvr::RendererProfilePass timing("bloom",copvr_motion_view_index(),Device.dwFrame); phase_bloom(); } // HDR RT invalidated here
+ 
+     // RImplementation.rmNormal();
+     // u_setrt(rt_Generic_1,0,0,get_base_zb());
+@@ -419,7 +424,7 @@ void CRenderTarget::phase_combine()
+     if (PP_Complex)
+     {
+         PIX_EVENT(phase_pp);
+-        phase_pp();
++        { copvr::RendererProfilePass timing("postprocess",copvr_motion_view_index(),Device.dwFrame); phase_pp(); }
+     }
+ 
+     //	Re-adapt luminance
 diff --git a/src/Layers/xrRender_R2/r2.cpp b/src/Layers/xrRender_R2/r2.cpp
-index f377c69..9478224 100644
+index f377c69..0f526e1 100644
 --- a/src/Layers/xrRender_R2/r2.cpp
 +++ b/src/Layers/xrRender_R2/r2.cpp
 @@ -3,6 +3,7 @@
@@ -388,7 +514,63 @@ index f377c69..9478224 100644
  #if defined(USE_DX11)
          const float VertTan = -1.0f * tanf(deg2rad(Device.fFOV / 2.0f));
          const float HorzTan = -VertTan / Device.fASPECT;
-@@ -760,6 +797,15 @@ bool CRender::occ_visible(sPoly& P) { return HOM.visible(P); }
+@@ -372,6 +409,7 @@ void CRender::create()
+     o.noshadows = (strstr(Core.Params, "-noshadows")) ? TRUE : FALSE;
+     o.Tshadows = (strstr(Core.Params, "-tsh")) ? TRUE : FALSE;
+     o.oldshadowcascades = must_enable_old_cascades() || ps_r2_ls_flags_ext.test(R2FLAGEXT_SUN_OLD);
++    if(strstr(Core.Params,"-copvr_shadow_safe")) Msg("* CoPVR: conservative sun-shadow test enabled; legacy=%d; TSM/focus bypassed",int(o.oldshadowcascades));
+     o.mblur = (strstr(Core.Params, "-mblur")) ? TRUE : FALSE;
+     o.distortion_enabled = (strstr(Core.Params, "-nodistort")) ? FALSE : TRUE;
+     o.distortion = o.distortion_enabled;
+@@ -410,8 +448,17 @@ void CRender::create()
+ 
+     //	MSAA option dependencies
+ #if defined(USE_DX11)
+-    o.msaa = !!ps_r3_msaa;
+-    o.msaa_samples = (1 << ps_r3_msaa);
++    // Per-launch VR diagnostic; do not overwrite the user's saved graphics config.
++    u32 selectedMsaa = ps_r3_msaa;
++    const char* vrMsaa = strstr(Core.Params, "-copvr_msaa ");
++    if (strstr(Core.Params, "-copvr") && vrMsaa)
++    {
++        const int samples = atoi(vrMsaa + strlen("-copvr_msaa "));
++        if (samples == 0 || samples == 2 || samples == 4)
++            selectedMsaa = samples == 4 ? 2 : (samples == 2 ? 1 : 0);
++    }
++    o.msaa = !!selectedMsaa;
++    o.msaa_samples = o.msaa ? (1 << selectedMsaa) : 1;
+ 
+     o.msaa_opt = ps_r2_ls_flags.test(R3FLAG_MSAA_OPT);
+     o.msaa_opt = o.msaa_opt && o.msaa && (HW.FeatureLevel >= D3D_FEATURE_LEVEL_10_1) ||
+@@ -453,6 +500,10 @@ void CRender::create()
+         }
+     }
+ 
++    if (strstr(Core.Params, "-copvr"))
++        Msg("* CoPVR: MSAA samples=%u; alpha-test mode=%u; post-AA=%d",
++            u32(o.msaa_samples), u32(o.msaa_alphatest), int(ps_r2_ls_flags.test(R2FLAG_AA)));
++
+     o.gbuffer_opt = ps_r2_ls_flags.test(R3FLAG_GBUFFER_OPT);
+ 
+     o.minmax_sm = ps_r3_minmax_sm;
+@@ -624,6 +675,16 @@ void CRender::OnCameraUpdated()
+     if (g_pGamePersistent->MainMenuActiveOrLevelNotExist())
+         return;
+ 
++#if defined(USE_DX11)
++    if(strstr(Core.Params,"-copvr_skip_base_camera_work")) {
++        // The VR entry point disables monocular HOM and rebuilds detail
++        // visibility for every installed eye/optical camera before drawing.
++        // Do not dispatch results for the actor camera that are never used.
++        ProcessHOMTask=nullptr;HOM.Disable();
++        if(Details)Details->m_calc_task=nullptr;
++        return;
++    }
++#endif
+     ProcessHOMTask = &HOM.DispatchMTRender();
+     if (Details)
+         Details->DispatchMTCalc();
+@@ -760,6 +821,15 @@ bool CRender::occ_visible(sPoly& P) { return HOM.visible(P); }
  bool CRender::occ_visible(Fbox& P) { return HOM.visible(P); }
  void CRender::add_Visual(u32 context_id, IRenderable* root, IRenderVisual* V, Fmatrix& m)
  {
@@ -404,11 +586,333 @@ index f377c69..9478224 100644
      // TODO: this whole function should be replaced by a list of renderables+xforms returned from `renderable_Render` call
      auto& dsgraph = get_context(context_id);
      dsgraph.add_leafs_dynamic(root, (dxRender_Visual*)V, m);
+diff --git a/src/Layers/xrRender_R2/r2_R_calculate.cpp b/src/Layers/xrRender_R2/r2_R_calculate.cpp
+index 355106a..724b837 100644
+--- a/src/Layers/xrRender_R2/r2_R_calculate.cpp
++++ b/src/Layers/xrRender_R2/r2_R_calculate.cpp
+@@ -1,4 +1,10 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_profile.hpp"
++#if defined(USE_DX11)
++extern "C" int copvr_motion_view_index();
++#else
++static int copvr_motion_view_index(){return -1;}
++#endif
+ 
+ #include "xrEngine/CustomHUD.h"
+ #include "xrCore/Threading/TaskManager.hpp"
+@@ -29,6 +35,7 @@ void render_main::init()
+ 
+ void render_main::calculate()
+ {
++    copvr::RendererProfilePass timing("visibility_build",copvr_motion_view_index(),Device.dwFrame,false);
+     ZoneScoped;
+ 
+     auto& dsgraph_main = RImplementation.get_imm_context();
+@@ -65,6 +72,7 @@ void render_main::render()
+ 
+ void CRender::Calculate()
+ {
++    copvr::RendererProfilePass timing("calculate_total",copvr_motion_view_index(),Device.dwFrame,false);
+     ZoneScopedN("r2_calculate");
+ 
+     // Transfer to global space to avoid deep pointer access
+@@ -131,7 +139,7 @@ void CRender::Calculate()
+         Lights.add_light(L);
+     }
+ 
+-    TaskScheduler->Wait(*ProcessHOMTask);
++    if(ProcessHOMTask)TaskScheduler->Wait(*ProcessHOMTask);
+ 
+     r_main.init();
+     if (o.oldshadowcascades)
+diff --git a/src/Layers/xrRender_R2/r2_R_lights.cpp b/src/Layers/xrRender_R2/r2_R_lights.cpp
+index ccf3726..a292a0f 100644
+--- a/src/Layers/xrRender_R2/r2_R_lights.cpp
++++ b/src/Layers/xrRender_R2/r2_R_lights.cpp
+@@ -1,10 +1,35 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_shadow_mode.hpp"
++#include "../../../../src/renderer_profile.hpp"
++#include "../../../../src/vr_shadow_queue.hpp"
++#include "Layers/xrRender/du_sphere_part.h"
++#if defined(USE_DX11)
++#include "../../../../src/vr_shadow_atlas_cache.hpp"
++#endif
++#if defined(USE_DX11)
++extern "C" int copvr_motion_view_index();
++#else
++static int copvr_motion_view_index(){return -1;}
++#endif
+ 
+ namespace xray::render::RENDER_NAMESPACE
+ {
++extern float g_fSCREEN;
+ void CRender::render_lights(light_Package& LP)
+ {
+     ZoneScoped;
++    struct ShadowFlagRestore {
++        std::vector<light*> changed;
++        ~ShadowFlagRestore(){for(auto* light:changed)light->flags.bShadow=TRUE;}
++    } shadowFlags;
++    if(copvrNoLocalShadows(Core.Params)) {
++        // Preserve local illumination using the existing unshadowed spot/omni shader.
++        for(auto* light:LP.v_shadowed) {
++            if(light->flags.bShadow){shadowFlags.changed.push_back(light);light->flags.bShadow=FALSE;}
++            LP.v_spot.push_back(light);
++        }
++        LP.v_shadowed.clear();
++    }
+ 
+     //////////////////////////////////////////////////////////////////////////
+     // Refactor order based on ability to pack shadow-maps
+@@ -23,6 +48,24 @@ void CRender::render_lights(light_Package& LP)
+             }
+             else
+             {
++                if(strstr(Core.Params,"-copvr_shadow_face_cull")&&L->flags.type==IRender_Light::OMNIPART&&
++                   !L->flags.bVolumetric&&!ps_r2_ls_flags.test(R2FLAG_GI)&&!L->s_point&&!L->s_spot) {
++                    // Bound the exact mesh used by draw_volume for this face.
++                    // An enlarged AABB can retain unnecessary faces, never reject
++                    // a visible vertex of the ordinary direct-light volume.
++                    static const Fbox localBounds=[](){
++                        Fbox bounds;bounds.invalidate();
++                        for(unsigned v=0;v<DU_SPHERE_PART_NUMVERTEX;++v)bounds.modify(du_sphere_part_vertices[v]);
++                        return bounds;
++                    }();
++                    L->xform_calc();
++                    Fbox bounds;bounds.xform(localBounds,L->m_xform);bounds.grow(.05f+L->range*.01f);
++                    auto mask=ViewBase.getMask();
++                    if(bounds.is_valid()&&ViewBase.testAABB(bounds.data(),mask)==fcvNone) {
++                        copvr::RendererProfilePass culled("shadow_face_culled",copvr_motion_view_index(),Device.dwFrame,false);
++                        source.erase(source.begin()+it);--it;continue;
++                    }
++                }
+                 LR.compute_xf_spot(L);
+             }
+         }
+@@ -95,13 +138,19 @@ void CRender::render_lights(light_Package& LP)
+     static xr_vector<task_data_t> lights_queue{};
+     lights_queue.reserve(R__NUM_SUN_CASCADES);
+ 
+-    const auto& flush_lights = [&]()
++    const bool pipelineShadows=strstr(Core.Params,"-copvr_shadow_pipeline")!=nullptr;
++    const auto& flush_lights = [&](bool drainAll=true)
+     {
+         ZoneScopedN("flush lights");
+-        for (const auto& [L, task, batch_id] : lights_queue)
++        copvr::RendererProfilePass timing("local_shadow_draw_and_wait",copvr_motion_view_index(),Device.dwFrame);
++        while(!lights_queue.empty())
+         {
++            const size_t selected=pipelineShadows?copvr::readyShadowTask(lights_queue,[](const task_data_t& work){
++                return !work.task||work.task->IsFinished();
++            }):0;
++            const auto [L, task, batch_id]=lights_queue[selected];
+             if (task)
+-                TaskScheduler->Wait(*task);
++            { copvr::RendererProfilePass waitTiming("local_shadow_task_wait",copvr_motion_view_index(),Device.dwFrame,false); TaskScheduler->Wait(*task); }
+ 
+             auto& dsgraph = get_context(batch_id);
+ 
+@@ -144,9 +193,12 @@ void CRender::render_lights(light_Package& LP)
+ 
+             L->svis[batch_id].end(); // NOTE(DX11): occqs are fetched here, this should be done on the imm context only
+             RImplementation.release_context(batch_id);
++            lights_queue.erase(lights_queue.begin()+selected);
++            if(!drainAll) {
++                copvr::RendererProfilePass released("local_shadow_pipeline_release",copvr_motion_view_index(),Device.dwFrame,false);
++                break;
++            }
+         }
+-
+-        lights_queue.clear();
+     };
+ 
+     while (!LP.v_shadowed.empty())
+@@ -159,6 +211,76 @@ void CRender::render_lights(light_Package& LP)
+         xr_vector<light*>& source = LP.v_shadowed;
+         light* L = source.back();
+         const u16 sid = L->vis.smap_ID;
++#if defined(USE_DX11)
++        static copvr::ShadowAtlasCache vrShadowCache;
++        const bool useCache=strstr(Core.Params,"-copvr_shadow_cache")&&!o.Tshadows&&
++            vrShadowCache.prepare(Device.dwFrame,Target->rt_smap_depth->pSurface);
++        std::string cacheKey;
++        copvr::ShadowCacheKeyParts keyParts;
++        std::vector<copvr::ShadowCacheTile> cacheTiles;
++        if(useCache) {
++            auto append=[&](const auto& value){cacheKey.append(reinterpret_cast<const char*>(&value),sizeof(value));};
++            // SSA/LOD thresholds depend on the current projection; keep unlike
++            // optical/main views separate even when their light lists match.
++            append(g_fSCREEN);append(Device.fFOV);append(ps_r2_ls_flags.flags);
++            const bool diagnose=copvr::rendererTrace().enabled();
++            keyParts.context=cacheKey;
++            std::vector<light*> batchMembers;
++            for(auto it=source.rbegin();it!=source.rend()&&(*it)->vis.smap_ID==sid;++it) {
++                const auto begin=cacheKey.size();
++                auto* light=*it;append(light);append(light->X.S.posX);append(light->X.S.posY);
++                append(light->X.S.size);append(light->X.S.combine);
++                cacheTiles.push_back({reinterpret_cast<uintptr_t>(light),cacheKey.substr(begin),light->X.S.posX,light->X.S.posY,light->X.S.size});
++                auto& tile=cacheTiles.back();
++                auto addContent=[&](const auto& value){tile.contentKey.append(reinterpret_cast<const char*>(&value),sizeof(value));};
++                addContent(light);addContent(light->X.S.size);addContent(light->X.S.combine);
++                if(diagnose)batchMembers.push_back(light);
++            }
++            if(diagnose) {
++                keyParts.layout=cacheKey.substr(keyParts.context.size());
++                std::sort(batchMembers.begin(),batchMembers.end(),[](light* a,light* b){return uintptr_t(a)<uintptr_t(b);});
++                auto add=[](std::string& target,const auto& value){target.append(reinterpret_cast<const char*>(&value),sizeof(value));};
++                for(auto* light:batchMembers) {
++                    add(keyParts.members,light);
++                    add(keyParts.sizes,light);add(keyParts.sizes,light->X.S.size);
++                    add(keyParts.transforms,light);add(keyParts.transforms,light->X.S.combine);
++                }
++            }
++        }
++        std::vector<uintptr_t> cachedContributors;
++        std::vector<uintptr_t> restoredTiles;
++        bool restored=false;
++        if(useCache) {
++            copvr::RendererProfilePass timing("shadow_cache_lookup_restore",copvr_motion_view_index(),Device.dwFrame);
++            // ClearState also unbinds the atlas from output/SRV slots before copy.
++            HW.get_context(CHW::IMM_CTX_ID)->ClearState();cmd_list.Invalidate();
++            restored=vrShadowCache.restore(HW.get_context(CHW::IMM_CTX_ID),cacheKey,cachedContributors);
++            if(!restored) {
++                restored=vrShadowCache.restoreSubset(HW.get_context(CHW::IMM_CTX_ID),keyParts.context,cacheTiles,cachedContributors);
++                if(restored) {copvr::RendererProfilePass hit("shadow_cache_subset_hit",copvr_motion_view_index(),Device.dwFrame,false);}
++            }
++            if(!restored&&strstr(Core.Params,"-copvr_shadow_tiles")) {
++                copvr::RendererProfilePass tileTiming("shadow_tile_restore",copvr_motion_view_index(),Device.dwFrame);
++                if(vrShadowCache.restoreTiles(HW.pDevice,HW.get_context(CHW::IMM_CTX_ID),keyParts.context,cacheTiles,restoredTiles,cachedContributors)) {
++                    restored=restoredTiles.size()==cacheTiles.size();
++                    for(auto value:restoredTiles) {copvr::RendererProfilePass hit("shadow_tile_hit",copvr_motion_view_index(),Device.dwFrame,false);}
++                    cmd_list.Invalidate();
++                }
++            }
++            if(!restored&&copvr::rendererTrace().enabled()) {
++                copvr::RendererProfilePass reason(vrShadowCache.missReason(keyParts),copvr_motion_view_index(),Device.dwFrame,false);
++            }
++        }
++        if(restored) {
++            copvr::RendererProfilePass timing("shadow_cache_hit",copvr_motion_view_index(),Device.dwFrame,false);
++            while(!source.empty()&&source.back()->vis.smap_ID==sid)source.pop_back();
++            for(auto value:cachedContributors)L_spot_s.push_back(reinterpret_cast<light*>(value));
++        } else
++#endif
++        {
++#if defined(USE_DX11)
++        for(auto value:cachedContributors)L_spot_s.push_back(reinterpret_cast<light*>(value));
++#endif
+         while (true)
+         {
+             if (source.empty())
+@@ -166,12 +288,18 @@ void CRender::render_lights(light_Package& LP)
+             L = source.back();
+             if (L->vis.smap_ID != sid)
+                 break;
++#if defined(USE_DX11)
++            if(std::find(restoredTiles.begin(),restoredTiles.end(),reinterpret_cast<uintptr_t>(L))!=restoredTiles.end()) {
++                source.pop_back();continue;
++            }
++#endif
+ 
+             const auto batch_id = alloc_context(false);
+             if (batch_id == R_dsgraph_structure::INVALID_CONTEXT_ID)
+             {
+                 VERIFY(!lights_queue.empty());
+-                flush_lights();
++                // Refill one released context while the remaining jobs continue.
++                flush_lights(!pipelineShadows);
+                 continue;
+             }
+ 
+@@ -192,6 +320,7 @@ void CRender::render_lights(light_Package& LP)
+                     L->svis[data.batch_id].begin();
+ 
+                     dsgraph.o.phase = PHASE_SMAP;
++                    if(strstr(Core.Params,"-copvr"))dsgraph.o.use_hom=false;
+                     dsgraph.r_pmask(true, RImplementation.o.Tshadows);
+                     dsgraph.o.sector_id = L->spatial.sector_id;
+                     dsgraph.o.view_pos = L->position;
+@@ -214,6 +343,17 @@ void CRender::render_lights(light_Package& LP)
+             lights_queue.emplace_back(data);
+         }
+         flush_lights(); // in case if something left
++#if defined(USE_DX11)
++        if(useCache) {
++            copvr::RendererProfilePass timing("shadow_cache_store",copvr_motion_view_index(),Device.dwFrame);
++            cachedContributors.clear();
++            for(auto* contributor:L_spot_s)cachedContributors.push_back(reinterpret_cast<uintptr_t>(contributor));
++            HW.get_context(CHW::IMM_CTX_ID)->ClearState();cmd_list.Invalidate();
++            const bool stored=vrShadowCache.store(HW.pDevice,HW.get_context(CHW::IMM_CTX_ID),cacheKey,cachedContributors,keyParts,cacheTiles);
++            if(!stored) {copvr::RendererProfilePass failure("shadow_cache_store_failed",copvr_motion_view_index(),Device.dwFrame,false);}
++        }
++#endif
++        }
+ 
+         cmd_list.Invalidate();
+ 
 diff --git a/src/Layers/xrRender_R2/r2_R_render.cpp b/src/Layers/xrRender_R2/r2_R_render.cpp
-index 50c56c8..b0f04d3 100644
+index 50c56c8..dd62537 100644
 --- a/src/Layers/xrRender_R2/r2_R_render.cpp
 +++ b/src/Layers/xrRender_R2/r2_R_render.cpp
-@@ -213,6 +213,8 @@ void CRender::Render()
+@@ -1,4 +1,10 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_profile.hpp"
++#if defined(USE_DX11)
++extern "C" int copvr_motion_view_index();
++#else
++static int copvr_motion_view_index(){return -1;}
++#endif
+ 
+ #include "xrCore/Threading/TaskManager.hpp"
+ 
+@@ -141,6 +147,7 @@ void CRender::Render()
+     }
+ 
+     //*******
++    { copvr::RendererProfilePass timing("gpu_sync_and_visibility_wait",copvr_motion_view_index(),Device.dwFrame,false);
+     // Sync point
+     BasicStats.WaitS.Begin();
+     {
+@@ -151,6 +158,9 @@ void CRender::Render()
+ 
+     r_main.sync();
+ 
++    }
++
++    { copvr::RendererProfilePass timing("scene_prepare",copvr_motion_view_index(),Device.dwFrame,true);
+     if (ps_r2_ls_flags.test(R2FLAG_ZFILL))
+     {
+         // flush
+@@ -164,6 +174,8 @@ void CRender::Render()
+         Target->phase_scene_prepare();
+     }
+ 
++    }
++
+     BOOL split_the_scene_to_minimize_wait = FALSE;
+     if (ps_r2_ls_flags.test(R2FLAG_EXP_SPLIT_SCENE))
+         split_the_scene_to_minimize_wait = TRUE;
+@@ -173,6 +185,7 @@ void CRender::Render()
+     if (psDeviceFlags.test(rsWireframe))
+         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+ #endif
++    { copvr::RendererProfilePass timing("geometry_primary",copvr_motion_view_index(),Device.dwFrame,true);
+     if (!split_the_scene_to_minimize_wait)
+     {
+         PIX_EVENT(DEFER_PART0_NO_SPLIT);
+@@ -198,6 +211,9 @@ void CRender::Render()
+         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+ #endif
+ 
++    }
++
++    { copvr::RendererProfilePass timing("light_visibility",copvr_motion_view_index(),Device.dwFrame,true);
+     //******* Occlusion testing of volume-limited light-sources
+     Target->phase_occq();
+     LP_normal.clear();
+@@ -213,6 +229,8 @@ void CRender::Render()
      {
          PIX_EVENT(DEFER_TEST_LIGHT_VIS);
          light_Package& LP = Lights.package;
@@ -417,6 +921,81 @@ index 50c56c8..b0f04d3 100644
  
          // stats
          Stats.l_shadowed = LP.v_shadowed.size();
+@@ -258,6 +276,9 @@ void CRender::Render()
+     LP_normal.sort();
+     LP_pending.sort();
+ 
++    }
++
++    { copvr::RendererProfilePass timing("geometry_secondary_decals",copvr_motion_view_index(),Device.dwFrame,true);
+     //******* Main render :: PART-1 (second)
+     if (split_the_scene_to_minimize_wait)
+     {
+@@ -300,6 +321,8 @@ void CRender::Render()
+         Wallmarks->Render(); // wallmarks has priority as normal geometry
+     }
+ 
++    }
++
+     // Update incremental shadowmap-visibility solver
+     {
+         PIX_EVENT(DEFER_FLUSH_OCCLUSION);
+@@ -325,14 +348,16 @@ void CRender::Render()
+     if (o.msaa)
+     {
+         PIX_EVENT(MARK_MSAA_EDGES);
++        copvr::RendererProfilePass timing("msaa_edges",copvr_motion_view_index(),Device.dwFrame);
+         Target->mark_msaa_edges();
+     }
+ 
+-    r_rain.sync();
++    { copvr::RendererProfilePass timing("rain_sync",copvr_motion_view_index(),Device.dwFrame); r_rain.sync(); }
+ 
+     // Directional light - fucking sun
+     {
+         PIX_EVENT(DEFER_SUN);
++        copvr::RendererProfilePass timing("sun",copvr_motion_view_index(),Device.dwFrame);
+         Stats.l_visible++;
+         if (!RImplementation.o.oldshadowcascades)
+             r_sun.sync();
+@@ -343,6 +368,7 @@ void CRender::Render()
+ 
+     {
+         PIX_EVENT(DEFER_SELF_ILLUM);
++        copvr::RendererProfilePass timing("emissive",copvr_motion_view_index(),Device.dwFrame);
+         Target->phase_accumulator(dsgraph.cmd_list);
+         // Render emissive geometry, stencil - write 0x0 at pixel pos
+         dsgraph.cmd_list.set_xform_project(Device.mProject);
+@@ -366,18 +392,21 @@ void CRender::Render()
+     // Lighting, non dependant on OCCQ
+     {
+         PIX_EVENT(DEFER_LIGHT_NO_OCCQ);
++        copvr::RendererProfilePass timing("local_lights_normal",copvr_motion_view_index(),Device.dwFrame);
+         render_lights(LP_normal);
+     }
+ 
+     // Lighting, dependant on OCCQ
+     {
+         PIX_EVENT(DEFER_LIGHT_OCCQ);
++        copvr::RendererProfilePass timing("local_lights_pending",copvr_motion_view_index(),Device.dwFrame);
+         render_lights(LP_pending);
+     }
+ 
+     // Postprocess
+     {
+         PIX_EVENT(DEFER_LIGHT_COMBINE);
++        copvr::RendererProfilePass timing("combine",copvr_motion_view_index(),Device.dwFrame);
+         Target->phase_combine();
+     }
+ 
+@@ -386,6 +415,7 @@ void CRender::Render()
+ 
+ void CRender::render_forward()
+ {
++    copvr::RendererProfilePass timing("forward_transparency",copvr_motion_view_index(),Device.dwFrame);
+     ZoneScoped;
+     auto& dsgraph = get_imm_context();
+ 
 diff --git a/src/Layers/xrRender_R2/r3_rendertarget_phase_scene.cpp b/src/Layers/xrRender_R2/r3_rendertarget_phase_scene.cpp
 index 7f4b473..26be4cb 100644
 --- a/src/Layers/xrRender_R2/r3_rendertarget_phase_scene.cpp
@@ -431,6 +1010,169 @@ index 7f4b473..26be4cb 100644
      PIX_EVENT(phase_scene_prepare);
      // Clear depth & stencil
      // u_setrt	( Device.dwWidth,Device.dwHeight, get_base_rt(), nullptr, nullptr, get_base_zb() );
+diff --git a/src/Layers/xrRender_R2/render_phase_sun.cpp b/src/Layers/xrRender_R2/render_phase_sun.cpp
+index c4109f7..d14ab89 100644
+--- a/src/Layers/xrRender_R2/render_phase_sun.cpp
++++ b/src/Layers/xrRender_R2/render_phase_sun.cpp
+@@ -1,4 +1,5 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_shadow_mode.hpp"
+ 
+ #include "r2_R_sun_support.h"
+ #include "xrCore/Threading/ParallelFor.hpp"
+@@ -308,23 +309,23 @@ void render_sun::render()
+             bool bNormal = !dsgraph.mapNormalPasses[0][0].empty() || !dsgraph.mapMatrixPasses[0][0].empty();
+             bool bSpecial = !dsgraph.mapNormalPasses[1][0].empty() || !dsgraph.mapMatrixPasses[1][0].empty() ||
+                 !dsgraph.mapSorted.empty();
+-            if (bNormal || bSpecial)
++            if (copvrNoSunShadows(Core.Params) || bNormal || bSpecial)
+             {
+                 RImplementation.Target->phase_smap_direct(dsgraph.cmd_list, sun, cascade_ind);
+                 dsgraph.cmd_list.set_xform_world(Fidentity);
+                 dsgraph.cmd_list.set_xform_view(Fidentity);
+                 dsgraph.cmd_list.set_xform_project(sun->X.D[cascade_ind].combine);
+-                dsgraph.render_graph(0);
+-                if (ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))
++                if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(0);
++                if (!copvrNoSunShadows(Core.Params) && ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))
+                     RImplementation.Details->Render(dsgraph.cmd_list);
+                 sun->X.D[cascade_ind].transluent = FALSE;
+-                if (bSpecial)
++                if (!copvrNoSunShadows(Core.Params) && bSpecial)
+                 {
+                     VERIFY(RImplementation.o.Tshadows);
+                     sun->X.D[cascade_ind].transluent = TRUE;
+                     RImplementation.Target->phase_smap_direct_tsh(dsgraph.cmd_list, sun, cascade_ind);
+-                    dsgraph.render_graph(1); // normal level, secondary priority
+-                    dsgraph.render_sorted(); // strict-sorted geoms
++                    if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(1); // normal level, secondary priority
++                    if(!copvrNoSunShadows(Core.Params))dsgraph.render_sorted(); // strict-sorted geoms
+                 }
+             }
+ 
+diff --git a/src/Layers/xrRender_R2/render_phase_sun_old.cpp b/src/Layers/xrRender_R2/render_phase_sun_old.cpp
+index a7a9787..d30f197 100644
+--- a/src/Layers/xrRender_R2/render_phase_sun_old.cpp
++++ b/src/Layers/xrRender_R2/render_phase_sun_old.cpp
+@@ -1,8 +1,16 @@
+ #include "stdafx.h"
++#include "../../../../src/renderer_shadow_mode.hpp"
+ #include "r2_R_sun_support.h"
++#include "../../../../src/vr_render_geometry.hpp"
+ 
+ namespace xray::render::RENDER_NAMESPACE
+ {
++static bool copvr_safe_sun_test() { return strstr(Core.Params,"-copvr_shadow_safe")!=nullptr; }
++static void build_test_sun_projection(Fmatrix& result,float farPlane) {
++    if(copvr_safe_sun_test()&&copvr::conservativeShadowProjection(result,Device.mProject,VIEWPORT_NEAR,farPlane))return;
++    result.build_projection(deg2rad(Device.fFOV),Device.fASPECT,VIEWPORT_NEAR,farPlane);
++}
++
+ void render_sun_old::init()
+ {
+     u32 cascade_count = R__NUM_SUN_CASCADES;
+@@ -54,7 +62,7 @@ void render_sun_old::render_sun()
+     {
+         float _far_ = std::min(ps_r2_sun_far, g_pGamePersistent->Environment().CurrentEnv.far_plane);
+         // ex_project.build_projection	(deg2rad(Device.fFOV/* *Device.fASPECT*/),Device.fASPECT,ps_r2_sun_near,_far_);
+-        ex_project.build_projection(deg2rad(Device.fFOV /* *Device.fASPECT*/), Device.fASPECT, VIEWPORT_NEAR, _far_);
++        build_test_sun_projection(ex_project,_far_);
+         // VIEWPORT_NEAR
+         ex_full.mul(ex_project, Device.mView);
+         ex_full_inverse = XMMatrixInverse(nullptr, XMLoadFloat4x4((XMFLOAT4X4*)&ex_full));
+@@ -170,7 +178,7 @@ void render_sun_old::render_sun()
+     float m_fTSM_Delta = ps_r2_sun_tsm_projection;
+ 
+     // Compute REAL sheared xform based on receivers/casters information
+-    if (_abs(m_fCosGamma) < 0.99f && ps_r2_ls_flags.test(R2FLAG_SUN_TSM))
++    if (!copvr_safe_sun_test() && _abs(m_fCosGamma) < 0.99f && ps_r2_ls_flags.test(R2FLAG_SUN_TSM))
+     {
+         //  get the near and the far plane (points) in eye space.
+         XMFLOAT3 frustumPnts[8];
+@@ -347,7 +355,7 @@ void render_sun_old::render_sun()
+     }
+ 
+     // perform "refit" or "focusing" on relevant
+-    if (ps_r2_ls_flags.test(R2FLAG_SUN_FOCUS))
++    if (!copvr_safe_sun_test() && ps_r2_ls_flags.test(R2FLAG_SUN_FOCUS))
+     {
+         // create clipper
+         DumbClipper view_clipper;
+@@ -383,8 +391,7 @@ void render_sun_old::render_sun()
+         {
+             //x_project.build_projection(deg2rad(Device.fFOV /* *Device.fASPECT*/), Device.fASPECT, ps_r2_sun_near,
+             //    ps_r2_sun_near + tweak_guaranteed_range);
+-            x_project.build_projection(deg2rad(Device.fFOV /* *Device.fASPECT*/), Device.fASPECT, VIEWPORT_NEAR,
+-                ps_r2_sun_near + tweak_guaranteed_range);
++            build_test_sun_projection(x_project,ps_r2_sun_near + tweak_guaranteed_range);
+             x_full.mul(x_project, Device.mView);
+             XMStoreFloat4x4((XMFLOAT4X4*)&x_full_inverse,
+                 XMMatrixInverse(nullptr, XMLoadFloat4x4((XMFLOAT4X4*)&x_full)));
+@@ -446,20 +453,20 @@ void render_sun_old::render_sun()
+         bool bNormal = !dsgraph.mapNormalPasses[0][0].empty() || !dsgraph.mapMatrixPasses[0][0].empty();
+         bool bSpecial = !dsgraph.mapNormalPasses[1][0].empty() || !dsgraph.mapMatrixPasses[1][0].empty() ||
+             !dsgraph.mapSorted.empty();
+-        if (bNormal || bSpecial)
++        if (copvrNoSunShadows(Core.Params) || bNormal || bSpecial)
+         {
+             RImplementation.Target->phase_smap_direct(dsgraph.cmd_list, sun, SE_SUN_FAR);
+             dsgraph.cmd_list.set_xform_world(Fidentity);
+             dsgraph.cmd_list.set_xform_view(Fidentity);
+             dsgraph.cmd_list.set_xform_project(sun->X.D[SE_SUN_FAR].combine);
+-            dsgraph.render_graph(0);
++            if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(0);
+             sun->X.D[SE_SUN_FAR].transluent = FALSE;
+-            if (bSpecial)
++            if (!copvrNoSunShadows(Core.Params) && bSpecial)
+             {
+                 sun->X.D[SE_SUN_FAR].transluent = TRUE;
+                 RImplementation.Target->phase_smap_direct_tsh(dsgraph.cmd_list, sun, SE_SUN_FAR);
+-                dsgraph.render_graph(1); // normal level, secondary priority
+-                dsgraph.render_sorted(); // strict-sorted geoms
++                if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(1); // normal level, secondary priority
++                if(!copvrNoSunShadows(Core.Params))dsgraph.render_sorted(); // strict-sorted geoms
+             }
+         }
+     }
+@@ -489,8 +496,7 @@ void render_sun_old::render_sun_near()
+     Fmatrix ex_project, ex_full;
+     XMMATRIX ex_full_inverse;
+     {
+-        ex_project.build_projection(
+-            deg2rad(Device.fFOV /* *Device.fASPECT*/), Device.fASPECT, VIEWPORT_NEAR, ps_r2_sun_near);
++        build_test_sun_projection(ex_project,ps_r2_sun_near);
+         ex_full.mul(ex_project, Device.mView);
+         ex_full_inverse = XMMatrixInverse(nullptr, XMLoadFloat4x4((XMFLOAT4X4*)&ex_full));
+     }
+@@ -670,22 +676,22 @@ void render_sun_old::render_sun_near()
+         bool bNormal = !dsgraph.mapNormalPasses[0][0].empty() || !dsgraph.mapMatrixPasses[0][0].empty();
+         bool bSpecial = !dsgraph.mapNormalPasses[1][0].empty() || !dsgraph.mapMatrixPasses[1][0].empty() ||
+             !dsgraph.mapSorted.empty();
+-        if (bNormal || bSpecial)
++        if (copvrNoSunShadows(Core.Params) || bNormal || bSpecial)
+         {
+             RImplementation.Target->phase_smap_direct(dsgraph.cmd_list, sun, SE_SUN_NEAR);
+             dsgraph.cmd_list.set_xform_world(Fidentity);
+             dsgraph.cmd_list.set_xform_view(Fidentity);
+             dsgraph.cmd_list.set_xform_project(sun->X.D[SE_SUN_NEAR].combine);
+-            dsgraph.render_graph(0);
+-            if (ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))
++            if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(0);
++            if (!copvrNoSunShadows(Core.Params) && ps_r2_ls_flags.test(R2FLAG_SUN_DETAILS))
+                 RImplementation.Details->Render(dsgraph.cmd_list);
+             sun->X.D[SE_SUN_NEAR].transluent = FALSE;
+-            if (bSpecial)
++            if (!copvrNoSunShadows(Core.Params) && bSpecial)
+             {
+                 sun->X.D[SE_SUN_NEAR].transluent = TRUE;
+                 RImplementation.Target->phase_smap_direct_tsh(dsgraph.cmd_list, sun, SE_SUN_NEAR);
+-                dsgraph.render_graph(1); // normal level, secondary priority
+-                dsgraph.render_sorted(); // strict-sorted geoms
++                if(!copvrNoSunShadows(Core.Params))dsgraph.render_graph(1); // normal level, secondary priority
++                if(!copvrNoSunShadows(Core.Params))dsgraph.render_sorted(); // strict-sorted geoms
+             }
+         }
+     }
 diff --git a/src/xrCore/xrDebug.cpp b/src/xrCore/xrDebug.cpp
 index 1edcda8..1a0e6aa 100644
 --- a/src/xrCore/xrDebug.cpp
@@ -513,6 +1255,42 @@ index b2b51cd..f29c449 100644
  
      m_imgui_render->OnDeviceResetBegin();
  
+diff --git a/src/xrEngine/Device_mode.cpp b/src/xrEngine/Device_mode.cpp
+index 7ef0640..8405632 100644
+--- a/src/xrEngine/Device_mode.cpp
++++ b/src/xrEngine/Device_mode.cpp
+@@ -1,4 +1,5 @@
+ #include "stdafx.h"
++#include "../../../src/vr_render_geometry.hpp"
+ 
+ #include "xrCore/xr_token.h"
+ #include "xr_input.h"
+@@ -162,7 +163,7 @@ void CRenderDevice::UpdateWindowProps()
+     ImGuiIO& io = ImGui::GetIO();
+ 
+     io.DisplaySize = { static_cast<float>(psDeviceMode.Width), static_cast<float>(psDeviceMode.Height) };
+-    io.DisplayFramebufferScale = ImVec2{ float(dwWidth / m_rcWindowClient.w), float(dwHeight / m_rcWindowClient.h) };
++    io.DisplayFramebufferScale = ImVec2{ float(dwWidth) / float(m_rcWindowClient.w), float(dwHeight) / float(m_rcWindowClient.h) };
+ }
+ 
+ void CRenderDevice::UpdateWindowRects()
+@@ -235,6 +236,16 @@ void CRenderDevice::SelectResolution(const bool windowed)
+ 
+     dwWidth = psDeviceMode.Width;
+     dwHeight = psDeviceMode.Height;
++    // Desktop presentation dimensions remain in psDeviceMode; VR buffers may be square.
++    if(strstr(Core.Params,"-copvr")) {
++        const char* key="-copvr_eye ";
++        if(const char* value=strstr(Core.Params,key)) {
++            const auto size=copvr::parseEyeSize(value+strlen(key));
++            if(size.width) {dwWidth=size.width;dwHeight=size.height;}
++            else Msg("! CoPVR: invalid -copvr_eye size; keeping desktop render dimensions");
++        }
++        Msg("* CoPVR: desktop window %ux%u; render per eye %ux%u",psDeviceMode.Width,psDeviceMode.Height,dwWidth,dwHeight);
++    }
+ }
+ 
+ SDL_Window* CRenderDevice::GetApplicationWindow()
 diff --git a/src/xrEngine/Engine.cpp b/src/xrEngine/Engine.cpp
 index 6404ba3..5b84670 100644
 --- a/src/xrEngine/Engine.cpp
@@ -575,18 +1353,20 @@ index fcfda9e..e738244 100644
  
  void IGame_Persistent::load_draw_internal() const
 diff --git a/src/xrEngine/device.cpp b/src/xrEngine/device.cpp
-index 01a427c..77be484 100644
+index 01a427c..56a9895 100644
 --- a/src/xrEngine/device.cpp
 +++ b/src/xrEngine/device.cpp
-@@ -14,6 +14,7 @@
+@@ -14,6 +14,9 @@
  #include "xrScriptEngine/script_space.hpp"
  
  #include <SDL.h>
 +#include "../../../src/engine_vr_hook.hpp"
++#include "../../../src/vr_profile.hpp"
++static copvr::ProfileTrace vrProfile("engine");
  
  ENGINE_API CRenderDevice Device;
  ENGINE_API CLoadScreenRenderer load_screen_renderer;
-@@ -94,6 +95,25 @@ void CRenderDevice::RenderEnd(void)
+@@ -94,6 +97,25 @@ void CRenderDevice::RenderEnd(void)
          }
      }
      // end scene
@@ -612,7 +1392,7 @@ index 01a427c..77be484 100644
      g_bRendering = false;
      GEnv.Render->End();
  
-@@ -192,7 +212,7 @@ void CRenderDevice::OnCameraUpdated()
+@@ -192,7 +214,7 @@ void CRenderDevice::OnCameraUpdated()
      ZoneScoped;
  
      // Precache
@@ -621,7 +1401,7 @@ index 01a427c..77be484 100644
      {
          const float factor = float(dwPrecacheFrame) / float(dwPrecacheTotal);
          const float angle = PI_MUL_2 * factor;
-@@ -233,6 +253,149 @@ void CRenderDevice::DoRender()
+@@ -233,6 +255,155 @@ void CRenderDevice::DoRender()
      CStatTimer renderTotalReal;
      renderTotalReal.FrameStart();
      renderTotalReal.Begin();
@@ -638,7 +1418,8 @@ index 01a427c..77be484 100644
 +        const bool screen=g_pGamePersistent&&(g_pGamePersistent->MainMenuActiveOrLevelNotExist()||(vr.isIntro&&vr.isIntro()));
 +        const int uiState=!loading&&!screen&&vr.isUI?vr.isUI():0;
 +        frame.menu=copvr::frameMode(loading,screen,uiState);
-+        const int status = vr.begin(&frame);
++        int status;
++        { copvr::ProfileSpan timing(vrProfile,"bridge_begin_cpu",dwFrame); status=vr.begin(&frame); }
 +        if(vr.updatePointer) vr.updatePointer();
 +        if (status < 0)
 +            vr.failed("begin frame");
@@ -679,13 +1460,14 @@ index 01a427c..77be484 100644
 +            const Fmatrix baseView = mView, baseProject = mProject;
 +            const float farPlane = _abs(1.f-baseProject._33)>0.000001f ?
 +                _abs(baseProject._43/(1.f-baseProject._33)) : 1000.f;
-+            vr.syncCamera(0);
++            { copvr::ProfileSpan timing(vrProfile,"base_camera_readers_wait_cpu",dwFrame); vr.syncCamera(0); }
 +            ImGui::Render();
 +            bool okay = true;
 +            vr.renderingStereo=true;
 +            if(vr.setOptics) vr.setOptics(0);
 +            CopVrOpticsView optic{}; optic.abi=1;
-+            if(frame.menu==0&&vr.getOptics&&vr.setOptics&&vr.copyOptics&&vr.getOptics(&optic)>0) {
++            const int opticsKind=frame.menu==0&&vr.getOptics&&vr.setOptics&&vr.copyOptics?vr.getOptics(&optic):0;
++            if(opticsKind>0) {
 +                for(int opticalEye=0;opticalEye<2;++opticalEye) {
 +                vCameraPosition.set(optic.position[0],optic.position[1],optic.position[2]);
 +                // Parallel cameras with the runtime eye baseline; no toe-in vertical disparity.
@@ -700,11 +1482,14 @@ index 01a427c..77be484 100644
 +                mView.build_camera_dir(vCameraPosition,vCameraDirection,vCameraTop);
 +                mProject.build_projection(deg2rad(optic.fov),float(dwHeight)/float(dwWidth),.05f,farPlane);
 +                mInvView.invert(mView); mFullTransform.mul(mProject,mView); mInvFullTransform.invert_44(mFullTransform);
-+                vr.syncCamera(1); GEnv.Render->SetCacheXform(mView,mProject);
++                { copvr::ProfileSpan timing(vrProfile,"optic_camera_sync_cpu",dwFrame); vr.syncCamera(1); }
++                GEnv.Render->SetCacheXform(mView,mProject);
 +                if(vr.setUI) vr.setUI(0,0);
-+                vr.setOptics(opticalEye+1);
++                vr.setOptics((opticalEye+1)|(opticsKind==COPVR_OPTICS_BINOCULAR?COPVR_OPTICS_BINOCULAR_PASS_BIT:0));
 +                if(RenderBegin()) {
-+                    seqRender.Process();
++                    { copvr::ProfileSpan timing(vrProfile,"optics_render_cpu",dwFrame);
++                      copvr::ProfileSpan kindTiming(vrProfile,opticsKind==COPVR_OPTICS_BINOCULAR?"binocular_render_cpu":"scope_render_cpu",dwFrame);
++                      seqRender.Process(); }
 +                    void* opticalTexture=vr.getBuffer();
 +                    if(opticalTexture) { vr.copyOptics(opticalTexture); vr.releaseBuffer(opticalTexture); }
 +                    g_bRendering=false; GEnv.Render->End();
@@ -734,10 +1519,11 @@ index 01a427c..77be484 100644
 +                mProject._33=farPlane/(farPlane-nearPlane); mProject._34=1.f;
 +                mProject._43=-nearPlane*farPlane/(farPlane-nearPlane);
 +                mInvView.invert(mView); mFullTransform.mul(mProject,mView); mInvFullTransform.invert_44(mFullTransform);
-+                vr.syncCamera(1); GEnv.Render->SetCacheXform(mView,mProject);
++                { copvr::ProfileSpan timing(vrProfile,eye==0?"eye0_camera_sync_cpu":"eye1_camera_sync_cpu",dwFrame); vr.syncCamera(1); }
++                GEnv.Render->SetCacheXform(mView,mProject);
 +                if(vr.setUI) vr.setUI(frame.menu==2||frame.menu==3,eye);
 +                if (!RenderBegin()) { okay=false; break; }
-+                seqRender.Process();
++                { copvr::ProfileSpan timing(vrProfile,eye==0?"eye0_render_cpu":"eye1_render_cpu",dwFrame); seqRender.Process(); }
 +                if(eye==0&&(frame.menu==2||frame.menu==3)&&vr.copyUI&&vr.getUITexture) {
 +                    void* uiTexture=vr.getUITexture();
 +                    if(!uiTexture||vr.copyUI(uiTexture)<0) okay=false;
@@ -771,18 +1557,40 @@ index 01a427c..77be484 100644
      if (b_is_Active && RenderBegin())
      {
          {
-@@ -280,6 +443,10 @@ void CRenderDevice::ProcessFrame()
+@@ -267,9 +438,11 @@ void CRenderDevice::ProcessFrame()
+ 
+     const u64 frameStartTime = TimerGlobal.GetElapsed_ms();
+ 
+-    FrameMove();
++    const u64 profileFrameId=dwFrame+1; // FrameMove increments dwFrame.
++    copvr::ProfileSpan frameTiming(vrProfile,"process_frame_cpu_wall",profileFrameId);
++    { copvr::ProfileSpan timing(vrProfile,"simulation_cpu",profileFrameId); FrameMove(); }
+ 
+-    OnCameraUpdated();
++    { copvr::ProfileSpan timing(vrProfile,"camera_cpu",dwFrame); OnCameraUpdated(); }
+ 
+     const auto& processSeqParallel = TaskScheduler->AddTask([this]
+     {
+@@ -280,9 +453,16 @@ void CRenderDevice::ProcessFrame()
          seqFrameMT.Process();
      });
  
+-    DoRender();
 +    // VR installs per-eye cameras; finish CPU readers before changing them.
 +#if defined(XR_PLATFORM_WINDOWS)
-+    if (copvr_engine::hook().requested()) TaskScheduler->Wait(processSeqParallel);
++    if (copvr_engine::hook().requested()) {
++        copvr::ProfileSpan timing(vrProfile,"parallel_wait_cpu",dwFrame);
++        TaskScheduler->Wait(processSeqParallel);
++    }
 +#endif
-     DoRender();
++    { copvr::ProfileSpan timing(vrProfile,"render_cpu_wall",dwFrame); DoRender(); }
  
-     TaskScheduler->Wait(processSeqParallel);
-@@ -295,6 +462,10 @@ void CRenderDevice::ProcessFrame()
+-    TaskScheduler->Wait(processSeqParallel);
++    { copvr::ProfileSpan timing(vrProfile,"parallel_tail_wait_cpu",dwFrame); TaskScheduler->Wait(processSeqParallel); }
+ 
+     const u64 frameEndTime = TimerGlobal.GetElapsed_ms();
+     const u64 frameTime = frameEndTime - frameStartTime;
+@@ -295,6 +475,10 @@ void CRenderDevice::ProcessFrame()
      else if (Paused() || g_pGameLevel == nullptr)
          updateDelta = 1000 / ps_fps_limit_in_menu;
  
@@ -4564,3 +5372,27 @@ index 6c5cf5c..8732bf3 100644
      Ivector2 p;
      p.x = iFloor(vPos.x / correction.x);
      p.y = iFloor(vPos.y / correction.y);
+diff --git a/src/xrUICore/ui_base.cpp b/src/xrUICore/ui_base.cpp
+index 37d3aba..4d198a0 100644
+--- a/src/xrUICore/ui_base.cpp
++++ b/src/xrUICore/ui_base.cpp
+@@ -1,4 +1,5 @@
+ #include "pch.hpp"
++#include "../../../src/vr_ui_layout.hpp"
+ #include "ui_base.h"
+ #include "Cursor/UICursor.h"
+ #include "xrCore/XML/XMLDocument.hpp"
+@@ -320,11 +321,13 @@ void UICore::RenderFont()
+ 
+ bool UICore::is_widescreen()
+ {
++    if(strstr(Core.Params,"-copvr"))return true;
+     return (Device.dwWidth) / float(Device.dwHeight) > (UI_BASE_WIDTH / UI_BASE_HEIGHT + 0.01f);
+ }
+ 
+ float UICore::get_current_kx()
+ {
++    if(strstr(Core.Params,"-copvr"))return copvr::uiAspectCorrection(UI_BASE_WIDTH,UI_BASE_HEIGHT);
+     float h = float(Device.dwHeight);
+     float w = float(Device.dwWidth);
+ 

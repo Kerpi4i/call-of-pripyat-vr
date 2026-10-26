@@ -1,6 +1,6 @@
 # Release gate / Перевірка перед публікацією
 
-Candidate: **0.1.0-alpha.1**. A checked item must have a date, tester and result. Leave untested items unchecked. The automated extraction check does not replace interactive/headset checks. No public upload until the owner approves the accepted candidate.
+Candidate: **0.1.0-alpha.2**. A checked item must have a date, tester and result. Leave untested items unchecked. The automated extraction check does not replace interactive/headset checks. No public upload until the owner approves the accepted candidate.
 
 ## Automated / Автоматично
 

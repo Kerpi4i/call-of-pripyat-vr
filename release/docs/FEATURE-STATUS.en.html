@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Feature status — Alpha 0.1.0 candidate</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CoPVR Alpha guide</title><style>body{font:17px/1.65 system-ui,sans-serif;background:#151b18;color:#e7ede8;max-width:1020px;margin:40px auto;padding:0 28px}a{color:#9edd9f}h1,h2,h3{line-height:1.25;color:#c8e4bb}h2{margin-top:2em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #455147;padding:10px;text-align:left}th{background:#283429}code{background:#29302b;padding:2px 5px;border-radius:4px}li{margin:.45em 0}nav{font-size:14px}</style><nav><a href="USER-GUIDE.en.html">English guide</a> · <a href="USER-GUIDE.uk.html">Українська інструкція</a> · <a href="FEATURE-STATUS.en.html">Feature status / Стан функцій</a></nav><h1>Feature status вЂ” Alpha 0.1.0 candidate</h1>
 <p>Evidence is from the development session on Quest 2 / Touch / USB Link. Historical confirmations are <strong>not</strong> final-build regression acceptance. No complete campaign or multi-headset qualification is claimed.</p>
 <table>
 <thead>
@@ -57,7 +57,7 @@
 <td>Implemented; later muzzle correction not headset-confirmed.</td>
 </tr>
 <tr>
-<td>RG-6 pull latch, 180° opening, drum indexing; SPAS open-action requirement</td>
+<td>RG-6 pull latch, 180В° opening, drum indexing; SPAS open-action requirement</td>
 <td>Implemented/refined after feedback; no explicit final confirmation.</td>
 </tr>
 <tr>
@@ -97,7 +97,7 @@
 <td>Build and code/unit checks only. No headset confirmation yet.</td>
 </tr>
 <tr>
-<td>Death → load save</td>
+<td>Death в†’ load save</td>
 <td>Historical crash reported repeatedly; later changes lack explicit successful tester confirmation. High-priority release test.</td>
 </tr>
 <tr>
@@ -107,4 +107,7 @@
 </tbody>
 </table>
 <p>Not supported: standalone Quest/APK, bare-hand tracking, full-body tracking, simultaneous independent dual firearms, multiplayer, Enhanced Edition, official Steam achievements/cloud-save integration, Anomaly/overhaul compatibility. The independent dual-item experiment was rolled back because it could leave hands unable to equip. Native detector combinations have selective relaxations, not unrestricted two independent item lifecycles.</p>
-<p>Prototype semantics: discarded magazines are temporary visuals with shared-pool ammunition accounting. Equipment slots use estimated torso anchors. There is no guarantee of realistic anatomy, physics for every quest prop, individual retained-magazine ammo or full campaign completion.</p></html>
+<p>Prototype semantics: discarded magazines are temporary visuals with shared-pool ammunition accounting. Equipment slots use estimated torso anchors. There is no guarantee of realistic anatomy, physics for every quest prop, individual retained-magazine ammo or full campaign completion.</p>
+<h2>Alpha.2 development confirmations and limits</h2>
+<p>Quest 2 / Touch / USB Link testing confirmed the local-light shadow pitch-popping fix and improved clarity with runtime-recommended eye dimensions and MSAA 4x. Same-frame tile reuse substantially reduced long frame-time tails in one capture; routes were not identical, so no universal FPS percentage is claimed. Heavy scenes still often run around 36 application FPS at 72 Hz, with longer spikes; binocular use can still be expensive. Binocular-only shadow suppression did not produce a clear performance improvement in the latest test. The camera-work optimization, queue pipeline and subset/face-culling experiments have mixed or incomplete evidence; only the selected launch flags ship enabled. Stronger Touch menu-ray smoothing and support-grip-only pump cycling are included but need broader regression. The current UI proportions and all weapon variants are not comprehensively revalidated.</p>
+<p>Alpha.2 installer extraction/self-check is separate from the historical alpha.1 installation/headset acceptance. No full campaign completion is claimed.</p></html>

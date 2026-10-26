@@ -3,10 +3,16 @@
 #include "vr_bridge_api.h"
 #include "ui_ray.hpp"
 #include "beam_math.hpp"
+#include "ui_aim_filter.hpp"
+#include "vr_ui_layout.hpp"
 #include <atomic>
+#include "vr_gpu_profile.hpp"
 using namespace copvr;
 namespace {
 std::unique_ptr<Host> host;
+ProfileTrace profile("bridge");
+std::unique_ptr<GpuProfile> gpuProfile;
+uint64_t profileFrame{};
 std::string lastError;
 XrTime predictedTime{}; bool begun{},render{},calibrated{};
 bool menu{},overlay{},passiveUI{},uiCopied{},panelPlaced{}; XrPosef panelPose{};
@@ -19,6 +25,7 @@ CopVrGrips grips{COPVR_GRIP_ABI};
 CopVrPointer pointer{COPVR_POINTER_ABI};
 int uiPointerOwner=-1;
 float uiPointerX=.5f,uiPointerY=.5f;
+UiAimFilter uiAimFilter;
 CopVrHead head{COPVR_HEAD_ABI};
 CopVrHeight height{COPVR_HEIGHT_ABI};
 std::atomic<bool> calibrateHeight{false};
@@ -46,7 +53,7 @@ void finish(bool submit) {
         panel.subImage.swapchain=host->uiOverlay.swapchain;
         panel.layerFlags=XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT;
     }
-    panel.size={2.f,2.f*static_cast<float>(host->eyes[0].height)/static_cast<float>(host->eyes[0].width)};
+    panel.size={uiPanelWidth,uiPanelHeight};
     const auto* base=menu?reinterpret_cast<const XrCompositionLayerBaseHeader*>(&panel):
         reinterpret_cast<const XrCompositionLayerBaseHeader*>(&layer);
     std::array<const XrCompositionLayerBaseHeader*,4> layers{{base}};
@@ -65,7 +72,9 @@ void finish(bool submit) {
     XrFrameEndInfo end{XR_TYPE_FRAME_END_INFO}; end.displayTime=predictedTime; end.environmentBlendMode=XR_ENVIRONMENT_BLEND_MODE_OPAQUE;
     end.layerCount=submit?layerCount:0; end.layers=submit?layers.data():nullptr;
     begun=false;
-    xr(host->fn<PFN_xrEndFrame>("xrEndFrame")(host->session,&end),"bridge xrEndFrame");
+    if(gpuProfile)gpuProfile->end(host->context.p);
+    { ProfileSpan timing(profile,"xr_end",profileFrame);
+    xr(host->fn<PFN_xrEndFrame>("xrEndFrame")(host->session,&end),"bridge xrEndFrame"); }
     if(submit) ++frames;
 }
 }
@@ -78,7 +87,9 @@ extern "C" __declspec(dllexport) int copvr_initialize(void* device,uint32_t widt
         pending->initializeGraphics(static_cast<ID3D11Device*>(device),width,height);
         pending->initializeBeam();
         pending->initializeOverlay();
+        if(profile.enabled())gpuProfile=std::make_unique<GpuProfile>();
         host=std::move(pending); calibrated=false; menu=panelPlaced=false; frames=0; lastError.clear();
+        uiAimFilter.reset(); uiPointerOwner=-1;
     });
 }
 extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
@@ -89,18 +100,24 @@ extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
         output->render=output->focused=0; controls.active=0; grips.active=0; pointer.active=0; head.active=0; navigation.active=0; beams={};
         menu=output->menu==1; passiveUI=output->menu==3; overlay=output->menu==2||passiveUI; uiCopied=false;
         if(!menu&&!overlay) panelPlaced=false;
-        host->events(); if(host->exit) { state=-2; return; } if(!host->running) return;
+        host->events(); if(host->exit) { uiAimFilter.reset(); state=-2; return; }
+        if(!host->running) { uiAimFilter.reset(); return; }
+        ++profileFrame;
         XrFrameWaitInfo wait{XR_TYPE_FRAME_WAIT_INFO}; XrFrameState frame{XR_TYPE_FRAME_STATE};
-        xr(host->fn<PFN_xrWaitFrame>("xrWaitFrame")(host->session,&wait,&frame),"bridge xrWaitFrame");
+        { ProfileSpan timing(profile,"xr_wait",profileFrame);
+        xr(host->fn<PFN_xrWaitFrame>("xrWaitFrame")(host->session,&wait,&frame),"bridge xrWaitFrame"); }
+        if(profile.enabled())profile.record("xr_period",profileFrame,profileClockMs(),double(frame.predictedDisplayPeriod)/1000000.0);
         XrFrameBeginInfo begin{XR_TYPE_FRAME_BEGIN_INFO};
-        xr(host->fn<PFN_xrBeginFrame>("xrBeginFrame")(host->session,&begin),"bridge xrBeginFrame");
+        { ProfileSpan timing(profile,"xr_begin",profileFrame);
+        xr(host->fn<PFN_xrBeginFrame>("xrBeginFrame")(host->session,&begin),"bridge xrBeginFrame"); }
+        if(gpuProfile&&frame.shouldRender)gpuProfile->begin(host->device.p,host->context.p,profile,profileFrame);
         begun=true; predictedTime=frame.predictedDisplayTime; copied={false,false};
         auto input=host->input->sample(predictedTime,host->focused);
         if((menu||overlay)&&(!panelPlaced||passiveUI)&&input.head.valid) {
             const auto forward=rotate(input.head.orientation,{0,0,-1});
             float yaw=std::atan2(-forward.x,-forward.z);
             Quaternion q{0,std::sin(yaw*.5f),0,std::cos(yaw*.5f)};
-            Vec3 p=input.head.position+rotate(q,{0,0,-2.f});
+            Vec3 p=input.head.position+rotate(q,{0,0,-uiPanelDistance});
             panelPose={{q.x,q.y,q.z,q.w},{p.x,p.y,p.z}}; panelPlaced=true;
         }
         output->focused=host->focused;
@@ -114,6 +131,7 @@ extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
         const bool firstCalibration=!calibrated&&input.head.valid;
         const bool requested=calibrateHeight.exchange(false);
         if(input.head.valid&&(firstCalibration||requested)) {
+            uiAimFilter.reset();
             origin=input.head.position;
             Vec3 forward=rotate(input.head.orientation,{0,0,-1});
             float yaw=std::atan2(-forward.x,-forward.z);
@@ -149,6 +167,7 @@ extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
             head={COPVR_HEAD_ABI,1,GetTickCount64(),{p.x,p.y,p.z},{d.x,d.y,d.z},{u.x,u.y,u.z}};
         }
         pointer={}; pointer.abi=COPVR_POINTER_ABI; pointer.timestampMs=GetTickCount64();
+        uiAimFilter.context((menu||overlay)&&!passiveUI&&render&&host->focused?(menu?1u:2u):0u);
         if((menu||overlay)&&!passiveUI&&render&&host->focused) {
             // An intentional left grip selects its ray for physical extraction;
             // normal menu pointing retains the previously validated right preference.
@@ -157,15 +176,17 @@ extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
                 input.hands[0].trigger>.7f&&input.hands[1].trigger<.7f?0:
                 input.hands[0].squeeze>.7f&&input.hands[1].squeeze<.7f?0:1;
             for(int i : {preferred,1-preferred}) {
-                const auto& h=input.hands[i]; if(!h.aim.valid) continue;
-                auto direction=rotate(h.aim.orientation,{0,0,-1});
-                auto hit=panelHit(h.aim.position,direction,
+                const auto& h=input.hands[i];
+                const auto aim=uiAimFilter.update(i,h.aim,pointer.timestampMs);
+                if(!aim.valid) continue;
+                auto direction=rotate(aim.orientation,{0,0,-1});
+                auto hit=panelHit(aim.position,direction,
                     {panelPose.position.x,panelPose.position.y,panelPose.position.z},
                     {panelPose.orientation.x,panelPose.orientation.y,panelPose.orientation.z,panelPose.orientation.w},
-                    2.f,2.f*host->eyes[0].height/host->eyes[0].width);
+                    uiPanelWidth,uiPanelHeight);
                 float length=hit.valid?std::max(0.f,hit.distance-.01f):2.5f;
                 if(input.head.valid&&length>.05f) {
-                    auto start=h.aim.position+direction*.03f,end=h.aim.position+direction*length;
+                    auto start=aim.position+direction*.03f,end=aim.position+direction*length;
                     beams[i]={beamPose(start,end,input.head.position),(end-start).length()};
                 }
                 if(hit.valid&&!pointer.active&&(uiPointerOwner<0||uiPointerOwner==i)) {
@@ -211,6 +232,7 @@ extern "C" __declspec(dllexport) int copvr_begin(CopVrFrame* output) {
 extern "C" __declspec(dllexport) int copvr_copy_eye(uint32_t eye,void* texture) {
     return guarded([&] {
         if(!host||!begun||!render||eye>1||!texture||copied[eye]) throw std::runtime_error("Invalid eye copy state");
+        ProfileSpan copyTiming(profile,eye==0?"eye0_copy_cpu":"eye1_copy_cpu",profileFrame);
         auto& target=host->eyes[eye]; auto* source=static_cast<ID3D11Texture2D*>(texture);
         Com<ID3D11Device> sourceDevice; source->GetDevice(sourceDevice.put());
         if(sourceDevice.p!=host->device.p) throw std::runtime_error("Backbuffer belongs to a different D3D11 device");
@@ -223,7 +245,8 @@ extern "C" __declspec(dllexport) int copvr_copy_eye(uint32_t eye,void* texture) 
         uint32_t index{}; XrSwapchainImageAcquireInfo acquire{XR_TYPE_SWAPCHAIN_IMAGE_ACQUIRE_INFO};
         xr(host->fn<PFN_xrAcquireSwapchainImage>("xrAcquireSwapchainImage")(target.swapchain,&acquire,&index),"bridge acquire");
         XrSwapchainImageWaitInfo wait{XR_TYPE_SWAPCHAIN_IMAGE_WAIT_INFO}; wait.timeout=XR_INFINITE_DURATION;
-        xr(host->fn<PFN_xrWaitSwapchainImage>("xrWaitSwapchainImage")(target.swapchain,&wait),"bridge wait image");
+        { ProfileSpan timing(profile,"swapchain_eye_wait",profileFrame);
+        xr(host->fn<PFN_xrWaitSwapchainImage>("xrWaitSwapchainImage")(target.swapchain,&wait),"bridge wait image"); }
         host->context->CopyResource(target.images.at(index).texture,source);
         XrSwapchainImageReleaseInfo release{XR_TYPE_SWAPCHAIN_IMAGE_RELEASE_INFO};
         xr(host->fn<PFN_xrReleaseSwapchainImage>("xrReleaseSwapchainImage")(target.swapchain,&release),"bridge release image");
@@ -234,6 +257,10 @@ extern "C" __declspec(dllexport) int copvr_end() {
     return guarded([&] {
         finish(render&&copied[0]&&(menu||copied[1]));
     });
+}
+extern "C" __declspec(dllexport) void copvr_profile_stage(const char* name,int opening) {
+    if(profile.enabled()&&host&&gpuProfile&&name)
+        gpuProfile->marker(host->device.p,host->context.p,name,opening!=0);
 }
 extern "C" __declspec(dllexport) int copvr_copy_ui(void* texture) {
     return guarded([&] {
@@ -247,7 +274,8 @@ extern "C" __declspec(dllexport) int copvr_copy_ui(void* texture) {
         uint32_t index{}; XrSwapchainImageAcquireInfo acquire{XR_TYPE_SWAPCHAIN_IMAGE_ACQUIRE_INFO};
         xr(host->fn<PFN_xrAcquireSwapchainImage>("xrAcquireSwapchainImage")(target.swapchain,&acquire,&index),"UI acquire");
         XrSwapchainImageWaitInfo wait{XR_TYPE_SWAPCHAIN_IMAGE_WAIT_INFO}; wait.timeout=XR_INFINITE_DURATION;
-        xr(host->fn<PFN_xrWaitSwapchainImage>("xrWaitSwapchainImage")(target.swapchain,&wait),"UI wait");
+        { ProfileSpan timing(profile,"swapchain_ui_wait",profileFrame);
+        xr(host->fn<PFN_xrWaitSwapchainImage>("xrWaitSwapchainImage")(target.swapchain,&wait),"UI wait"); }
         host->context->CopyResource(target.images.at(index).texture,source);
         XrSwapchainImageReleaseInfo release{XR_TYPE_SWAPCHAIN_IMAGE_RELEASE_INFO};
         xr(host->fn<PFN_xrReleaseSwapchainImage>("xrReleaseSwapchainImage")(target.swapchain,&release),"UI release");
@@ -308,9 +336,10 @@ extern "C" __declspec(dllexport) int copvr_get_navigation(CopVrNavigation* outpu
 extern "C" __declspec(dllexport) void copvr_shutdown() {
     if(host) {
         guarded([] { finish(false); });
-        log("Submitted engine stereo frames: "+std::to_string(frames)); host.reset();
+        log("Submitted engine stereo frames: "+std::to_string(frames)); gpuProfile.reset(); host.reset();
     }
     calibrated=begun=render=false;
+    uiAimFilter.reset(); uiPointerOwner=-1;
     calibrateHeight.store(false); height={}; height.abi=COPVR_HEIGHT_ABI;
     controls={}; controls.abi=COPVR_CONTROLS_ABI;
     grips={}; grips.abi=COPVR_GRIP_ABI;

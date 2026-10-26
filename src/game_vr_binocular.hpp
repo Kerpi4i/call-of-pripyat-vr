@@ -95,12 +95,12 @@ inline int binocularView(CopVrOpticsView* out) {
     out->fov=15.f;
     auto ini=equipmentConfig(); if(ini&&ini->line_exist("binocular_vr","vertical_fov")) out->fov=ini->r_float("binocular_vr","vertical_fov");
     out->fov=_max(3.f,_min(45.f,out->fov));
-    if(optic.scope) return 1; // Fixed prototype optics; no proximity animation or stick zoom.
+    if(optic.scope) return COPVR_OPTICS_SCOPE; // Fixed prototype optics; no proximity animation or stick zoom.
     static copvr::BinocularZoom zoom;
     CopVrNavigation nav{};
     const bool navActive=navigation(nav)&&nav.active;
     const float factor=zoom.update(navActive,nav.scrollY,nav.timestampMs);
     out->fov=rad2deg(2.f*atanf(tanf(deg2rad(out->fov)*.5f)/factor));
-    return 1;
+    return COPVR_OPTICS_BINOCULAR;
 }
 }
